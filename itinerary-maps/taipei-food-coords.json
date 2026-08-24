@@ -1,0 +1,402 @@
+[
+ {
+  "name": "橘色涮涮屋（橘色火鍋）",
+  "cat": "餐廳",
+  "area": "大安/信義(連鎖)",
+  "notes": "火鍋/涮涮鍋；多分店",
+  "lat": 25.045,
+  "lon": 121.545,
+  "prec": "city",
+  "chain": true
+ },
+ {
+  "name": "欣葉台菜(創始店)",
+  "cat": "餐廳",
+  "area": "中山區",
+  "notes": "台菜",
+  "lat": 25.06653,
+  "lon": 121.52419,
+  "prec": "precise",
+  "chain": false
+ },
+ {
+  "name": "欣葉小聚",
+  "cat": "餐廳",
+  "area": "連鎖",
+  "notes": "台菜(小聚系列)",
+  "lat": 25.045,
+  "lon": 121.545,
+  "prec": "city",
+  "chain": true
+ },
+ {
+  "name": "無老鍋",
+  "cat": "餐廳",
+  "area": "中山/信義",
+  "notes": "火鍋",
+  "lat": 25.03772,
+  "lon": 121.53247,
+  "prec": "precise",
+  "chain": false
+ },
+ {
+  "name": "鼎王麻辣鍋",
+  "cat": "餐廳",
+  "area": "中山區",
+  "notes": "麻辣鍋",
+  "lat": 25.04267,
+  "lon": 121.50799,
+  "prec": "precise",
+  "chain": false
+ },
+ {
+  "name": "饗食天堂",
+  "cat": "餐廳",
+  "area": "連鎖(信義/京站)",
+  "notes": "Buffet 吃到飽",
+  "lat": 25.045,
+  "lon": 121.545,
+  "prec": "city",
+  "chain": true
+ },
+ {
+  "name": "饗 A Joy",
+  "cat": "餐廳",
+  "area": "信義區",
+  "notes": "Fine dining(饗賓)",
+  "lat": 25.03334,
+  "lon": 121.5669,
+  "prec": "district",
+  "chain": false
+ },
+ {
+  "name": "犇 鐵板燒",
+  "cat": "餐廳",
+  "area": "大安/中山",
+  "notes": "鐵板燒",
+  "lat": 25.04042,
+  "lon": 121.56693,
+  "prec": "precise",
+  "chain": false
+ },
+ {
+  "name": "HANA 錵鐵板燒",
+  "cat": "餐廳",
+  "area": "中山區",
+  "notes": "鐵板燒",
+  "lat": 25.06436,
+  "lon": 121.53347,
+  "prec": "district",
+  "chain": false
+ },
+ {
+  "name": "山海樓",
+  "cat": "餐廳",
+  "area": "中正區(仁愛路)",
+  "notes": "台菜(米其林)",
+  "lat": 25.038,
+  "lon": 121.53137,
+  "prec": "precise",
+  "chain": false
+ },
+ {
+  "name": "Nara Thai",
+  "cat": "餐廳",
+  "area": "信義區(微風/ATT)",
+  "notes": "泰式；連鎖",
+  "lat": 25.03334,
+  "lon": 121.5669,
+  "prec": "district",
+  "chain": true
+ },
+ {
+  "name": "鼎泰豐",
+  "cat": "餐廳",
+  "area": "信義/101(連鎖)",
+  "notes": "小籠包",
+  "lat": 25.045,
+  "lon": 121.545,
+  "prec": "city",
+  "chain": true
+ },
+ {
+  "name": "鄒記食舖",
+  "cat": "黃仁勳美食地圖",
+  "area": "松山區",
+  "notes": "",
+  "lat": 25.04989,
+  "lon": 121.57727,
+  "prec": "district",
+  "chain": false
+ },
+ {
+  "name": "磚窯古早味懷舊餐廳",
+  "cat": "黃仁勳美食地圖",
+  "area": "松山區",
+  "notes": "",
+  "lat": 25.04989,
+  "lon": 121.57727,
+  "prec": "district",
+  "chain": false
+ },
+ {
+  "name": "三六食府",
+  "cat": "黃仁勳美食地圖",
+  "area": "大安區",
+  "notes": "",
+  "lat": 25.02274,
+  "lon": 121.52755,
+  "prec": "precise",
+  "chain": false
+ },
+ {
+  "name": "驥園川菜餐廳",
+  "cat": "黃仁勳美食地圖",
+  "area": "大安區",
+  "notes": "川菜(砂鍋雞湯)",
+  "lat": 25.02652,
+  "lon": 121.5344,
+  "prec": "district",
+  "chain": false
+ },
+ {
+  "name": "春韭",
+  "cat": "黃仁勳美食地圖",
+  "area": "中山區晴光商圈",
+  "notes": "",
+  "lat": 25.06436,
+  "lon": 121.53347,
+  "prec": "district",
+  "chain": false
+ },
+ {
+  "name": "花娘小館",
+  "cat": "黃仁勳美食地圖",
+  "area": "松山區",
+  "notes": "",
+  "lat": 25.05486,
+  "lon": 121.55088,
+  "prec": "precise",
+  "chain": false
+ },
+ {
+  "name": "老撈麻辣火鍋",
+  "cat": "黃仁勳美食地圖",
+  "area": "松山區",
+  "notes": "麻辣火鍋",
+  "lat": 25.04989,
+  "lon": 121.57727,
+  "prec": "district",
+  "chain": false
+ },
+ {
+  "name": "梨園湯包館",
+  "cat": "黃仁勳美食地圖",
+  "area": "松山區",
+  "notes": "湯包",
+  "lat": 25.05026,
+  "lon": 121.54479,
+  "prec": "precise",
+  "chain": false
+ },
+ {
+  "name": "聚聚",
+  "cat": "黃仁勳美食地圖",
+  "area": "中正區",
+  "notes": "",
+  "lat": 25.02999,
+  "lon": 121.51499,
+  "prec": "precise",
+  "chain": false
+ },
+ {
+  "name": "牛耳精緻麵館",
+  "cat": "黃仁勳美食地圖",
+  "area": "內湖區",
+  "notes": "麵館",
+  "lat": 25.06966,
+  "lon": 121.589,
+  "prec": "district",
+  "chain": false
+ },
+ {
+  "name": "醉翁漁港海鮮",
+  "cat": "黃仁勳美食地圖",
+  "area": "松山區",
+  "notes": "海鮮熱炒(也在餐廳清單)",
+  "lat": 25.04809,
+  "lon": 121.54474,
+  "prec": "precise",
+  "chain": false
+ },
+ {
+  "name": "富霸王豬腳",
+  "cat": "黃仁勳美食地圖",
+  "area": "中山區四平商圈",
+  "notes": "豬腳",
+  "lat": 25.06436,
+  "lon": 121.53347,
+  "prec": "district",
+  "chain": false
+ },
+ {
+  "name": "譽展蜜餞行",
+  "cat": "黃仁勳美食地圖",
+  "area": "中山區四平商圈",
+  "notes": "蜜餞",
+  "lat": 25.06436,
+  "lon": 121.53347,
+  "prec": "district",
+  "chain": false
+ },
+ {
+  "name": "王記府城肉粽",
+  "cat": "黃仁勳美食地圖",
+  "area": "松山區",
+  "notes": "肉粽",
+  "lat": 25.04792,
+  "lon": 121.546,
+  "prec": "precise",
+  "chain": false
+ },
+ {
+  "name": "阿婆水果攤(臨江街夜市)",
+  "cat": "黃仁勳美食地圖",
+  "area": "信義區(通化/臨江街)",
+  "notes": "水果",
+  "lat": 25.03334,
+  "lon": 121.5669,
+  "prec": "district",
+  "chain": false
+ },
+ {
+  "name": "豆花莊",
+  "cat": "黃仁勳美食地圖",
+  "area": "大同區寧夏夜市",
+  "notes": "豆花",
+  "lat": 25.06599,
+  "lon": 121.51551,
+  "prec": "district",
+  "chain": false
+ },
+ {
+  "name": "詹記水果",
+  "cat": "黃仁勳美食地圖",
+  "area": "大同區寧夏夜市",
+  "notes": "水果(原文標示)",
+  "lat": 25.06599,
+  "lon": 121.51551,
+  "prec": "district",
+  "chain": false
+ },
+ {
+  "name": "老宗店蚵仔煎",
+  "cat": "黃仁勳美食地圖",
+  "area": "大同區寧夏夜市",
+  "notes": "蚵仔煎",
+  "lat": 25.06599,
+  "lon": 121.51551,
+  "prec": "district",
+  "chain": false
+ },
+ {
+  "name": "迷客夏 Milksha",
+  "cat": "奶茶",
+  "area": "連鎖",
+  "notes": "紅茶拿鐵",
+  "lat": 25.045,
+  "lon": 121.545,
+  "prec": "city",
+  "chain": true
+ },
+ {
+  "name": "一沐日",
+  "cat": "奶茶",
+  "area": "連鎖",
+  "notes": "",
+  "lat": 25.045,
+  "lon": 121.545,
+  "prec": "city",
+  "chain": true
+ },
+ {
+  "name": "五桐號 WOOTEA",
+  "cat": "奶茶",
+  "area": "連鎖",
+  "notes": "",
+  "lat": 25.045,
+  "lon": 121.545,
+  "prec": "city",
+  "chain": true
+ },
+ {
+  "name": "得正",
+  "cat": "奶茶",
+  "area": "連鎖",
+  "notes": "烏龍奶茶",
+  "lat": 25.045,
+  "lon": 121.545,
+  "prec": "city",
+  "chain": true
+ },
+ {
+  "name": "龜記茗品",
+  "cat": "奶茶",
+  "area": "連鎖",
+  "notes": "紅柚翡翠",
+  "lat": 25.045,
+  "lon": 121.545,
+  "prec": "city",
+  "chain": true
+ },
+ {
+  "name": "約翰紅茶",
+  "cat": "奶茶",
+  "area": "連鎖",
+  "notes": "鮮奶茶",
+  "lat": 25.045,
+  "lon": 121.545,
+  "prec": "city",
+  "chain": true
+ },
+ {
+  "name": "麻古茶坊 Macu",
+  "cat": "奶茶",
+  "area": "連鎖",
+  "notes": "",
+  "lat": 25.045,
+  "lon": 121.545,
+  "prec": "city",
+  "chain": true
+ },
+ {
+  "name": "大茗本位製茶堂",
+  "cat": "奶茶",
+  "area": "連鎖",
+  "notes": "",
+  "lat": 25.045,
+  "lon": 121.545,
+  "prec": "city",
+  "chain": true
+ },
+ {
+  "name": "再睡五分鐘",
+  "cat": "奶茶",
+  "area": "連鎖",
+  "notes": "",
+  "lat": 25.045,
+  "lon": 121.545,
+  "prec": "city",
+  "chain": true
+ },
+ {
+  "name": "可不可熟成紅茶 KEBUKE",
+  "cat": "奶茶",
+  "area": "連鎖",
+  "notes": "",
+  "lat": 25.045,
+  "lon": 121.545,
+  "prec": "city",
+  "chain": true
+ }
+]
