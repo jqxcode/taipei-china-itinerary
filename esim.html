@@ -1,0 +1,417 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>eSIM / 上网完整方案</title>
+<style>
+:root{--bg:#0f1723;--card:#182333;--ink:#e8eef7;--mut:#9fb0c6;--acc:#4aa3ff;--line:#243349}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,"PingFang SC","Microsoft YaHei","PingFang TC","Microsoft JhengHei",sans-serif;background:linear-gradient(180deg,#0b111b,#0f1723);color:var(--ink);line-height:1.6}
+.wrap{max-width:1000px;margin:0 auto;padding:28px 18px 70px}
+a{color:var(--acc)}
+h1{font-size:25px;margin:0 0 6px;border-bottom:2px solid var(--line);padding-bottom:10px}
+h2{font-size:19px;margin:28px 0 10px;color:#dbe6f5;background:#101c2c;border-left:3px solid var(--acc);padding:7px 12px;border-radius:6px}
+h3{font-size:16px;margin:20px 0 8px;color:#fff}
+blockquote{color:var(--mut);border-left:3px solid var(--line);margin:14px 0;padding:6px 14px;background:#101a28;border-radius:6px;font-size:14px}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#101c2c;color:#cfe0f5}
+tr:nth-child(even) td{background:#131e2d}
+ul,ol{padding-left:22px}li{margin:5px 0}
+code{background:#0e1826;border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:12.5px}
+hr{border:0;border-top:1px solid var(--line);margin:22px 0}
+.back{position:fixed;top:12px;right:14px;background:rgba(14,24,38,.94);border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:13px;text-decoration:none}
+strong{color:#fff}
+footer{color:var(--mut);font-size:12px;margin-top:26px;border-top:1px solid var(--line);padding-top:12px}
+</style></head><body>
+<a class="back" href="Taipei-China-Itinerary.html">← 回行程 Itinerary</a>
+<div class="wrap"><h1>eSIM / 上网完整方案（台湾 + 大陆 · 苹果+小米混合机队）</h1>
+<blockquote>
+<p>行程：5 人家庭，2026 年 9 月。台北 3 天（无墙）+ 大陆约 7 天（厦门→泉州→福州→杭州→上海，有墙）。设备：美国 iPhone（支持 eSIM）+ 小米（部分国行、无 eSIM）。研究/核实日 <strong>2026-08-03</strong>，价格下单前复核。（链接自 <code>Master-Plan.md</code>）
+<strong>核心结论：台湾和大陆要区别对待。</strong> 台湾无墙→任何卡都行、只挑便宜；大陆有墙→<strong>必须选「走国际路由/绕防火墙」的 eSIM</strong>（Google/WhatsApp/Gmail 落地即用、无需另装 VPN），否则本地卡会被墙。
+汇率（2026-08-04）：<strong>US$1 = NT$32.34 = ¥6.77 = HK$7.84</strong>。所有价格已附 ≈US$。</p>
+</blockquote>
+<h2>📌 一句话抄作业（TL;DR）</h2>
+<ul>
+<li><strong>iPhone 全程一张最省心</strong>：<strong>Airalo「亚洲」无限 10 天 = US$35/人</strong>——一张覆盖台湾+大陆、<strong>官方确认绕防火墙</strong>，Google 全程可用。</li>
+<li><strong>想最便宜（iPhone，可分开买）</strong>：台湾 <strong>Ubigi 3GB/7天 = US$6</strong> ＋ 大陆 <strong>Nomad 无限 7 天 = US$25</strong>（Nomad 无热点限制，最适合全家共享热点）。</li>
+<li><strong>国行小米（不能装 eSIM）</strong>：买<strong>香港实体漫游卡</strong>——最超值 <strong>SIM World「内地及港澳台漫游卡」20GB/395 天 = HK$198（≈US$25）</strong>，一张同覆盖台湾+大陆、经香港出网绕墙、任何解锁手机可用、免 EID。</li>
+<li><strong>台湾落地备份</strong>：桃园机场 <strong>中华电信 3 日无限实体卡 ~NT$300（≈US$9）/张</strong>，买 2 张开热点给全家。</li>
+<li>⚠️ <strong>大陆段两条铁律</strong>：①<strong>过关进大陆前就要买好并装好</strong> eSIM（进了墙内通常无法再下载/购买 eSIM）；②万一用到「本地路由」的卡，任何 VPN App 必须<strong>出发前就装好付好</strong>（墙内 VPN 官网打不开）。</li>
+</ul>
+<h2>📱 台北 3 天 · 5 人｜落地上网最优方案（用户定稿 2026-08-24）</h2>
+<blockquote>
+<p>仅针对<strong>台北市区 3 天</strong>（不跑东部山区，三家运营商信号差别很小）。设备：苹果+小米、<strong>全部已解锁</strong>，<strong>不是人人都要流量</strong>。<strong>大陆段另见本文件后半——台湾实体卡在大陆不通、且会被墙。</strong></p>
+</blockquote>
+<p><strong>关键前提</strong>
+- ✅ 美国购入 iPhone 绝大多数支持 eSIM；<strong>国行小米绝大多数不支持 eSIM</strong>（海外版小米才支持）。
+- ✅ 只在台北市区、行程仅 3 天 → 优先<strong>降低落地麻烦</strong>。
+- ✅ <strong>机场 SIM 柜台支持国际信用卡</strong>，不用提前换台币；（对比：<strong>悠游卡加值只能现金</strong>。）</p>
+<h3>方案A【最推荐 · 灵活自由，适合经常分头行动】</h3>
+<ul>
+<li><strong>配置</strong>：<strong>2 张中华电信实体 SIM</strong>（桃园机场现场买）。</li>
+<li><strong>价格</strong>：3 天无限流量 <strong>NT$300/张（约 US$10）</strong>，含少量通话额度、自带台湾本地 +886 号。</li>
+<li><strong>地点</strong>：桃园 <strong>T1/T2 入境大厅中华电信柜台</strong>，出关直接办、出示护照即可（<strong>可刷卡</strong>）。</li>
+<li><strong>运作</strong>：2 人持 SIM 卡随时开热点，其余 3 人连热点。</li>
+<li><strong>优点</strong>：① 分头逛街/搭捷运也各有网络，不靠单一热点失联；② 实体卡比旅游 eSIM 稳、有 +886 号方便订餐/打车；③ 两张合计约 <strong>US$20</strong>。</li>
+<li>⚠️ <strong>国行小米装不了 eSIM，但实体 SIM 全部手机通用</strong>，完美兼容苹果+小米。</li>
+</ul>
+<h3>方案B【极简一套搞定 · 全程集体行动为主】</h3>
+<ul>
+<li>租<strong>随身 WiFi 蛋（Pocket WiFi）</strong>，桃园机场取还，最多同时连 5 台。</li>
+<li><strong>价格</strong>：3 天约 <strong>US$22–28</strong>（Klook/KKday 线上先订更划算）。</li>
+<li><strong>缺点</strong>：不能分开太远（走散没网）；要带充电宝；离境<strong>原地归还</strong>，很晚的航班先确认柜台营业时间。</li>
+<li>👉 只适合全程几乎不分开的队伍。</li>
+</ul>
+<h3>方案C【eSIM · 只作补充，有明显短板】</h3>
+<ul>
+<li><strong>Airalo 台湾 3 天无限 eSIM ≈US$12.5/张</strong>。</li>
+<li><strong>问题</strong>：<strong>国行小米无法安装 eSIM</strong>；只有全部是苹果/海外版手机才可行 → 国行小米这条路直接 pass。</li>
+</ul>
+<h3>最终抄作业</h3>
+<ul>
+<li><strong>情况1｜会分头逛（最常见）→ 方案A</strong>：桃园机场买 2 张中华电信 3 天无限卡（NT$300/张），落地出关找中华电信柜台，直接说「3 days tourist unlimited data prepaid SIM, 2 pieces」；办好后 2 台开热点、其余 3 人连；<strong>务必关美国主卡数据漫游</strong>，杜绝天价漫游费。</li>
+<li><strong>情况2｜全程几乎组队、很少散开 → 方案B</strong>：线上先订 Pocket WiFi，机场取机、3 天共用。</li>
+</ul>
+<h3>避坑</h3>
+<ol>
+<li><strong>别用美国运营商国际漫游</strong>：AT&amp;T/Verizon $12/天/人，5 人 3 天极贵；T-Mobile 高端套餐多人刷视频易限速。</li>
+<li><strong>热点</strong>：单台热点连 3 台以上明显掉速 → <strong>2 张 SIM 分流</strong>体验更好。</li>
+<li><strong>桃园机场免费 WiFi</strong>：只适合临时收发消息，不稳，别当主力。</li>
+<li><strong>支付</strong>：机场 SIM 柜台<strong>支持国际信用卡</strong>，不用提前换台币（<strong>悠游卡加值仍只能现金</strong>）。</li>
+</ol>
+<blockquote>
+<p>若确认小米是国行还是海外版、以及是否常分开行动，可再精确锁定。<strong>注意：以上是台湾段；大陆 7 天有墙，需另备「绕防火墙」eSIM（Airalo 亚洲/Nomad，落地免 VPN），见下文。</strong></p>
+</blockquote>
+<hr>
+<h2>0. 核实用户方案（真伪表）</h2>
+<table>
+<thead>
+<tr>
+<th>Claim</th>
+<th style="text-align: right;">结论</th>
+<th>依据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>美国 iPhone 绝大多数支持 eSIM</td>
+<td style="text-align: right;">✅ 真</td>
+<td>Apple 官方 + Airalo 兼容列表</td>
+</tr>
+<tr>
+<td>国行小米不支持 eSIM、海外版才支持</td>
+<td style="text-align: right;">⚠️ 多数对</td>
+<td>国行几乎都无 EID→不能装 eSIM；海外版按型号，拨 <code>*#06#</code> 看有无 EID</td>
+</tr>
+<tr>
+<td>Airalo 台湾 3天无限 ~US$12.5</td>
+<td style="text-align: right;">✅ 真</td>
+<td>Airalo Taiwan 页：3 days Unlimited $12.50</td>
+</tr>
+<tr>
+<td>中华电信机场 3日无限 ~NT$300（≈US$9）、带 +886</td>
+<td style="text-align: right;">✅ 基本真</td>
+<td>中华电信观光预付卡页：机场门市即办、计日无限、3日型 NT$300</td>
+</tr>
+<tr>
+<td>「台湾之星」机场卡</td>
+<td style="text-align: right;">❌ 过时</td>
+<td>2023-12 并入台湾大哥大</td>
+</tr>
+<tr>
+<td>别用 AT&amp;T/Verizon $12/天/人</td>
+<td style="text-align: right;">✅ 真</td>
+<td>5 人 3 天 ≈ $180，太贵</td>
+</tr>
+</tbody>
+</table>
+<h2>1. 先做 30 秒设备检查</h2>
+<ul>
+<li><strong>iPhone</strong>：美版 XS/XR 及更新一般支持 eSIM 且多为解锁；可装下面任何 eSIM。可存 8 张、同时启用 2 张（美国卡收短信 + 旅行卡上网）。</li>
+<li><strong>小米</strong>：仅<strong>部分海外版</strong>支持；<strong>国行几乎都不支持</strong>。每台拨 <strong><code>*#06#</code></strong>：有 <strong>EID</strong> = 能装 eSIM；无 EID = 走实体卡（见第 5 节）。</li>
+<li>大陆/台湾对你都是「外网漫游」→旅行卡要<strong>打开 Data Roaming</strong>；eSIM 的 APN 自动配置，香港实体卡可能要手填 APN <code>mobile.lte.three.com.hk</code>。</li>
+</ul>
+<h2>2. ⚠️ 核心概念：大陆卡的三种「路由」行为（决定 Google 能不能用）</h2>
+<table>
+<thead>
+<tr>
+<th>路由方式</th>
+<th>Google/WhatsApp</th>
+<th>代表运营商（本次核实）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>国际漫游路由</strong>（最佳）</td>
+<td>✅ 落地即用，流量出境到海外网关，对防火墙你就是「外国漫游客」，<strong>什么都不用装</strong></td>
+<td><strong>Airalo、Nomad、GigSky、Saily</strong></td>
+</tr>
+<tr>
+<td><strong>eSIM 内置 VPN</strong></td>
+<td>✅ 能用、无需另装 App，但本质是 VPN 隧道，严打期可能被限速/阻断</td>
+<td><strong>Holafly</strong></td>
+</tr>
+<tr>
+<td><strong>本地路由</strong>（❌）</td>
+<td>❌ 被墙，得自备<strong>已装好</strong>的 VPN</td>
+<td><strong>MobiMatter、Roamless、aloSIM、Jetpac</strong> 及一切大陆本地卡</td>
+</tr>
+<tr>
+<td><strong>存疑/未能核实</strong></td>
+<td>❓ 未证实前当作「本地路由」</td>
+<td><strong>Ubigi、Sim Local、Instabridge、Yesim</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>权威原话（2026-08-03 官方页）：<strong>Airalo</strong>：用其 China/Regional Asia/Global eSIM「<strong>不需要 VPN</strong>……流量经中国大陆境外的安全网关，对防火墙你像个国际漫游用户，落地即可无过滤上网」。<strong>Nomad</strong>：数据「经中国境外服务器再上网，自动绕过防火墙——无需装 VPN」。<strong>Holafly</strong>：「<strong>内置 VPN</strong>……无需自己开 VPN」。<strong>MobiMatter</strong>：自家博客说「中国会封 Google/WhatsApp……<strong>请搭配 VPN</strong>」→即本地路由、不绕墙。</p>
+</blockquote>
+<h2>3. 台湾段（3 天，无墙）——只挑便宜</h2>
+<p>排名（性价比优先）：
+1. <strong>Ubigi 3GB/7天 = US$6</strong>（最便宜的已核实真数据；1GB/7天=$3）
+2. <strong>Roamless 500MB 免费 / 5GB US$11.95</strong>（中华电信网、30 天有效，「以防万一」的免费档不错）
+3. <strong>Airalo 台湾无限/3天 = US$12.5</strong>（台湾大哥大网；最省心的「无限不动脑」；5天$19/7天$29.5/10天$35）
+4. <strong>干脆不买台湾专卡</strong>，用「全程卡」（Airalo 亚洲 10 天，或下面 SIM World 实体卡）一张覆盖台+陆
+5. <strong>落地备份 / 给国行小米</strong>：中华电信机场 3 日无限实体卡 <strong>~NT$300（≈US$9）/张</strong>，买 2 张开热点</p>
+<table>
+<thead>
+<tr>
+<th>供应商</th>
+<th>3天最合适档</th>
+<th>价格（≈USD）</th>
+<th>在哪买（App＋官网）</th>
+<th>适配</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ubigi</strong></td>
+<td>3GB/7天</td>
+<td><strong>US$6</strong>（美元标价）</td>
+<td>App「Ubigi」· cellulardata.ubigi.com</td>
+<td>iPhone✅ 海外小米✅ 国行❌</td>
+<td>最便宜已核实；1GB/7天$3</td>
+</tr>
+<tr>
+<td><strong>Roamless</strong></td>
+<td>500MB 免费 / 5GB</td>
+<td><strong>免费 / US$11.95</strong></td>
+<td>App「Roamless eSIM」· roamless.com</td>
+<td>iPhone✅ 国行❌</td>
+<td>30天有效、首连计时</td>
+</tr>
+<tr>
+<td><strong>Airalo</strong></td>
+<td>台湾无限/3天</td>
+<td><strong>US$12.5</strong></td>
+<td>App「Airalo」· airalo.com/taiwan-esim</td>
+<td>iPhone✅ 国行❌</td>
+<td>台湾大哥大网</td>
+</tr>
+<tr>
+<td><strong>中华电信实体</strong></td>
+<td>3日无限</td>
+<td><strong>~NT$300（≈US$9）/张</strong></td>
+<td>桃园机场入境大厅柜台（凭护照）</td>
+<td><strong>所有解锁手机✅（含国行小米）</strong></td>
+<td>带 +886、可开热点</td>
+</tr>
+<tr>
+<td>Holafly/Nomad/GigSky/MobiMatter</td>
+<td>均有台湾档</td>
+<td>$4–5.9 起（多为未核实/JS 页）</td>
+<td>各自 App</td>
+<td>iPhone✅ 国行❌</td>
+<td>台湾无墙，没必要为它多折腾</td>
+</tr>
+</tbody>
+</table>
+<h2>4. 大陆段（7 天，有墙）——必须走国际路由、免另装 VPN</h2>
+<p>排名（要 Google/WhatsApp + 能开热点、不想装 VPN）：
+1. <strong>Airalo</strong>——文档最全、官方明确绕墙；<strong>首用才计时</strong>（可提前装、零浪费）。中国无限 7 天 <strong>US$27</strong>，或<strong>亚洲 10 天 US$35</strong>（连台湾一起覆盖）。
+2. <strong>Nomad</strong>——最便宜无限（<strong>US$25/7天</strong>）且<strong>无热点限制</strong>（一台手机就能带全家），首用计时。<em>（分档价来自 Nomad 自家博客、非实时选单，已标注）</em>
+3. <strong>Holafly</strong>——确认绕墙但靠<strong>内置 VPN</strong>；<strong>热点限 500MB/天</strong>、且<strong>激活即计时</strong>，对一家人偏弱。中国无限 7 天 <strong>US$29.9</strong>（官方）。
+4. <strong>GigSky</strong>——确认绕墙（自有骨干）；价格只确认到「$4.99 起」。
+5. <strong>Saily（Nord 旗下）</strong>——很可能绕墙（国际漫游伙伴）；价格来自竞品博客（官网 403），需 App 内核实。
+- ❌ <strong>别用于大陆绕墙</strong>：MobiMatter/TSIMtech、Roamless、aloSIM、Jetpac（本地路由→Google 被墙）。Ubigi/Sim Local/Instabridge/Yesim = 未核实。</p>
+<table>
+<thead>
+<tr>
+<th>供应商</th>
+<th>7天档</th>
+<th>价格（≈USD）</th>
+<th>在哪买</th>
+<th><strong>绕墙?（路由）</strong></th>
+<th>适配</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Airalo</strong> ✅</td>
+<td>中国无限/7天</td>
+<td><strong>US$27</strong>（或亚洲无限10天$35）</td>
+<td>Airalo App · airalo.com/china-esim ·/asia-esim</td>
+<td><strong>是——国际漫游路由</strong>（官方证实）</td>
+<td>iPhone✅ 国行❌</td>
+<td>首用计时；3天$11.5/10天$35</td>
+</tr>
+<tr>
+<td><strong>Nomad</strong> ✅</td>
+<td>中国无限/7天</td>
+<td><strong>US$25</strong> <em>(自家博客)</em></td>
+<td>Nomad App · nomadesim.com/china-eSIM</td>
+<td><strong>是——经境外服务器</strong>（自述证实）</td>
+<td>iPhone✅ 国行❌</td>
+<td><strong>无热点限制</strong>（全家共享最佳）；首用计时；另 1GB/7天$4、10GB/30天$17</td>
+</tr>
+<tr>
+<td><strong>Holafly</strong> ⚠️</td>
+<td>中国无限/7天</td>
+<td><strong>US$29.9</strong>（官方）</td>
+<td>Holafly App · esim.holafly.com/esim-china</td>
+<td><strong>是——但靠内置 VPN</strong>（可能被限速）</td>
+<td>iPhone✅ 国行❌</td>
+<td><strong>热点限 500MB/天</strong>；<strong>激活即计时</strong>，结账选到达日、别提前激活</td>
+</tr>
+<tr>
+<td><strong>GigSky</strong> ✅</td>
+<td>中国/APAC</td>
+<td><strong>$4.99 起</strong>（确切7天价未核实）</td>
+<td>GigSky App · gigsky.com</td>
+<td><strong>是——自有国际骨干</strong></td>
+<td>iPhone✅ 国行❌</td>
+<td>可复用 eSIM、自动 APN</td>
+</tr>
+<tr>
+<td><strong>Saily</strong> ⚠️</td>
+<td>中国无限/7天</td>
+<td><strong>$29.99</strong>（竞品博客·未核实）</td>
+<td>Saily App · saily.com</td>
+<td><strong>推断是</strong>（国际漫游伙伴，无官方原话）</td>
+<td>iPhone✅ 国行❌</td>
+<td>标准套餐不需 NordVPN</td>
+</tr>
+<tr>
+<td><strong>Ubigi</strong> ❓</td>
+<td>3GB/10GB · 30天</td>
+<td><strong>$7 / $17</strong>（已核实）</td>
+<td>Ubigi App</td>
+<td><strong>未核实</strong>——无绕墙声明，别指望它上 Google</td>
+<td>iPhone✅ 国行❌</td>
+<td>数据便宜但绕墙行为不明</td>
+</tr>
+<tr>
+<td><strong>MobiMatter/TSIMtech</strong> ❌</td>
+<td>10GB/30天</td>
+<td><strong>$7.99</strong>（已核实，最便宜）</td>
+<td>MobiMatter App</td>
+<td><strong>否</strong>——本地、官方叫你「配 VPN」</td>
+<td>iPhone✅ 国行❌</td>
+<td>数据最便宜但不满足「免VPN」</td>
+</tr>
+<tr>
+<td><strong>Roamless</strong> ❌</td>
+<td>5GB/10GB</td>
+<td><strong>$15.45 / $26.45</strong></td>
+<td>Roamless App</td>
+<td><strong>否</strong>——中国联通本地</td>
+<td>iPhone✅ 国行❌</td>
+<td>无自备 VPN 则 Google 被墙</td>
+</tr>
+</tbody>
+</table>
+<p><strong>5 人大陆 7 天合计</strong>：Airalo $27→<strong>$135</strong>（或亚洲10天$35→<strong>$175</strong>覆盖全程）· Nomad $25→<strong>$125</strong> · Holafly $29.9→<strong>$149.5</strong>。</p>
+<h2>5. 国行小米（不能装 eSIM）→ 香港实体漫游卡（关键！）</h2>
+<p><strong>先查 EID</strong>：每台小米拨 <strong><code>*#06#</code></strong>，无 EID 行 = 无 eSIM 硬件 → 上面 eSIM 全用不了 → 用下面实体 nano-SIM。（国行 MIUI 几乎都无 EID；海外版部分有）
+<strong>为什么香港卡能翻墙</strong>：它们是<strong>香港</strong>卡，在大陆是「漫游」、数据回传到香港（APN <code>mobile.lte.three.com.hk</code>）经香港出网 = <strong>在墙外</strong>，Google/WhatsApp 免 VPN 可用；实体卡任何<strong>解锁</strong>手机可用（含国行小米）。</p>
+<table>
+<thead>
+<tr>
+<th>产品</th>
+<th>流量/天数</th>
+<th>价格（≈USD/人）</th>
+<th>在哪买</th>
+<th>绕墙?</th>
+<th>国行小米?</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SIM World「内地及港澳台漫游卡」</strong> ✅ 最超值·覆盖全程</td>
+<td><strong>20GB/395天</strong></td>
+<td><strong>HK$198（≈US$25）</strong>·5张≈<strong>US$126</strong></td>
+<td>simworld.net/en/ 或香港门店（铜锣湾/中环/旺角/荃湾/元朗）</td>
+<td><strong>是</strong>（3HK 香港网）</td>
+<td><strong>是</strong>（解锁·手填 APN·开漫游）</td>
+<td>一张覆盖台湾+大陆；实名（护照可，≤10 张/人）；深链 404 → 从首页买</td>
+</tr>
+<tr>
+<td><strong>3HK DIY 预付 — APAC 30天</strong> ✅</td>
+<td>流量未核实/30天</td>
+<td><strong>HK$138（≈US$17.6）</strong>·5张≈<strong>US$88</strong></td>
+<td>three.com.hk/prepaid/DIY/en/ 或 3Shop</td>
+<td><strong>是</strong>（3HK 路由）</td>
+<td><strong>是</strong></td>
+<td>最便宜；买前确认含大陆＋GB 数</td>
+</tr>
+<tr>
+<td><strong>3HK DIY — 中港澳 365天</strong> ✅</td>
+<td>流量未核实/365天</td>
+<td><strong>HK$268（≈US$34）</strong>·5张≈<strong>US$171</strong></td>
+<td>同上</td>
+<td><strong>是</strong></td>
+<td><strong>是</strong></td>
+<td>更贵、GB 未确认</td>
+</tr>
+<tr>
+<td><strong>China Unicom(HK) 跨境卡</strong> ❓ <em>(你问的)</em></td>
+<td>未核实</td>
+<td>未核实</td>
+<td>chinaunicomhk.com（今日 522 打不开）· 常见于 Klook/Amazon</td>
+<td><strong>常用且一般绕墙</strong>（港注册）但今日未证实</td>
+<td>解锁即可</td>
+<td>到港机场/门店/Klook/Amazon 核实</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>国行小米额外坑（Google App）</strong>：国行 MIUI 出厂<strong>无 Google Play/服务</strong>。即便香港卡绕了墙，可能仍需<strong>出发前</strong>侧载 Google Play 服务+商店（或直接装 WhatsApp/Telegram APK、或浏览器用 Google Maps/Gmail）。
+<strong>没经香港转机怎么买</strong>：常见做法是<strong>出发前在 Amazon/Klook 买「3HK / 中国联通香港」旅行卡寄到美国</strong>（今日 Amazon/Klook 被 403/503、价格未核实，按上面运营商价核对）。</p>
+</blockquote>
+<h2>6. 提前多久买 / 装 / 激活（关键时间线）</h2>
+<p><strong>决定「提前装会不会浪费天数」的唯一问题：有效期什么时候开始计时？</strong>
+- <strong>首次联网/首用才计时</strong> → 提前装 <strong>100% 安全、不浪费</strong>：<strong>Airalo、Nomad、Saily、Roamless、GigSky</strong> + <strong>SIM World/3HK 实体卡</strong>（用时才启用，货架期 395/365 天）。
+- <strong>激活即计时（你选日期）</strong> → <strong>Holafly</strong>：提前装 profile，但<strong>结账时填大陆到达日、别提前激活</strong>，否则浪费天数。
+- <strong>Ubigi/MobiMatter</strong>：计量套餐，MobiMatter 明说「提前装、到了再激活」，按首用理解但结账时确认。</p>
+<p><strong>推荐时间表：</strong>
+1. <strong>买：出发前 3–7 天</strong>（买＝拿到 QR/profile，提前买留出付款/发货容错时间；<strong>大陆卡必须过关前买好</strong>）。
+2. <strong>装 profile：出发前 2–7 天</strong>、在家 WiFi 装好，线路命名「Travel」；首用计时的卡这一步<strong>不</strong>开始计时。（国行小米无 EID：改为出发前插好香港实体卡、手填 APN <code>mobile.lte.three.com.hk</code>）
+3. <strong>落地前保持旅行线路「关」</strong>；同时把<strong>美国卡的漫游/数据关掉</strong>防天价漫游。
+4. <strong>台北落地</strong>：开旅行 eSIM 线 + <strong>Data Roaming ON</strong> → 此刻才开始 X 天计时（正好行程开始）；一路用到大陆段。
+5. <strong>仅 Holafly</strong>：激活即计时，别提前激活、结账填对到达日。
+6. <strong>留缓冲</strong>：有效期 ≥ 行程天数。3+7 天行程选 <strong>10 天</strong>档（或 SIM World 20GB/395 天卡）更稳。</p>
+<h2>7. 三种配置选一</h2>
+<ul>
+<li><strong>最省心</strong>：每台 iPhone 一张 <strong>Airalo 亚洲无限 10 天 $35</strong>（台+陆一张、Google 全程）；国行小米一张 <strong>SIM World 20GB HK$198（≈US$25）</strong>；台湾再买 1–2 张中华电信做全家热点/备份。</li>
+<li><strong>最省钱</strong>：台湾 <strong>Ubigi $6/人</strong>（或只买 2 张中华电信全家共享）；大陆只给 iPhone 买 <strong>Nomad $25/人</strong>（无热点限制、可带国行小米蹭热点，分头行动会断）。</li>
+<li><strong>最稳</strong>：台湾 2 张中华电信；大陆每台 iPhone 一张 Airalo/Nomad、每台国行小米一张 SIM World 香港卡（成本最高、人人独立联网）。</li>
+</ul>
+<h2>8. 成本估算（≈USD）</h2>
+<ul>
+<li><strong>台湾 3 天</strong>：2 张中华电信 ~NT$600（≈US$19）/全家；Ubigi $6/人×5=$30；Airalo TW $12.5/人×5=$62.5；美国漫游 ~$180（别选）。</li>
+<li><strong>大陆 7 天</strong>：Airalo 中国 $27/人 或 亚洲 10 天 $35/人（台+陆一张）；Nomad $25/人；国行小米 SIM World HK$198（≈US$25）/人。</li>
+<li><strong>全程一张（iPhone）</strong>：Airalo 亚洲无限 10 天 <strong>$35/人</strong>（5 人 $175）覆盖台+陆，最省事。</li>
+</ul>
+<h2>9. 关键提醒</h2>
+<ul>
+<li>台湾无墙→本地/任何卡都行；大陆有墙→<strong>只信「国际漫游路由/内置VPN」的卡</strong>（Airalo/Nomad/GigSky/Saily/Holafly），别用本地路由卡（MobiMatter/Roamless/aloSIM/Jetpac）当外网。</li>
+<li>国行小米别默认能装 eSIM（先查 EID）；无 EID 走香港实体卡；MIUI 可能要侧载 Google。</li>
+<li>iPhone 用 eSIM 前确认已解锁；<strong>全程关美国卡 Data Roaming</strong>；旅行线路开 Data Roaming。</li>
+<li><strong>大陆卡过关前买好装好</strong>；价格/覆盖/绕墙/热点限制<strong>下单前复核</strong>（尤其带 UNVERIFIED 的）。</li>
+</ul>
+<h2>10. 来源（均 2026-08-03 抓取）＋ 未核实项</h2>
+<p><strong>已核实（直接读官方页）</strong>：Airalo 台/中/亚价格与绕墙官方说明；Holafly 中国 $29.9＋内置VPN；Nomad 绕墙＋分档（自家博客）；GigSky 绕墙；MobiMatter 不绕墙＋价；Roamless 价＋联通本地；Ubigi 价；aloSIM 建议配 VPN；HK 实体：SIM World（HK$198/20GB/395天）、3HK（HK$138 APAC / HK$268 中港澳）。
+<strong>未核实（今日无法从官方页确认，谨慎）</strong>：Nomad 精确分档价（$25/$4/$17，来自自家博客非实时选单）；Holafly 台湾 3 天档；Saily 全部价（官网 403，来自竞品博客；绕墙为推断）；GigSky 精确台/中价；aloSIM/Jetpac/Sim Local/Instabridge 价（JS 页）；Yesim 全部（WAF 拦截）；Ubigi 绕墙行为；3HK DIY 两档的 GB 数；China Unicom HK、CMHK/CMLink（官网 522/466 打不开）；Amazon/Klook 零售价（403/503）。<strong>Maya Mobile：未找到正规供应商，勿购。</strong></p>
+<footer>由 esim.md 自动渲染 · rendered 2026-08-24 · 数据以官方/实时为准</footer>
+</div></body></html>
