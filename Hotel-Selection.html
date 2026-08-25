@@ -1,33 +1,120 @@
 <!DOCTYPE html>
-<html lang="zh-Hans"><head><meta charset="utf-8">
+<html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>住宿选择说明 · Hotel Selection</title>
+<title>Hotel Selection</title>
 <style>
 :root{--bg:#0f1723;--card:#182333;--ink:#e8eef7;--mut:#9fb0c6;--acc:#4aa3ff;--line:#243349}
 *{box-sizing:border-box}
 body{margin:0;font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,"PingFang SC","Microsoft YaHei","PingFang TC","Microsoft JhengHei",sans-serif;background:linear-gradient(180deg,#0b111b,#0f1723);color:var(--ink);line-height:1.6}
 .wrap{max-width:1000px;margin:0 auto;padding:28px 18px 70px}
 a{color:var(--acc)}
-h1{font-size:26px;margin:0 0 6px;border-bottom:2px solid var(--line);padding-bottom:10px}
-h2{font-size:20px;margin:30px 0 10px;color:#dbe6f5}
-h3{font-size:17px;margin:22px 0 8px;color:#fff;scroll-margin-top:16px;background:#101c2c;border-left:3px solid var(--acc);padding:8px 12px;border-radius:6px}
+h1{font-size:25px;margin:0 0 6px;border-bottom:2px solid var(--line);padding-bottom:10px}
+h2{font-size:19px;margin:28px 0 10px;color:#dbe6f5;background:#101c2c;border-left:3px solid var(--acc);padding:7px 12px;border-radius:6px}
+h3{font-size:16px;margin:20px 0 8px;color:#fff;scroll-margin-top:64px}
+.sec{scroll-margin-top:64px}
 blockquote{color:var(--mut);border-left:3px solid var(--line);margin:14px 0;padding:6px 14px;background:#101a28;border-radius:6px;font-size:14px}
 table{border-collapse:collapse;width:100%;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
 th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
 th{background:#101c2c;color:#cfe0f5}
 tr:nth-child(even) td{background:#131e2d}
-ul,ol{padding-left:22px}
-li{margin:5px 0}
+ul,ol{padding-left:22px}li{margin:5px 0}
 code{background:#0e1826;border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:12.5px}
 hr{border:0;border-top:1px solid var(--line);margin:22px 0}
-.back{position:fixed;top:12px;right:14px;background:rgba(14,24,38,.94);border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:13px;text-decoration:none}
+.back{position:fixed;top:12px;left:14px;z-index:1200;background:rgba(14,24,38,.94);border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:13px;text-decoration:none}
 strong{color:#fff}
 footer{color:var(--mut);font-size:12px;margin-top:26px;border-top:1px solid var(--line);padding-top:12px}
+@media (max-width:640px){.wrap{padding-top:56px}}
+
+body[data-lang="zh"] .en{display:none!important}
+body[data-lang="en"] .zh{display:none!important}
+.lang-toggle{position:fixed;top:10px;right:12px;z-index:1200;background:rgba(14,24,38,.94);border:1px solid var(--line);border-radius:999px;padding:4px;box-shadow:0 8px 22px rgba(0,0,0,.28)}
+.lang-toggle button{background:transparent;color:var(--mut);border:0;border-radius:999px;padding:6px 10px;font-size:12px;cursor:pointer}
+.lang-toggle .sep{color:#53677f;font-size:12px}
+body[data-lang="en"] #lang-en,body[data-lang="zh"] #lang-zh{background:var(--acc);color:#04121f}
+@media (max-width:640px){.lang-toggle{top:8px;right:8px}}
 </style></head>
-<body>
-<a class="back" href="Taipei-China-Itinerary.html">← 回行程 Itinerary</a>
+<body data-lang="en">
+<a class="back" href="Taipei-China-Itinerary.html"><span class="en">← Itinerary</span><span class="zh">← 回行程</span></a>
+<div class="lang-toggle" aria-label="Language"><button id="lang-en" type="button" onclick="setLang('en')">EN</button><span class="sep">|</span><button id="lang-zh" type="button" onclick="setLang('zh')">中文</button></div>
 <div class="wrap">
-<h1>订酒店计划（Plan SH：台北 + 华东：上海 / 杭州 / 南京 / 苏州）</h1>
+<div class="en"><h1>Hotel Booking Plan (Plan SH: Taipei + East China: Shanghai / Hangzhou / Nanjing / Suzhou)</h1>
+<blockquote>
+<p>Applies to: family of 5, <strong>2 rooms</strong> in each city; Mom values comfort more; September 2026. (Linked from <code>Master-Plan.md</code> · the HTML itinerary’s “Lodging” links to the corresponding city sections in this file.)
+<strong>Itinerary is locked to Plan SH</strong>: Taipei (3 nights) → Shanghai → Hangzhou → Nanjing → Suzhou → Shanghai (final leg). The old “Route C Xiamen/Quanzhou/Fuzhou/Chongqing route” has been discarded and is no longer kept in this file.
+For the mainland China portion, prioritize Hilton-family hotels (Hilton / Conrad / Waldorf Astoria / DoubleTree / Hampton / Canopy) and use <strong>Hilton Diamond + Aspire free-night cert</strong> to maximize value; <strong>Palais de Chine in Taipei is not Hilton</strong> (see below), so pay separately with cash/points.
+Prices are rough pre-tax nightly rates per room visible on web pages (estimated, pulled 2026-08). <strong>Before final booking, you must re-check real-time 2026-09 prices, cancellation policies, bed types, and connecting rooms</strong>.</p>
+</blockquote>
+<h2>One-line conclusion</h2>
+<ul>
+<li><strong>Taipei</strong>: choose <strong>君品酒店 Palais de Chine Hotel</strong> (Taipei Main Station (台北车站)/Q Square (京站)) — convenient for late-night arrival, fast to National Palace Museum/101/Ximen/Songshan, comfortable for elders. <strong>Not Hilton</strong>; cash is about NT$9,800–13,500/night.</li>
+<li><strong>Shanghai</strong>: use the Aspire <strong>free-night cert first at Waldorf Astoria on the Bund</strong> (highest cash rate, strongest experience); baseline option is <strong>Conrad Shanghai</strong>. The cert only covers 1 standard double-occupancy room for 1 night; book the second room with cash/points.</li>
+<li><strong>Hangzhou</strong>: for West Lake routing, first choice is <strong>Canopy by Hilton Hangzhou West Lake</strong>; for better hardware, choose <strong>Conrad Hangzhou</strong>.</li>
+<li><strong>Nanjing</strong>: full-service first choice is <strong>Hilton Nanjing (Jianye · near Xinjiekou (新街口))</strong>; if you want to stay close to Confucius Temple/Qinhuai River, choose <strong>Hampton by Hilton Nanjing Confucius Temple</strong> (breakfast included, good value).</li>
+<li><strong>Suzhou</strong>: flagship <strong>Hilton Suzhou (Jinji Lake · Industrial Park)</strong> (family-friendly, metro into the old city); if you want to be closer to Pingjiang Road, choose <strong>Hampton by Hilton Suzhou Guanqian Street</strong> (breakfast included, closest Hilton-family option to the old city).</li>
+</ul>
+<h2>Recommendation table by city</h2>
+<table>
+<thead>
+<tr>
+<th>City/nights</th>
+<th>First choice</th>
+<th>Backup</th>
+<th>Area/routing</th>
+<th style="text-align: right;">Approx. price/night/room (estimate, verify before booking)</th>
+<th>5 people / 2 rooms &amp; Diamond notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Taipei 3 nights</td>
+<td><strong>君品酒店 Palais de Chine</strong></td>
+<td>Caesar Park Taipei / Just Sleep Ximending / Hotel Royal-Nikko Taipei (Zhongshan)</td>
+<td>Above Taipei Main Station (台北车站)/Q Square (京站); 2 min to MRT, Airport MRT A1 terminus, Jiufen/Yangmingshan bus hub</td>
+<td style="text-align: right;">NT$9,800–13,500（≈US$303–417）</td>
+<td><strong>Not Hilton</strong>; book 2 rooms or a family room for 5 people; check whether breakfast is included in the rate</td>
+</tr>
+<tr>
+<td>Shanghai 1–2 nights</td>
+<td><strong>Waldorf Astoria on the Bund</strong></td>
+<td>Conrad Shanghai</td>
+<td>WA gives the strongest Bund experience (use cert); Conrad is the baseline on Nanjing East Road</td>
+<td style="text-align: right;">WA ¥2,200–2,800（≈US$325–414）；Conrad ¥1,000–1,300（≈US$148–192）</td>
+<td>Cert only covers 1 room for 1 night; book the second room with cash/points in the same stay</td>
+</tr>
+<tr>
+<td>Hangzhou 2 nights</td>
+<td><strong>Canopy by Hilton West Lake</strong></td>
+<td>Conrad Hangzhou / Qiushui Villa SLH</td>
+<td>Canopy is best for West Lake/lakeside/Intime routing; Conrad is modern in Qianjiang New Town but farther from West Lake</td>
+<td style="text-align: right;">Canopy ¥750–1,000（≈US$111–148）；Conrad ¥1,200–1,500（≈US$177–222）</td>
+<td>Choose Canopy for West Lake sightseeing; check connecting rooms</td>
+</tr>
+<tr>
+<td>Nanjing 1–2 nights</td>
+<td><strong>Hilton Nanjing (Jianye)</strong></td>
+<td>Hampton Confucius Temple / Hilton Nanjing Riverside</td>
+<td>Hilton Jianye is near Xinjiekou (新街口) and Wanda Plaza; Hampton is right by Confucius Temple/Qinhuai River</td>
+<td style="text-align: right;">Hilton ¥600–900（≈US$89–133）；Hampton ¥400–600（≈US$74–111）</td>
+<td>Full-service Diamond breakfast is usually member +1; choose Hampton for the Confucius Temple route</td>
+</tr>
+<tr>
+<td>Suzhou 1 night</td>
+<td><strong>Hilton Suzhou (Jinji Lake)</strong></td>
+<td>Hampton Suzhou Guanqian St</td>
+<td>Hilton is in Industrial Park/Jinji Lake, with metro into the old city (~20–30 min); Hampton is closest to Pingjiang Road</td>
+<td style="text-align: right;">Hilton ¥700–1,000（≈US$108–155）；Hampton ¥400–600（≈US$62–93）</td>
+<td>Only 1 night → if the focus is Pingjiang Road, Hampton is closer; choose Hilton for the flagship experience</td>
+</tr>
+</tbody>
+</table>
+<h2>Free-night cert and Diamond strategy (mainland China Hilton stays only)</h2>
+<ol>
+<li><strong>Aspire free-night cert → prioritize Waldorf Astoria on the Bund in Shanghai</strong> (1 room for 1 night, highest cash value). Rules: redeemable for standard accommodation, double occupancy, subject to standard reward room availability, must be redeemed by phone, and cannot be converted to cash/points. With 5 people, you still need a second room with cash/points; add the same-order note <code>family traveling together, connecting rooms</code>.</li>
+<li><strong>Do not budget as if Diamond breakfast/lounge will cover all 5 people for free</strong>: full-service hotels usually only cover “member +1”. Book both rooms through official Hilton channels; if there is a second Hilton Gold/Diamond account, attaching the second room to that account is safest; Hampton/Home2 with breakfast included are simpler.</li>
+<li><strong>Points</strong>: Hilton uses dynamic pricing — when WA/Conrad cash rates are high and standard reward rooms exist → consider points/cert; when Hampton/HGI/DoubleTree cash rates are cheap → cash is better and saves points; <strong>do not use the cert at Hampton/DoubleTree</strong> (unless it is about to expire).</li>
+<li><strong>Palais de Chine Taipei is not Hilton</strong>: Hilton benefits do not apply at all; use cash or transferable points (Capital One, etc.), or book directly with cash; compare Trip.com/Booking/official site before booking.</li>
+</ol>
+<h2>Detailed city recommendations</h2></div><div class="zh"><h1>订酒店计划（Plan SH：台北 + 华东：上海 / 杭州 / 南京 / 苏州）</h1>
 <blockquote>
 <p>适用：5 人家庭，每城 <strong>2 间房</strong>；妈妈更看重舒适度；2026 年 9 月。（链接自 <code>Master-Plan.md</code> · 由 HTML 行程「住宿」处链接到本文件对应城市段落）
 <strong>行程已锁定 Plan SH</strong>：台北(3 晚) → 上海 → 杭州 → 南京 → 苏州 → 上海(尾程)。旧「Route C 厦门/泉州/福州/重庆线」已弃用，本文件不再保留。
@@ -104,9 +191,66 @@ footer{color:var(--mut);font-size:12px;margin-top:26px;border-top:1px solid var(
 <li><strong>点数</strong>：Hilton 动态定价——WA/Conrad 现金贵且有标准奖励房→可点数/房券；Hampton/HGI/DoubleTree 现金便宜→现金更划算、留点数；<strong>房券别用在 Hampton/DoubleTree</strong>（除非快过期）。</li>
 <li><strong>台北君品非 Hilton</strong>：Hilton 权益全不适用；用现金或可转点(Capital One 等)，或直接现金订；订前比 Trip.com/Booking/官网。</li>
 </ol>
-<h2>城市详细建议</h2>
-<p><a id="hotel-taipei"></a></p>
-<h3>🏨 台北 · 君品酒店 Palais de Chine Hotel（首选 · 非 Hilton）</h3>
+<h2>城市详细建议</h2></div>
+<section class="sec"><a id="hotel-taipei"></a><div class="en"><h3>🏨 Taipei · 君品酒店 Palais de Chine Hotel (first choice · not Hilton)</h3>
+<ul>
+<li><strong>English name</strong>: <strong>Palais de Chine Hotel</strong> (Chinese: 君品酒店).</li>
+<li><strong>Address</strong>: <strong>No. 3, Sec. 1, Chengde Rd, Datong Dist., Taipei 103</strong> (台北市大同区承德路一段 3 号) — above <strong>Q Square (京站时尚广场 Q Square)</strong> and next to <strong>Taipei Main Station (台北车站)</strong>.</li>
+<li><strong>Coordinates</strong>: <strong>25.0491, 121.5169</strong> (OpenStreetMap approved point). <strong>Nearest MRT</strong>: Taipei Main Station (台北车站), directly up from underground mall <strong>Y5 Exit (Y5 出口)</strong>; Airport MRT <strong>A1 Taipei Main Station (A1 台北车站)</strong> terminus is downstairs.</li>
+<li><strong>Why this one</strong> (meets the key needs): ① <strong>Convenient for late-night arrival on 9/10</strong> — Airport MRT A1 terminus / pickup van can go directly to the entrance; ② <strong>~2 min walk to MRT</strong>; ③ <strong>Jiufen/Yangmingshan bus hubs</strong> are both at Taipei Main Station; ④ fast to <strong>National Palace Museum/101/Ximen/Songshan Airport</strong> by MRT or taxi; ⑤ Q Square downstairs has restaurants/convenience stores/bubble tea, <strong>comfortable for elders</strong>; ⑥ close to Songshan Airport for 9/13.</li>
+<li><strong>Room type/price</strong>: for 5 people, book <strong>2 rooms</strong> or a family room; about <strong>from NT$4,500–6,000/night</strong> (standard double · Klook promo; executive/suite rooms higher; verify prices before booking).</li>
+<li><strong>Comparison of the four candidates</strong> (OSM building-level coordinates · prices are estimates · verify before booking; 🗺️ <strong>interactive map: <a href="Taipei-Hotels-Map.html">Taipei-Hotels-Map.html</a></strong> — puts the 4 hotels and all your Taipei markers on one map for location comparison):</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Hotel</th>
+<th>Coordinates</th>
+<th>Address</th>
+<th>Nearest MRT</th>
+<th>Reference price/night</th>
+<th>Best for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>君品 Palais de Chine</strong> ⭐5</td>
+<td>25.04914, 121.51692</td>
+<td>No. 3, Sec. 1, Chengde Rd (Q Square)</td>
+<td>Taipei Main Station (台北车站) · 3 min walk</td>
+<td>From NT$4,500–6,000</td>
+<td>Comfortable all-rounder · one-station hub (first choice)</td>
+</tr>
+<tr>
+<td><strong>凯撒 Caesar Park</strong> ⭐4</td>
+<td>25.04611, 121.51629</td>
+<td>No. 38, Sec. 1, Zhongxiao W. Rd</td>
+<td>Taipei Main Station (台北车站) · 2 min walk</td>
+<td>NT$2,100–3,100</td>
+<td>Best value · directly connected to station (runner-up)</td>
+</tr>
+<tr>
+<td><strong>捷丝旅西门 Just Sleep</strong> ⭐3</td>
+<td>25.04504, 121.50963</td>
+<td>5F, No. 41, Sec. 1, Zhonghua Rd</td>
+<td>Ximen Station (西门站) · 3–5 min walk</td>
+<td>NT$3,800–4,500</td>
+<td>Ximen atmosphere · slightly farther for elders</td>
+</tr>
+<tr>
+<td><strong>老爷 Royal Nikko</strong> ⭐5</td>
+<td>25.05367, 121.52291</td>
+<td>No. 37-1, Sec. 2, Zhongshan N. Rd</td>
+<td>Zhongshan Station (中山站) · 5–7 min walk</td>
+<td>NT$4,400–6,000</td>
+<td>Fastest to National Palace Museum · Zhongshan shopping</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Tradeoffs</strong>: average one-way MRT time to the 8 landmarks (Taipei Main Station/National Palace Museum/101/Ximen/Ningxia/Linjiang/Raohe/Songshan Airport) — Palais de Chine/Caesar ≈15 min, Just Sleep/Royal Nikko ≈17 min. <strong>Best value: Caesar Park</strong> (direct station connection in 2 min, family room about half the price of Palais de Chine, ~15 min to Songshan Airport on 9/13); <strong>best comfortable all-rounder: Palais de Chine</strong> (direct access to Q Square mall, walkable to Ningxia Night Market). Just Sleep/Royal Nikko each add an extra segment to Songshan Airport and to the Jiufen/Yangmingshan buses (Taipei Main Station), so they are less smooth than the first two when traveling with elders.</li>
+<li>⚠️ <strong>It is fine if the Taiwan entry permit lists a Banqiao address</strong> — you can stay wherever you actually stay; just enter the <strong>actual Palais de Chine Hotel stay</strong> on the <strong>TWAC arrival card</strong>.</li>
+</ul></div><div class="zh"><h3>🏨 台北 · 君品酒店 Palais de Chine Hotel（首选 · 非 Hilton）</h3>
 <ul>
 <li><strong>英文名</strong>：<strong>Palais de Chine Hotel</strong>（中文：君品酒店）。</li>
 <li><strong>地址</strong>：<strong>台北市大同区承德路一段 3 号</strong>（No. 3, Sec. 1, Chengde Rd, Datong Dist., Taipei 103）——在<strong>京站时尚广场 Q Square</strong> 上盖、<strong>台北车站</strong>旁。</li>
@@ -164,31 +308,65 @@ footer{color:var(--mut);font-size:12px;margin-top:26px;border-top:1px solid var(
 <ul>
 <li><strong>取舍</strong>：8 个标志点（台北车站/故宫/101/西门/宁夏/临江/饶河/松山机场）单程 MRT 均时——君品/凯撒 ≈15 分、捷丝旅/老爷 ≈17 分。<strong>性价比首选凯撒</strong>（车站直连 2 分、家庭房约君品一半、9/13 松山机场 ~15 分）；<strong>舒适全能首选君品</strong>（直通京站商场、宁夏夜市步行可达）。捷丝旅/老爷离松山机场与九份/阳明山巴士(台北车站)各多约一段路，长辈同行不如前两家顺。</li>
 <li>⚠️ <strong>入台证上填板桥地址无妨</strong>——实际住哪都行，只需在 <strong>TWAC 入境卡</strong>填<strong>实际入住的君品酒店</strong>。</li>
-</ul>
-<p><a id="hotel-shanghai"></a></p>
-<h3>🏨 上海 · 外滩 WA 用券，Conrad 基础盘</h3>
+</ul></div></section>
+<section class="sec"><a id="hotel-shanghai"></a><div class="en"><h3>🏨 Shanghai · Use cert at Bund WA, Conrad as baseline</h3>
+<ul>
+<li><strong>Waldorf Astoria on the Bund (highlight · use cert)</strong>: Bund location + historic building + service; <strong>use the Aspire free-night cert here (1 room for 1 night)</strong>; book the second room with cash/points in the same stay. About ¥2,200–2,800（≈US$325–414）.</li>
+<li><strong>Conrad Shanghai (baseline)</strong>: strong routing for Nanjing East Road/People’s Square, cheaper than WA; if staying 2 nights, Conrad can be used for the first night. About ¥1,000–1,300（≈US$148–192）.</li>
+<li>For the final leg if catching an early PVG flight: there is no strong Hilton-family choice “next to the terminal”; <strong>DoubleTree Shanghai Pudong</strong> is usable but still requires a drive to PVG, so for an early flight prioritize booking a true airport/Chuansha hotel with cash.</li>
+</ul></div><div class="zh"><h3>🏨 上海 · 外滩 WA 用券，Conrad 基础盘</h3>
 <ul>
 <li><strong>Waldorf Astoria on the Bund（高光·用房券）</strong>：外滩位置+历史建筑+服务，<strong>Aspire 免费房券用在这（1 间 1 晚）</strong>；第二间现金/点数同订。约 ¥2,200–2,800（≈US$325–414）。</li>
 <li><strong>Conrad Shanghai（基础）</strong>：南京东路/人民广场动线强、比 WA 便宜；住 2 晚时第一晚可用 Conrad。约 ¥1,000–1,300（≈US$148–192）。</li>
 <li>尾程若赶早班 PVG：Hilton 系无「航站楼旁」强选；<strong>DoubleTree Shanghai Pudong</strong> 可用但到 PVG 仍需车程，早班机优先现金订真正机场/川沙酒店。</li>
-</ul>
-<p><a id="hotel-hangzhou"></a></p>
-<h3>🏨 杭州 · 西湖动线 Canopy / 硬件 Conrad</h3>
+</ul></div></section>
+<section class="sec"><a id="hotel-hangzhou"></a><div class="en"><h3>🏨 Hangzhou · Canopy for West Lake routing / Conrad for hardware</h3>
+<ul>
+<li><strong>Canopy by Hilton Hangzhou West Lake (first choice)</strong>: best routing for West Lake/lakeside/Intime, for 2 nights of sightseeing. About ¥750–1,000（≈US$111–148）.</li>
+<li><strong>Conrad Hangzhou (backup 1)</strong>: Qianjiang New Town, stronger hardware/breakfast but farther from West Lake and requires taxis. About ¥1,200–1,500（≈US$177–222）.</li>
+<li><strong>Qiushui Villa SLH (backup 2)</strong>: boutique luxury by West Lake, for Mom’s “most comfortable one night”; small property, so confirm 2 rooms/bed types/luggage vehicle. About ¥1,400+（≈US$207+）.</li>
+</ul></div><div class="zh"><h3>🏨 杭州 · 西湖动线 Canopy / 硬件 Conrad</h3>
 <ul>
 <li><strong>Canopy by Hilton Hangzhou West Lake（首选）</strong>：西湖/湖滨/银泰动线最好，2 晚观光。约 ¥750–1,000（≈US$111–148）。</li>
 <li><strong>Conrad Hangzhou（备选1）</strong>：钱江新城，硬件/早餐更强但离西湖远、需打车。约 ¥1,200–1,500（≈US$177–222）。</li>
 <li><strong>Qiushui Villa SLH（备选2）</strong>：西湖边 boutique 奢华，给 Mom「最舒服一晚」；小体量需确认 2 房/床型/行李车。约 ¥1,400+（≈US$207+）。</li>
-</ul>
-<p><a id="hotel-nanjing"></a></p>
-<h3>🏨 南京 · 全服务 Hilton / 夫子庙贴身 Hampton</h3>
+</ul></div></section>
+<section class="sec"><a id="hotel-nanjing"></a><div class="en"><h3>🏨 Nanjing · Full-service Hilton / Hampton close to Confucius Temple</h3>
+<ul>
+<li><strong>Hilton Nanjing (first choice · No. 100 Jiangdong Middle Road, Jianye District)</strong>: full service, near Wanda Plaza (shopping/dining), convenient metro access, about 10 min by car to Xinjiekou (新街口), ~5km to Confucius Temple. About ¥600–900（≈US$89–133）.</li>
+<li><strong>Hampton by Hilton Nanjing Confucius Temple (backup · Confucius Temple)</strong>: <strong>closest Hilton-family hotel to Confucius Temple/Qinhuai River</strong>, breakfast included, strong value (midscale). About ¥400–600（≈US$74–111）.</li>
+<li><strong>Hilton Nanjing Riverside (backup · Xiaguan riverfront)</strong>: Yangtze River views, but farther from Confucius Temple/Qinhuai.</li>
+<li>Note: in 2026, <strong>central Nanjing has no Conrad/DoubleTree</strong> (the nearest DoubleTree is in another Jiangsu city). If you want a full-service experience + easy taxi access to sights → Hilton Jianye; if you want to stay in the Qinhuai night scenery → Hampton Confucius Temple.</li>
+</ul></div><div class="zh"><h3>🏨 南京 · 全服务 Hilton / 夫子庙贴身 Hampton</h3>
 <ul>
 <li><strong>Hilton Nanjing（首选·建邺区江东中路 100 号）</strong>：全服务、近万达广场(购物/餐饮)、地铁方便、约 10 分车程到新街口、~5km 到夫子庙。约 ¥600–900（≈US$89–133）。</li>
 <li><strong>Hampton by Hilton Nanjing Confucius Temple（备选·夫子庙）</strong>：<strong>离夫子庙/秦淮河最近的 Hilton 系</strong>、含早、性价比高（中端）。约 ¥400–600（≈US$74–111）。</li>
 <li><strong>Hilton Nanjing Riverside（备选·下关滨江）</strong>：长江景，但离夫子庙/秦淮较远。</li>
 <li>说明：2026 年南京<strong>市中心暂无 Conrad/DoubleTree</strong>（最近 DoubleTree 在江苏他市）。想全服务体验+能打车到景点 → Hilton 建邺；想住进秦淮夜色里 → Hampton 夫子庙。</li>
+</ul></div></section>
+<section class="sec"><a id="hotel-suzhou"></a><div class="en"><h3>🏨 Suzhou · Jinji Lake flagship Hilton / Hampton closest to old city</h3>
+<ul>
+<li><strong>Hilton Suzhou (first choice · Jinji Lake · Suzhou Industrial Park)</strong>: family-friendly, pool, well-reviewed rooms/breakfast; ~9–10km from Pingjiang Road (20–30 min by taxi or metro into the old city). About ¥700–1,000（≈US$108–155）.</li>
+<li><strong>Hampton by Hilton Suzhou Guanqian Street (backup · Guanqian Street)</strong>: <strong>closest Hilton-family hotel to Pingjiang Road</strong> (~4km), breakfast included, midscale; choose it if you want a smoother old-city walking route. About ¥400–600（≈US$62–93）.</li>
+<li>Note: in 2026, <strong>there is no DoubleTree/Canopy in the Suzhou old city/Pingjiang Road area</strong>; DoubleTree is in Wujiang (farther south). Only 1 night → if the priority is walking Pingjiang Road, choose Hampton Guanqian Street for proximity; if the priority is the flagship experience, choose Hilton Jinji Lake. If you want to “stay inside the old city,” also compare non-Hilton boutique guesthouses around Pingjiang Road.</li>
 </ul>
-<p><a id="hotel-suzhou"></a></p>
-<h3>🏨 苏州 · 金鸡湖旗舰 Hilton / 古城最近 Hampton</h3>
+<h2>Booking action checklist</h2>
+<ol>
+<li>Search each city for 2026-09 using <strong>2 rooms and the true party size of 5 people</strong>.</li>
+<li><strong>Prioritize official Hilton channels</strong> (to reliably receive Diamond benefits/points/cert); use Trip.com/Booking only for price comparison. <strong>Palais de Chine Taipei</strong> is not Hilton, so compare and book directly via official site/Trip.com/Booking.</li>
+<li>Add this note to every Hilton booking: <code>Family of 5 traveling together</code> / <code>Please assign two rooms nearby or connecting</code> / <code>Diamond member; breakfast consideration for family</code>.</li>
+<li>3–5 days before arrival, confirm by app/email: bed types for both rooms, connecting/same-floor arrangement, number of guests covered for breakfast, children’s policy, and whether the lounge is open.</li>
+<li>Free-night cert: first check whether WA Shanghai has Standard Room Reward availability → if yes, redeem by phone; book the second room at the same hotel for the same night with cash.</li>
+<li>Cancellation policy: September China-city rates fluctuate a lot, so first book cancellable rates; after rail/flights are locked, then switch to non-refundable rates if worthwhile.</li>
+</ol>
+<h2>Sources</h2>
+<ul>
+<li>Palais de Chine Hotel: official site palaisdechinehotel.com · address/coordinates from OpenStreetMap (Sec. 1, Chengde Rd, Datong Dist., 25.0491/121.5169) · Trip.com hotel map page.</li>
+<li>Nanjing Hilton-family hotels: hilton.com/en/locations/china/nanjing/ · Booking/Trip.com pages for “Hilton Nanjing” and “Hampton Nanjing Confucius Temple” (pulled 2026).</li>
+<li>Suzhou Hilton-family hotels: hilton.com/en/locations/china/suzhou-jiangsu/ · Tripadvisor/Trip.com pages for “Hilton Suzhou” and “Hampton Suzhou Guanqian Street” (pulled 2026).</li>
+<li>Shanghai/Hangzhou: hilton.com city locations pages · Amex Hilton Honors Aspire free-night cert terms page.</li>
+<li><strong>Prices/points/availability are all estimates and must be re-checked in real time before booking.</strong></li>
+</ul></div><div class="zh"><h3>🏨 苏州 · 金鸡湖旗舰 Hilton / 古城最近 Hampton</h3>
 <ul>
 <li><strong>Hilton Suzhou（首选·金鸡湖·苏州工业园区）</strong>：家庭友好、泳池、房间/早餐口碑好；离平江路 ~9–10km(打车 20–30 分或地铁进古城)。约 ¥700–1,000（≈US$108–155）。</li>
 <li><strong>Hampton by Hilton Suzhou Guanqian Street（备选·观前街）</strong>：<strong>离平江路最近的 Hilton 系</strong>(~4km)、含早、中端；想步行古城动线更顺可选它。约 ¥400–600（≈US$62–93）。</li>
@@ -210,7 +388,21 @@ footer{color:var(--mut);font-size:12px;margin-top:26px;border-top:1px solid var(
 <li>苏州 Hilton 系：hilton.com/en/locations/china/suzhou-jiangsu/ · Tripadvisor/Trip.com「Hilton Suzhou」「Hampton Suzhou Guanqian Street」页（抓取 2026）。</li>
 <li>上海/杭州：hilton.com 各城 locations 页 · Amex Hilton Honors Aspire 房券条款页。</li>
 <li><strong>价格/点数/房态均为估算，订房前必须实时复核。</strong></li>
-</ul>
-<footer>由 master-plan-hotel.md 自动渲染 · rendered 2026-08-24 · 价格/房态订前实时复核</footer>
+</ul></div></section>
+<footer><span class="en">Auto-rendered · 2026-08-24 · verify prices/status before booking</span><span class="zh">自动渲染 · 2026-08-24 · 价格/房态订前复核</span></footer>
 </div>
+<script>
+function setLang(lang){
+  lang = lang === 'zh' ? 'zh' : 'en';
+  document.body.dataset.lang = lang;
+  document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : 'en';
+  document.title = lang === 'zh' ? '住宿选择说明' : 'Hotel Selection';
+  try{localStorage.setItem('itin-lang', lang);}catch(e){}
+}
+(function(){
+  var p=null; try{p=new URLSearchParams(location.search).get('lang');}catch(e){}
+  var s=null; try{s=localStorage.getItem('itin-lang');}catch(e){}
+  setLang(p==='zh'||p==='en'?p:(s==='zh'?'zh':'en'));
+})();
+</script>
 </body></html>

@@ -1,5 +1,7 @@
-<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><title>eSIM / 上网完整方案</title>
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>eSIM / SIM Data Guide</title>
 <style>
 :root{--bg:#0f1723;--card:#182333;--ink:#e8eef7;--mut:#9fb0c6;--acc:#4aa3ff;--line:#243349}
 *{box-sizing:border-box}
@@ -8,7 +10,8 @@ body{margin:0;font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,"PingF
 a{color:var(--acc)}
 h1{font-size:25px;margin:0 0 6px;border-bottom:2px solid var(--line);padding-bottom:10px}
 h2{font-size:19px;margin:28px 0 10px;color:#dbe6f5;background:#101c2c;border-left:3px solid var(--acc);padding:7px 12px;border-radius:6px}
-h3{font-size:16px;margin:20px 0 8px;color:#fff}
+h3{font-size:16px;margin:20px 0 8px;color:#fff;scroll-margin-top:64px}
+.sec{scroll-margin-top:64px}
 blockquote{color:var(--mut);border-left:3px solid var(--line);margin:14px 0;padding:6px 14px;background:#101a28;border-radius:6px;font-size:14px}
 table{border-collapse:collapse;width:100%;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
 th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
@@ -17,12 +20,414 @@ tr:nth-child(even) td{background:#131e2d}
 ul,ol{padding-left:22px}li{margin:5px 0}
 code{background:#0e1826;border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:12.5px}
 hr{border:0;border-top:1px solid var(--line);margin:22px 0}
-.back{position:fixed;top:12px;right:14px;background:rgba(14,24,38,.94);border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:13px;text-decoration:none}
+.back{position:fixed;top:12px;left:14px;z-index:1200;background:rgba(14,24,38,.94);border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:13px;text-decoration:none}
 strong{color:#fff}
 footer{color:var(--mut);font-size:12px;margin-top:26px;border-top:1px solid var(--line);padding-top:12px}
-</style></head><body>
-<a class="back" href="Taipei-China-Itinerary.html">← 回行程 Itinerary</a>
-<div class="wrap"><h1>eSIM / 上网完整方案（台湾 + 大陆 · 苹果+小米混合机队）</h1>
+@media (max-width:640px){.wrap{padding-top:56px}}
+
+body[data-lang="zh"] .en{display:none!important}
+body[data-lang="en"] .zh{display:none!important}
+.lang-toggle{position:fixed;top:10px;right:12px;z-index:1200;background:rgba(14,24,38,.94);border:1px solid var(--line);border-radius:999px;padding:4px;box-shadow:0 8px 22px rgba(0,0,0,.28)}
+.lang-toggle button{background:transparent;color:var(--mut);border:0;border-radius:999px;padding:6px 10px;font-size:12px;cursor:pointer}
+.lang-toggle .sep{color:#53677f;font-size:12px}
+body[data-lang="en"] #lang-en,body[data-lang="zh"] #lang-zh{background:var(--acc);color:#04121f}
+@media (max-width:640px){.lang-toggle{top:8px;right:8px}}
+</style></head>
+<body data-lang="en">
+<a class="back" href="Taipei-China-Itinerary.html"><span class="en">← Itinerary</span><span class="zh">← 回行程</span></a>
+<div class="lang-toggle" aria-label="Language"><button id="lang-en" type="button" onclick="setLang('en')">EN</button><span class="sep">|</span><button id="lang-zh" type="button" onclick="setLang('zh')">中文</button></div>
+<div class="wrap">
+<div class="en"><h1>Complete eSIM / Internet Access Plan (Taiwan + Mainland China · Mixed Apple + Xiaomi Devices)</h1>
+<blockquote>
+<p>Trip: 5-person family, September 2026. Taipei for 3 days (no firewall) + Mainland China for about 7 days (Xiamen→Quanzhou→Fuzhou→Hangzhou→Shanghai, behind the firewall). Devices: U.S. iPhones (support eSIM) + Xiaomi phones (some China-market models, no eSIM). Researched/verified on <strong>2026-08-03</strong>; re-check prices before ordering. (Linked from <code>Master-Plan.md</code>)
+<strong>Core conclusion: handle Taiwan and Mainland China differently.</strong> Taiwan has no firewall → any card works, just choose the cheapest; Mainland China has the firewall → <strong>you must choose an eSIM that uses “international roaming routing / bypasses the firewall”</strong> (Google/WhatsApp/Gmail work immediately on arrival, no separate VPN needed), otherwise a local card will be blocked by the firewall.
+Exchange rates (2026-08-04): <strong>US$1 = NT$32.34 = ¥6.77 = HK$7.84</strong>. All prices include ≈US$.</p>
+</blockquote>
+<h2>📌 Copy-this-summary (TL;DR)</h2>
+<ul>
+<li><strong>Simplest single-card option for the whole iPhone trip</strong>: <strong>Airalo “Asia” Unlimited 10 days = US$35/person</strong> — one eSIM covers Taiwan + Mainland China, <strong>officially confirmed to bypass the firewall</strong>, Google works throughout.</li>
+<li><strong>Cheapest option (iPhone, can buy separately)</strong>: Taiwan <strong>Ubigi 3GB/7 days = US$6</strong> + Mainland China <strong>Nomad Unlimited 7 days = US$25</strong> (Nomad has no hotspot restrictions, best for sharing hotspot with the family).</li>
+<li><strong>China-market Xiaomi (cannot install eSIM)</strong>: buy a <strong>Hong Kong physical roaming SIM</strong> — best value is <strong>SIM World “Mainland China, Hong Kong, Macau &amp; Taiwan Roaming Card” 20GB/395 days = HK$198 (≈US$25)</strong>, one card also covers Taiwan + Mainland China, exits via Hong Kong to bypass the firewall, works in any unlocked phone, no EID required.</li>
+<li><strong>Taiwan arrival backup</strong>: Taoyuan Airport <strong>Chunghwa Telecom (中华电信) 3-day unlimited physical SIM ~NT$300 (≈US$9)/card</strong>, buy 2 cards and turn on hotspot for the family.</li>
+<li>⚠️ <strong>Two iron rules for the Mainland China segment</strong>: ① buy and install the eSIM <strong>before crossing the border into Mainland China</strong> (once inside the firewall, you usually cannot download/buy eSIMs); ② if you end up using a “local routing” card, any VPN app must be <strong>installed and paid for before departure</strong> (VPN websites cannot be opened inside the firewall).</li>
+</ul>
+<h2>📱 Taipei 3 days · 5 people｜Best arrival internet plan (user-finalized 2026-08-24)</h2>
+<blockquote>
+<p>Only for <strong>3 days in Taipei city</strong> (not going to eastern mountain areas; signal differences among the three carriers are very small). Devices: Apple + Xiaomi, <strong>all unlocked</strong>, and <strong>not everyone needs mobile data</strong>. <strong>For Mainland China, see the second half of this file — Taiwan physical SIMs will not work in Mainland China and will also be behind the firewall.</strong></p>
+</blockquote>
+<p><strong>Key assumptions</strong>
+- ✅ Most U.S.-purchased iPhones support eSIM; <strong>most China-market Xiaomi phones do not support eSIM</strong> (only overseas Xiaomi models do).
+- ✅ Taipei city only, trip is only 3 days → prioritize <strong>reducing hassle after landing</strong>.
+- ✅ <strong>Airport SIM counters accept international credit cards</strong>, so there is no need to exchange NT dollars in advance; (by contrast: <strong>EasyCard top-ups are cash-only</strong>.)</p>
+<h3>Plan A【Most recommended · Flexible and independent, good for splitting up often】</h3>
+<ul>
+<li><strong>Setup</strong>: <strong>2 Chunghwa Telecom physical SIMs</strong> (buy on site at Taoyuan Airport).</li>
+<li><strong>Price</strong>: 3-day unlimited data <strong>NT$300/card (about US$10)</strong>, includes a small calling credit and a local Taiwan +886 number.</li>
+<li><strong>Location</strong>: Taoyuan <strong>T1/T2 arrivals hall Chunghwa Telecom counter</strong>, handle it right after customs; just show passports (<strong>credit cards accepted</strong>).</li>
+<li><strong>How it works</strong>: 2 people carry SIM cards and can turn on hotspot anytime; the other 3 people connect to hotspot.</li>
+<li><strong>Pros</strong>: ① if people shop separately / take MRT separately, each subgroup still has internet and is not dependent on one hotspot; ② physical SIMs are more stable than travel eSIMs and include a +886 number for restaurant bookings / taxis; ③ two cards total about <strong>US$20</strong>.</li>
+<li>⚠️ <strong>China-market Xiaomi cannot install eSIM, but physical SIMs work in all phones</strong>, perfectly compatible with Apple + Xiaomi.</li>
+</ul>
+<h3>Plan B【One ultra-simple package · Best if the group stays together the whole time】</h3>
+<ul>
+<li>Rent a <strong>Pocket WiFi</strong> device, pick up and return at Taoyuan Airport, connects up to 5 devices at the same time.</li>
+<li><strong>Price</strong>: about <strong>US$22–28</strong> for 3 days (booking online through Klook/KKday is cheaper).</li>
+<li><strong>Cons</strong>: cannot separate too far (if you split up, some people have no internet); need to carry a power bank; for departure, <strong>return it at the same location</strong>, and if the flight is very late, confirm counter hours first.</li>
+<li>👉 Only suitable for groups that almost never split up.</li>
+</ul>
+<h3>Plan C【eSIM · Supplement only, with clear limitations】</h3>
+<ul>
+<li><strong>Airalo Taiwan 3-day unlimited eSIM ≈US$12.5/card</strong>.</li>
+<li><strong>Issue</strong>: <strong>China-market Xiaomi cannot install eSIM</strong>; this only works if all phones are iPhones / overseas-version phones → China-market Xiaomi makes this route a direct pass.</li>
+</ul>
+<h3>Final copy-this plan</h3>
+<ul>
+<li><strong>Scenario 1｜You will split up (most common) → Plan A</strong>: buy 2 Chunghwa Telecom 3-day unlimited cards at Taoyuan Airport (NT$300/card), after landing and clearing customs find the Chunghwa Telecom counter, and simply say “3 days tourist unlimited data prepaid SIM, 2 pieces”; after setup, turn on hotspot on 2 phones and have the other 3 people connect; <strong>be sure to turn off data roaming on the U.S. primary SIMs</strong> to avoid sky-high roaming charges.</li>
+<li><strong>Scenario 2｜The group stays together almost the whole time and rarely separates → Plan B</strong>: book Pocket WiFi online in advance, pick it up at the airport, and share it for 3 days.</li>
+</ul>
+<h3>Pitfalls to avoid</h3>
+<ol>
+<li><strong>Do not use U.S. carrier international roaming</strong>: AT&amp;T/Verizon $12/day/person, extremely expensive for 5 people over 3 days; T-Mobile premium plans may throttle easily when multiple people stream video.</li>
+<li><strong>Hotspot</strong>: one hotspot noticeably slows down with 3+ connected devices → <strong>splitting traffic across 2 SIMs</strong> gives a better experience.</li>
+<li><strong>Taoyuan Airport free WiFi</strong>: only good for temporary messaging, not stable; do not use it as the main connection.</li>
+<li><strong>Payment</strong>: airport SIM counters <strong>accept international credit cards</strong>, no need to exchange NT dollars in advance (<strong>EasyCard top-ups are still cash-only</strong>).</li>
+</ol>
+<blockquote>
+<p>If you confirm whether the Xiaomi phones are China-market or overseas versions, and whether the group often splits up, this can be narrowed down further. <strong>Note: the above is only for the Taiwan segment; Mainland China for 7 days has the firewall, so prepare a separate “firewall-bypassing” eSIM (Airalo Asia/Nomad, no VPN needed on arrival), see below.</strong></p>
+</blockquote>
+<hr>
+<h2>0. Verify the user plan (truth table)</h2>
+<table>
+<thead>
+<tr>
+<th>Claim</th>
+<th style="text-align: right;">Conclusion</th>
+<th>Basis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Most U.S. iPhones support eSIM</td>
+<td style="text-align: right;">✅ True</td>
+<td>Apple official + Airalo compatibility list</td>
+</tr>
+<tr>
+<td>China-market Xiaomi does not support eSIM; only overseas versions do</td>
+<td style="text-align: right;">⚠️ Mostly correct</td>
+<td>China-market models almost all lack EID→cannot install eSIM; overseas versions depend on model, dial <code>*#06#</code> to check whether there is an EID</td>
+</tr>
+<tr>
+<td>Airalo Taiwan 3-day unlimited ~US$12.5</td>
+<td style="text-align: right;">✅ True</td>
+<td>Airalo Taiwan page: 3 days Unlimited $12.50</td>
+</tr>
+<tr>
+<td>Chunghwa Telecom airport 3-day unlimited ~NT$300 (≈US$9), with +886</td>
+<td style="text-align: right;">✅ Basically true</td>
+<td>Chunghwa Telecom tourist prepaid card page: airport store on-the-spot purchase, calendar-day unlimited, 3-day plan NT$300</td>
+</tr>
+<tr>
+<td>“Taiwan Star” airport card</td>
+<td style="text-align: right;">❌ Outdated</td>
+<td>Merged into Taiwan Mobile in 2023-12</td>
+</tr>
+<tr>
+<td>Do not use AT&amp;T/Verizon $12/day/person</td>
+<td style="text-align: right;">✅ True</td>
+<td>5 people × 3 days ≈ $180, too expensive</td>
+</tr>
+</tbody>
+</table>
+<h2>1. First do a 30-second device check</h2>
+<ul>
+<li><strong>iPhone</strong>: U.S. XS/XR and newer generally support eSIM and are usually unlocked; can install any eSIM below. Can store 8 eSIMs and enable 2 at the same time (U.S. SIM for SMS + travel SIM for data).</li>
+<li><strong>Xiaomi</strong>: only <strong>some overseas versions</strong> support it; <strong>China-market models almost all do not</strong>. On each phone dial <strong><code>*#06#</code></strong>: has <strong>EID</strong> = can install eSIM; no EID = use a physical SIM (see Section 5).</li>
+<li>Mainland China/Taiwan are both “foreign-network roaming” for you → the travel card needs <strong>Data Roaming ON</strong>; eSIM APN config is automatic, while Hong Kong physical SIMs may require manually entering APN <code>mobile.lte.three.com.hk</code>.</li>
+</ul>
+<h2>2. ⚠️ Core concept: the three “routing” behaviors of Mainland China cards (determines whether Google works)</h2>
+<table>
+<thead>
+<tr>
+<th>Routing method</th>
+<th>Google/WhatsApp</th>
+<th>Representative providers (verified this time)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>International roaming routing</strong> (best)</td>
+<td>✅ Works immediately on arrival; data exits to overseas gateways, so to the firewall you are a “foreign roaming user”; <strong>nothing else needs to be installed</strong></td>
+<td><strong>Airalo、Nomad、GigSky、Saily</strong></td>
+</tr>
+<tr>
+<td><strong>eSIM built-in VPN</strong></td>
+<td>✅ Works, no separate app needed, but it is essentially a VPN tunnel and may be throttled/blocked during crackdowns</td>
+<td><strong>Holafly</strong></td>
+</tr>
+<tr>
+<td><strong>Local routing</strong> (❌)</td>
+<td>❌ Blocked by the firewall; you need your own VPN that is <strong>already installed</strong></td>
+<td><strong>MobiMatter、Roamless、aloSIM、Jetpac</strong> and all Mainland China local cards</td>
+</tr>
+<tr>
+<td><strong>Unclear / not verified</strong></td>
+<td>❓ Treat as “local routing” until proven otherwise</td>
+<td><strong>Ubigi、Sim Local、Instabridge、Yesim</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Authoritative wording (official pages as of 2026-08-03): <strong>Airalo</strong>: with its China/Regional Asia/Global eSIM, “<strong>no VPN required</strong>” ... traffic goes through secure gateways outside Mainland China, so to the firewall you look like an international roaming user and can browse unfiltered immediately on arrival. <strong>Nomad</strong>: data “goes through servers outside China before accessing the internet, automatically bypassing the firewall — no VPN installation required.” <strong>Holafly</strong>: “<strong>built-in VPN</strong> ... no need to turn on your own VPN.” <strong>MobiMatter</strong>: its own blog says “China blocks Google/WhatsApp ... <strong>please use with a VPN</strong>” → that means local routing, does not bypass the firewall.</p>
+</blockquote>
+<h2>3. Taiwan segment (3 days, no firewall) — just choose the cheapest</h2>
+<p>Ranking (value first):
+1. <strong>Ubigi 3GB/7 days = US$6</strong> (cheapest verified real data; 1GB/7 days=$3)
+2. <strong>Roamless 500MB free / 5GB US$11.95</strong> (Chunghwa Telecom network, valid for 30 days; the free tier is nice “just in case”)
+3. <strong>Airalo Taiwan unlimited/3 days = US$12.5</strong> (Taiwan Mobile network; simplest “unlimited, no thinking” option; 5 days $19/7 days $29.5/10 days $35)
+4. <strong>Simply do not buy a Taiwan-only card</strong>, use a “whole-trip card” (Airalo Asia 10 days, or the SIM World physical card below) to cover both Taiwan + Mainland China
+5. <strong>Arrival backup / for China-market Xiaomi</strong>: Chunghwa Telecom airport 3-day unlimited physical SIM <strong>~NT$300 (≈US$9)/card</strong>, buy 2 cards and turn on hotspot</p>
+<table>
+<thead>
+<tr>
+<th>Provider</th>
+<th>Best 3-day tier</th>
+<th>Price (≈USD)</th>
+<th>Where to buy (App + official site)</th>
+<th>Compatibility</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ubigi</strong></td>
+<td>3GB/7 days</td>
+<td><strong>US$6</strong> (USD list price)</td>
+<td>App “Ubigi” · cellulardata.ubigi.com</td>
+<td>iPhone✅ Overseas Xiaomi✅ China-market❌</td>
+<td>Cheapest verified; 1GB/7 days $3</td>
+</tr>
+<tr>
+<td><strong>Roamless</strong></td>
+<td>500MB free / 5GB</td>
+<td><strong>Free / US$11.95</strong></td>
+<td>App “Roamless eSIM” · roamless.com</td>
+<td>iPhone✅ China-market❌</td>
+<td>Valid for 30 days, timer starts on first connection</td>
+</tr>
+<tr>
+<td><strong>Airalo</strong></td>
+<td>Taiwan unlimited/3 days</td>
+<td><strong>US$12.5</strong></td>
+<td>App “Airalo” · airalo.com/taiwan-esim</td>
+<td>iPhone✅ China-market❌</td>
+<td>Taiwan Mobile network</td>
+</tr>
+<tr>
+<td><strong>Chunghwa Telecom physical</strong></td>
+<td>3-day unlimited</td>
+<td><strong>~NT$300 (≈US$9)/card</strong></td>
+<td>Taoyuan Airport arrivals hall counter (passport required)</td>
+<td><strong>All unlocked phones✅ (including China-market Xiaomi)</strong></td>
+<td>Includes +886 number, hotspot allowed</td>
+</tr>
+<tr>
+<td>Holafly/Nomad/GigSky/MobiMatter</td>
+<td>All have Taiwan tiers</td>
+<td>From $4–5.9 (mostly unverified / JS pages)</td>
+<td>Their respective apps</td>
+<td>iPhone✅ China-market❌</td>
+<td>Taiwan has no firewall, not worth extra hassle</td>
+</tr>
+</tbody>
+</table>
+<h2>4. Mainland China segment (7 days, behind the firewall) — must use international routing, no separate VPN</h2>
+<p>Ranking (want Google/WhatsApp + hotspot, without installing VPN):
+1. <strong>Airalo</strong> — most complete docs, officially clearly bypasses the firewall; <strong>timer starts on first use</strong> (can install in advance, zero waste). China unlimited 7 days <strong>US$27</strong>, or <strong>Asia 10 days US$35</strong> (covers Taiwan too).
+2. <strong>Nomad</strong> — cheapest unlimited (<strong>US$25/7 days</strong>) and <strong>no hotspot limit</strong> (one phone can cover the whole family), timer starts on first use. <em>(Tier prices come from Nomad’s own blog, not the live product menu; noted as such.)</em>
+3. <strong>Holafly</strong> — confirmed to bypass the firewall but relies on a <strong>built-in VPN</strong>; <strong>hotspot limited to 500MB/day</strong>, and <strong>timer starts on activation</strong>, weak for a family. China unlimited 7 days <strong>US$29.9</strong> (official).
+4. <strong>GigSky</strong> — confirmed firewall bypass (own backbone); price only confirmed as “from $4.99”.
+5. <strong>Saily (under Nord)</strong> — very likely bypasses the firewall (international roaming partners); prices are from competitor blogs (official site 403), verify inside the app.
+- ❌ <strong>Do not use for Mainland China firewall bypass</strong>: MobiMatter/TSIMtech, Roamless, aloSIM, Jetpac (local routing→Google blocked). Ubigi/Sim Local/Instabridge/Yesim = not verified.</p>
+<table>
+<thead>
+<tr>
+<th>Provider</th>
+<th>7-day tier</th>
+<th>Price (≈USD)</th>
+<th>Where to buy</th>
+<th><strong>Bypasses firewall? (routing)</strong></th>
+<th>Compatibility</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Airalo</strong> ✅</td>
+<td>China unlimited/7 days</td>
+<td><strong>US$27</strong> (or Asia unlimited 10 days $35)</td>
+<td>Airalo App · airalo.com/china-esim ·/asia-esim</td>
+<td><strong>Yes — international roaming routing</strong> (officially confirmed)</td>
+<td>iPhone✅ China-market❌</td>
+<td>Timer starts on first use; 3 days $11.5/10 days $35</td>
+</tr>
+<tr>
+<td><strong>Nomad</strong> ✅</td>
+<td>China unlimited/7 days</td>
+<td><strong>US$25</strong> <em>(own blog)</em></td>
+<td>Nomad App · nomadesim.com/china-eSIM</td>
+<td><strong>Yes — via overseas servers</strong> (self-stated and confirmed)</td>
+<td>iPhone✅ China-market❌</td>
+<td><strong>No hotspot limit</strong> (best for family sharing); timer starts on first use; also 1GB/7 days $4, 10GB/30 days $17</td>
+</tr>
+<tr>
+<td><strong>Holafly</strong> ⚠️</td>
+<td>China unlimited/7 days</td>
+<td><strong>US$29.9</strong> (official)</td>
+<td>Holafly App · esim.holafly.com/esim-china</td>
+<td><strong>Yes — but via built-in VPN</strong> (may be throttled)</td>
+<td>iPhone✅ China-market❌</td>
+<td><strong>Hotspot limited to 500MB/day</strong>; <strong>timer starts on activation</strong>, choose arrival date at checkout, do not activate early</td>
+</tr>
+<tr>
+<td><strong>GigSky</strong> ✅</td>
+<td>China/APAC</td>
+<td><strong>From $4.99</strong> (exact 7-day price not verified)</td>
+<td>GigSky App · gigsky.com</td>
+<td><strong>Yes — own international backbone</strong></td>
+<td>iPhone✅ China-market❌</td>
+<td>Reusable eSIM, automatic APN</td>
+</tr>
+<tr>
+<td><strong>Saily</strong> ⚠️</td>
+<td>China unlimited/7 days</td>
+<td><strong>$29.99</strong> (competitor blog · unverified)</td>
+<td>Saily App · saily.com</td>
+<td><strong>Inferred yes</strong> (international roaming partners, no official quote)</td>
+<td>iPhone✅ China-market❌</td>
+<td>Standard plans do not require NordVPN</td>
+</tr>
+<tr>
+<td><strong>Ubigi</strong> ❓</td>
+<td>3GB/10GB · 30 days</td>
+<td><strong>$7 / $17</strong> (verified)</td>
+<td>Ubigi App</td>
+<td><strong>Not verified</strong> — no firewall-bypass statement, do not count on it for Google</td>
+<td>iPhone✅ China-market❌</td>
+<td>Cheap data but firewall behavior unclear</td>
+</tr>
+<tr>
+<td><strong>MobiMatter/TSIMtech</strong> ❌</td>
+<td>10GB/30 days</td>
+<td><strong>$7.99</strong> (verified, cheapest)</td>
+<td>MobiMatter App</td>
+<td><strong>No</strong> — local; official guidance says “use with VPN”</td>
+<td>iPhone✅ China-market❌</td>
+<td>Cheapest data but does not meet “no VPN” requirement</td>
+</tr>
+<tr>
+<td><strong>Roamless</strong> ❌</td>
+<td>5GB/10GB</td>
+<td><strong>$15.45 / $26.45</strong></td>
+<td>Roamless App</td>
+<td><strong>No</strong> — local China Unicom</td>
+<td>iPhone✅ China-market❌</td>
+<td>Without your own VPN, Google is blocked</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Total for 5 people in Mainland China for 7 days</strong>: Airalo $27→<strong>$135</strong> (or Asia 10 days $35→<strong>$175</strong> covering the whole trip) · Nomad $25→<strong>$125</strong> · Holafly $29.9→<strong>$149.5</strong>.</p>
+<h2>5. China-market Xiaomi (cannot install eSIM) → Hong Kong physical roaming SIM (important!)</h2>
+<p><strong>Check EID first</strong>: on each Xiaomi phone dial <strong><code>*#06#</code></strong>; no EID line = no eSIM hardware → none of the eSIMs above can be used → use the physical nano-SIMs below. (China-market MIUI almost always has no EID; some overseas versions do)
+<strong>Why Hong Kong cards can bypass the firewall</strong>: they are <strong>Hong Kong</strong> cards; in Mainland China they are “roaming,” and data is backhauled to Hong Kong (APN <code>mobile.lte.three.com.hk</code>) and exits via Hong Kong = <strong>outside the firewall</strong>, so Google/WhatsApp work without VPN; physical cards work in any <strong>unlocked</strong> phone (including China-market Xiaomi).</p>
+<table>
+<thead>
+<tr>
+<th>Product</th>
+<th>Data/days</th>
+<th>Price (≈USD/person)</th>
+<th>Where to buy</th>
+<th>Bypasses firewall?</th>
+<th>China-market Xiaomi?</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SIM World “Mainland China, Hong Kong, Macau &amp; Taiwan Roaming Card”</strong> ✅ Best value · covers whole trip</td>
+<td><strong>20GB/395 days</strong></td>
+<td><strong>HK$198 (≈US$25)</strong> · 5 cards≈<strong>US$126</strong></td>
+<td>simworld.net/en/ or Hong Kong stores (Causeway Bay/Central/Mong Kok/Tsuen Wan/Yuen Long)</td>
+<td><strong>Yes</strong> (3HK Hong Kong network)</td>
+<td><strong>Yes</strong> (unlocked · manually enter APN · enable roaming)</td>
+<td>One card covers Taiwan + Mainland China; real-name registration (passport OK, ≤10 cards/person); deep link 404 → buy from homepage</td>
+</tr>
+<tr>
+<td><strong>3HK DIY Prepaid — APAC 30 days</strong> ✅</td>
+<td>Data not verified/30 days</td>
+<td><strong>HK$138 (≈US$17.6)</strong> · 5 cards≈<strong>US$88</strong></td>
+<td>three.com.hk/prepaid/DIY/en/ or 3Shop</td>
+<td><strong>Yes</strong> (3HK routing)</td>
+<td><strong>Yes</strong></td>
+<td>Cheapest; before buying, confirm it includes Mainland China + GB amount</td>
+</tr>
+<tr>
+<td><strong>3HK DIY — China/Hong Kong/Macau 365 days</strong> ✅</td>
+<td>Data not verified/365 days</td>
+<td><strong>HK$268 (≈US$34)</strong> · 5 cards≈<strong>US$171</strong></td>
+<td>Same as above</td>
+<td><strong>Yes</strong></td>
+<td><strong>Yes</strong></td>
+<td>More expensive, GB not confirmed</td>
+</tr>
+<tr>
+<td><strong>China Unicom(HK) cross-border card</strong> ❓ <em>(the one you asked about)</em></td>
+<td>Not verified</td>
+<td>Not verified</td>
+<td>chinaunicomhk.com (522 unavailable today) · commonly found on Klook/Amazon</td>
+<td><strong>Commonly used and generally bypasses the firewall</strong> (Hong Kong-registered) but not confirmed today</td>
+<td>Works if unlocked</td>
+<td>Verify at Hong Kong airport/store/Klook/Amazon</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Extra pitfall for China-market Xiaomi (Google apps)</strong>: China-market MIUI ships with <strong>no Google Play/Services</strong>. Even if the Hong Kong card bypasses the firewall, you may still need to <strong>sideload Google Play Services + Store before departure</strong> (or directly install WhatsApp/Telegram APKs, or use Google Maps/Gmail in the browser).
+<strong>How to buy if not transiting Hong Kong</strong>: the common approach is to <strong>buy a “3HK / China Unicom Hong Kong” travel card from Amazon/Klook before departure and have it shipped to the U.S.</strong> (Amazon/Klook were 403/503 today, prices not verified; check against the carrier prices above).</p>
+</blockquote>
+<h2>6. How early to buy / install / activate (key timeline)</h2>
+<p><strong>The only question that determines whether installing early wastes days: when does the validity period start?</strong>
+- <strong>Timer starts on first connection / first use</strong> → installing in advance is <strong>100% safe, no days wasted</strong>: <strong>Airalo、Nomad、Saily、Roamless、GigSky</strong> + <strong>SIM World/3HK physical SIMs</strong> (activate when used; shelf life 395/365 days).
+- <strong>Timer starts on activation (you choose the date)</strong> → <strong>Holafly</strong>: install the profile in advance, but <strong>enter the Mainland China arrival date at checkout and do not activate early</strong>, otherwise days are wasted.
+- <strong>Ubigi/MobiMatter</strong>: metered plans; MobiMatter explicitly says “install in advance, activate after arrival,” so treat as first-use timing but confirm at checkout.</p>
+<p><strong>Recommended timeline:</strong>
+1. <strong>Buy: 3–7 days before departure</strong> (buy = receive QR/profile; buying early leaves buffer for payment/shipping issues; <strong>Mainland China card must be purchased before crossing the border</strong>).
+2. <strong>Install profile: 2–7 days before departure</strong>, install at home on WiFi and name the line “Travel”; for first-use-timed cards, this step <strong>does not</strong> start the timer. (China-market Xiaomi with no EID: instead insert the Hong Kong physical SIM before departure and manually enter APN <code>mobile.lte.three.com.hk</code>)
+3. <strong>Before landing, keep the travel line “off”</strong>; also turn <strong>roaming/data off on U.S. SIMs</strong> to prevent sky-high roaming charges.
+4. <strong>Landing in Taipei</strong>: turn on the travel eSIM line + <strong>Data Roaming ON</strong> → the X-day timer starts only now (exactly when the trip begins); use it through the Mainland China segment.
+5. <strong>Holafly only</strong>: timer starts on activation, do not activate early, enter the correct arrival date at checkout.
+6. <strong>Leave buffer</strong>: validity period ≥ trip days. For a 3+7 day trip, choose a <strong>10-day</strong> tier (or SIM World 20GB/395-day card) for more stability.</p>
+<h2>7. Pick one of three configurations</h2>
+<ul>
+<li><strong>Simplest</strong>: each iPhone gets one <strong>Airalo Asia unlimited 10 days $35</strong> (one card for Taiwan + Mainland China, Google throughout); each China-market Xiaomi gets one <strong>SIM World 20GB HK$198 (≈US$25)</strong>; in Taiwan, additionally buy 1–2 Chunghwa Telecom cards for family hotspot/backup.</li>
+<li><strong>Cheapest</strong>: Taiwan <strong>Ubigi $6/person</strong> (or buy only 2 Chunghwa Telecom cards and share with the family); in Mainland China, buy <strong>Nomad $25/person</strong> only for iPhones (no hotspot limit, can let China-market Xiaomi use hotspot; if people split up, they may lose connection).</li>
+<li><strong>Most reliable</strong>: Taiwan 2 Chunghwa Telecom cards; in Mainland China, each iPhone gets one Airalo/Nomad, and each China-market Xiaomi gets one SIM World Hong Kong card (highest cost, everyone has independent internet).</li>
+</ul>
+<h2>8. Cost estimate (≈USD)</h2>
+<ul>
+<li><strong>Taiwan 3 days</strong>: 2 Chunghwa Telecom cards ~NT$600 (≈US$19)/family; Ubigi $6/person×5=$30; Airalo TW $12.5/person×5=$62.5; U.S. roaming ~$180 (do not choose).</li>
+<li><strong>Mainland China 7 days</strong>: Airalo China $27/person or Asia 10 days $35/person (one card for Taiwan + Mainland China); Nomad $25/person; China-market Xiaomi SIM World HK$198 (≈US$25)/person.</li>
+<li><strong>Single card for whole trip (iPhone)</strong>: Airalo Asia unlimited 10 days <strong>$35/person</strong> (5 people $175) covers Taiwan + Mainland China, simplest.</li>
+</ul>
+<h2>9. Key reminders</h2>
+<ul>
+<li>Taiwan has no firewall→local/any card works; Mainland China has the firewall→<strong>trust only “international roaming routing / built-in VPN” cards</strong> (Airalo/Nomad/GigSky/Saily/Holafly); do not use local-routing cards (MobiMatter/Roamless/aloSIM/Jetpac) as your outside-internet connection.</li>
+<li>Do not assume China-market Xiaomi can install eSIM (check EID first); no EID means use a Hong Kong physical SIM; MIUI may require sideloading Google.</li>
+<li>Before using eSIM on iPhone, confirm it is unlocked; <strong>keep U.S. SIM Data Roaming off for the entire trip</strong>; keep Data Roaming on for the travel line.</li>
+<li><strong>Buy and install the Mainland China card before crossing the border</strong>; re-check price/coverage/firewall bypass/hotspot limits <strong>before ordering</strong> (especially anything marked UNVERIFIED).</li>
+</ul>
+<h2>10. Sources (all captured 2026-08-03) + unverified items</h2>
+<p><strong>Verified (directly read official pages)</strong>: Airalo Taiwan/China/Asia prices and official firewall-bypass explanation; Holafly China $29.9 + built-in VPN; Nomad firewall bypass + tiers (own blog); GigSky firewall bypass; MobiMatter does not bypass firewall + price; Roamless price + local China Unicom; Ubigi price; aloSIM recommends using with VPN; HK physical: SIM World (HK$198/20GB/395 days), 3HK (HK$138 APAC / HK$268 China-Hong Kong-Macau).
+<strong>Unverified (could not confirm from official pages today, use caution)</strong>: exact Nomad tier prices ($25/$4/$17, from own blog not live menu); Holafly Taiwan 3-day tier; all Saily prices (official site 403, from competitor blog; firewall bypass inferred); exact GigSky Taiwan/China prices; aloSIM/Jetpac/Sim Local/Instabridge prices (JS pages); all Yesim info (WAF blocked); Ubigi firewall-bypass behavior; GB amounts for the two 3HK DIY tiers; China Unicom HK, CMHK/CMLink (official sites 522/466 unavailable); Amazon/Klook retail prices (403/503). <strong>Maya Mobile: no legitimate supplier found; do not buy.</strong></p></div><div class="zh"><h1>eSIM / 上网完整方案（台湾 + 大陆 · 苹果+小米混合机队）</h1>
 <blockquote>
 <p>行程：5 人家庭，2026 年 9 月。台北 3 天（无墙）+ 大陆约 7 天（厦门→泉州→福州→杭州→上海，有墙）。设备：美国 iPhone（支持 eSIM）+ 小米（部分国行、无 eSIM）。研究/核实日 <strong>2026-08-03</strong>，价格下单前复核。（链接自 <code>Master-Plan.md</code>）
 <strong>核心结论：台湾和大陆要区别对待。</strong> 台湾无墙→任何卡都行、只挑便宜；大陆有墙→<strong>必须选「走国际路由/绕防火墙」的 eSIM</strong>（Google/WhatsApp/Gmail 落地即用、无需另装 VPN），否则本地卡会被墙。
@@ -412,6 +817,21 @@ footer{color:var(--mut);font-size:12px;margin-top:26px;border-top:1px solid var(
 </ul>
 <h2>10. 来源（均 2026-08-03 抓取）＋ 未核实项</h2>
 <p><strong>已核实（直接读官方页）</strong>：Airalo 台/中/亚价格与绕墙官方说明；Holafly 中国 $29.9＋内置VPN；Nomad 绕墙＋分档（自家博客）；GigSky 绕墙；MobiMatter 不绕墙＋价；Roamless 价＋联通本地；Ubigi 价；aloSIM 建议配 VPN；HK 实体：SIM World（HK$198/20GB/395天）、3HK（HK$138 APAC / HK$268 中港澳）。
-<strong>未核实（今日无法从官方页确认，谨慎）</strong>：Nomad 精确分档价（$25/$4/$17，来自自家博客非实时选单）；Holafly 台湾 3 天档；Saily 全部价（官网 403，来自竞品博客；绕墙为推断）；GigSky 精确台/中价；aloSIM/Jetpac/Sim Local/Instabridge 价（JS 页）；Yesim 全部（WAF 拦截）；Ubigi 绕墙行为；3HK DIY 两档的 GB 数；China Unicom HK、CMHK/CMLink（官网 522/466 打不开）；Amazon/Klook 零售价（403/503）。<strong>Maya Mobile：未找到正规供应商，勿购。</strong></p>
-<footer>由 esim.md 自动渲染 · rendered 2026-08-24 · 数据以官方/实时为准</footer>
-</div></body></html>
+<strong>未核实（今日无法从官方页确认，谨慎）</strong>：Nomad 精确分档价（$25/$4/$17，来自自家博客非实时选单）；Holafly 台湾 3 天档；Saily 全部价（官网 403，来自竞品博客；绕墙为推断）；GigSky 精确台/中价；aloSIM/Jetpac/Sim Local/Instabridge 价（JS 页）；Yesim 全部（WAF 拦截）；Ubigi 绕墙行为；3HK DIY 两档的 GB 数；China Unicom HK、CMHK/CMLink（官网 522/466 打不开）；Amazon/Klook 零售价（403/503）。<strong>Maya Mobile：未找到正规供应商，勿购。</strong></p></div>
+<footer><span class="en">Auto-rendered · 2026-08-24 · verify prices/status before booking</span><span class="zh">自动渲染 · 2026-08-24 · 价格/房态订前复核</span></footer>
+</div>
+<script>
+function setLang(lang){
+  lang = lang === 'zh' ? 'zh' : 'en';
+  document.body.dataset.lang = lang;
+  document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : 'en';
+  document.title = lang === 'zh' ? 'eSIM/SIM 上网方案' : 'eSIM / SIM Data Guide';
+  try{localStorage.setItem('itin-lang', lang);}catch(e){}
+}
+(function(){
+  var p=null; try{p=new URLSearchParams(location.search).get('lang');}catch(e){}
+  var s=null; try{s=localStorage.getItem('itin-lang');}catch(e){}
+  setLang(p==='zh'||p==='en'?p:(s==='zh'?'zh':'en'));
+})();
+</script>
+</body></html>

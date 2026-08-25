@@ -1,5 +1,7 @@
-<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><title>全程预约审计 · Reservations</title>
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reservations & Bookings</title>
 <style>
 :root{--bg:#0f1723;--card:#182333;--ink:#e8eef7;--mut:#9fb0c6;--acc:#4aa3ff;--line:#243349}
 *{box-sizing:border-box}
@@ -8,7 +10,8 @@ body{margin:0;font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,"PingF
 a{color:var(--acc)}
 h1{font-size:25px;margin:0 0 6px;border-bottom:2px solid var(--line);padding-bottom:10px}
 h2{font-size:19px;margin:28px 0 10px;color:#dbe6f5;background:#101c2c;border-left:3px solid var(--acc);padding:7px 12px;border-radius:6px}
-h3{font-size:16px;margin:20px 0 8px;color:#fff}
+h3{font-size:16px;margin:20px 0 8px;color:#fff;scroll-margin-top:64px}
+.sec{scroll-margin-top:64px}
 blockquote{color:var(--mut);border-left:3px solid var(--line);margin:14px 0;padding:6px 14px;background:#101a28;border-radius:6px;font-size:14px}
 table{border-collapse:collapse;width:100%;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
 th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
@@ -17,12 +20,311 @@ tr:nth-child(even) td{background:#131e2d}
 ul,ol{padding-left:22px}li{margin:5px 0}
 code{background:#0e1826;border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:12.5px}
 hr{border:0;border-top:1px solid var(--line);margin:22px 0}
-.back{position:fixed;top:12px;right:14px;background:rgba(14,24,38,.94);border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:13px;text-decoration:none}
+.back{position:fixed;top:12px;left:14px;z-index:1200;background:rgba(14,24,38,.94);border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:13px;text-decoration:none}
 strong{color:#fff}
 footer{color:var(--mut);font-size:12px;margin-top:26px;border-top:1px solid var(--line);padding-top:12px}
-</style></head><body>
-<a class="back" href="Taipei-China-Itinerary.html">← 回行程 Itinerary</a>
-<div class="wrap"><h1>全程预约审计（2026 核验）· 每个点是否需预约 + 提前几天</h1>
+@media (max-width:640px){.wrap{padding-top:56px}}
+
+body[data-lang="zh"] .en{display:none!important}
+body[data-lang="en"] .zh{display:none!important}
+.lang-toggle{position:fixed;top:10px;right:12px;z-index:1200;background:rgba(14,24,38,.94);border:1px solid var(--line);border-radius:999px;padding:4px;box-shadow:0 8px 22px rgba(0,0,0,.28)}
+.lang-toggle button{background:transparent;color:var(--mut);border:0;border-radius:999px;padding:6px 10px;font-size:12px;cursor:pointer}
+.lang-toggle .sep{color:#53677f;font-size:12px}
+body[data-lang="en"] #lang-en,body[data-lang="zh"] #lang-zh{background:var(--acc);color:#04121f}
+@media (max-width:640px){.lang-toggle{top:8px;right:8px}}
+</style></head>
+<body data-lang="en">
+<a class="back" href="Taipei-China-Itinerary.html"><span class="en">← Itinerary</span><span class="zh">← 回行程</span></a>
+<div class="lang-toggle" aria-label="Language"><button id="lang-en" type="button" onclick="setLang('en')">EN</button><span class="sep">|</span><button id="lang-zh" type="button" onclick="setLang('zh')">中文</button></div>
+<div class="wrap">
+<div class="en"><h1>Full Reservation Audit (2026 Verification) · Whether Each Stop Requires Reservation + How Many Days Ahead</h1>
+<blockquote>
+<p>Party of 5 (4 U.S. passports + 1 Chinese passport holder with Mainland Travel Permit for Taiwan Residents; includes seniors). Taipei 9/10–13; mainland China 9/14–20. <strong>Every planned stop is marked as “reservation required/no reservation needed, how many days ahead, and how foreigners can book.”</strong> Related: <code>Taipei-3Day-Executable-Plan.md</code>, <code>Cash-Exchange.html</code>.
+⚠️ Mainland China attractions mostly require <strong>real-name reservation</strong>: <strong>first choice is Trip.com (Ctrip international version, English, passport number, international cards)</strong>; or use a WeChat mini program and choose the “passport/Mainland Travel Permit for Taiwan Residents” document type; if that still does not work, ask the <strong>hotel concierge to book on your behalf</strong>. The person with the Mainland Travel Permit for Taiwan Residents will have an easier time booking than those using U.S. passports.</p>
+</blockquote>
+<h2>One, Main Table (sorted by longest lead time first)</h2>
+<table>
+<thead>
+<tr>
+<th>Location / Item</th>
+<th>City</th>
+<th>Reservation required?</th>
+<th>Lead time</th>
+<th>How foreigners can book</th>
+<th>Free/Paid</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>High-speed rail tickets</strong> (all segments)</td>
+<td>Mainland China</td>
+<td><strong>Required</strong></td>
+<td><strong>On sale T-15 days</strong> (grab as soon as the window opens; popular trains can sell out within hours)</td>
+<td>12306 (English + passport) or Trip.com; <strong>passport is the ticket</strong> for gate entry</td>
+<td>¥50–180/segment/person</td>
+</tr>
+<tr>
+<td><strong>National Palace Museum “Dragon Tripitaka” special exhibition timed ticket</strong></td>
+<td>Taipei</td>
+<td><strong>Required</strong> (only if you want to see it)</td>
+<td>2–14 days</td>
+<td>Buy directly on npm.fonticket.com official site, admission included</td>
+<td>Admission included NT$350</td>
+</tr>
+<tr>
+<td><strong>National Palace Museum English guided tour</strong></td>
+<td>Taipei</td>
+<td><strong>Required</strong> (if you want to join)</td>
+<td><strong>≥7 days (latest 9/4)</strong></td>
+<td>signup.npm.edu.tw; + audio NT$50</td>
+<td>Admission purchased separately</td>
+</tr>
+<tr>
+<td><strong>Sun Yat-sen Mausoleum</strong> (Nanjing)</td>
+<td>Nanjing</td>
+<td><strong>Required · free real-name reservation</strong></td>
+<td>Recommended as early as possible within 7 days</td>
+<td>WeChat/Alipay mini program: choose “passport”, or book via Trip.com/hotel</td>
+<td>Free</td>
+</tr>
+<tr>
+<td><strong>Memorial Hall of the Victims in Nanjing Massacre by Japanese Invaders</strong></td>
+<td>Nanjing</td>
+<td><strong>Required · free real-name reservation</strong> (three halls separately; each person limited to 1 visit/month/hall)</td>
+<td><strong>Up to 7 days ahead</strong></td>
+<td>WeChat mini program (Chinese, can translate); phone 025-58598353 for assistance</td>
+<td>Free</td>
+</tr>
+<tr>
+<td><strong>Lingyin Temple/Feilai Peak</strong></td>
+<td>Hangzhou</td>
+<td><strong>Required · real-name reservation</strong> (not available same day)</td>
+<td><strong>1–7 days</strong> (latest 1 day ahead)</td>
+<td>“杭州灵隐飞来峰” mini program supports passport/English</td>
+<td>Feilai Peak free; main hall incense-flower ticket ¥30</td>
+</tr>
+<tr>
+<td><strong>Humble Administrator's Garden</strong></td>
+<td>Suzhou</td>
+<td><strong>Required · real-name timed entry</strong> (very easy to sell out in peak season)</td>
+<td>Recommended 3–7 days</td>
+<td>Trip.com/TravelChinaGuide (passport); enter with passport</td>
+<td>Peak season ¥80; 70+ free</td>
+</tr>
+<tr>
+<td><strong>National Palace Museum regular admission</strong></td>
+<td>Taipei</td>
+<td><strong>Recommended</strong> (buy online to skip ticket queue)</td>
+<td>1–7 days</td>
+<td>Official site card payment NT$350 (free under age 17)</td>
+<td>NT$350</td>
+</tr>
+<tr>
+<td><strong>Taipei 101 Observatory + Fast Track</strong></td>
+<td>Taipei</td>
+<td><strong>Recommended</strong> (Fast Track must be booked in advance)</td>
+<td>1–14 days</td>
+<td>Official site/Klook/KKday; entrance from 2026-07 is at the office tower 1F</td>
+<td>Standard NT$600 / Fast Track NT$1,200</td>
+</tr>
+<tr>
+<td><strong>Huangpu River night cruise</strong></td>
+<td>Shanghai</td>
+<td><strong>Recommended</strong> (peak-season evening sailings fill easily)</td>
+<td>1–3 days</td>
+<td>Trip.com/Klook; exchange for boarding pass with passport</td>
+<td>¥120–150</td>
+</tr>
+<tr>
+<td><strong>Ming Xiaoling Mausoleum</strong></td>
+<td>Nanjing</td>
+<td><strong>Recommended</strong></td>
+<td>2–5 days</td>
+<td>Trip.com/Klook (passport)</td>
+<td>¥70</td>
+</tr>
+<tr>
+<td><strong>Presidential Palace</strong> (Nanjing)</td>
+<td>Nanjing</td>
+<td><strong>Recommended</strong></td>
+<td>2–3 days</td>
+<td>Trip.com/Klook</td>
+<td>¥50–60</td>
+</tr>
+<tr>
+<td><strong>Tiger Hill</strong></td>
+<td>Suzhou</td>
+<td><strong>Recommended</strong></td>
+<td>1–3 days</td>
+<td>Trip.com/TravelChinaGuide</td>
+<td>Peak season ¥70</td>
+</tr>
+<tr>
+<td><strong>Yu Garden</strong></td>
+<td>Shanghai</td>
+<td><strong>Recommended</strong></td>
+<td>1–2 days</td>
+<td>Klook/Trip.com; enter with passport</td>
+<td>¥40</td>
+</tr>
+<tr>
+<td><strong>Oriental Pearl Tower/Lujiazui sightseeing</strong></td>
+<td>Shanghai</td>
+<td><strong>Recommended</strong></td>
+<td>1–2 days</td>
+<td>Official site/Trip.com</td>
+<td>¥165–399</td>
+</tr>
+<tr>
+<td><strong>West Lake boat ride</strong></td>
+<td>Hangzhou</td>
+<td><strong>Recommended</strong></td>
+<td>Same day–1 day</td>
+<td>Trip.com/GetYourGuide</td>
+<td>¥55–70</td>
+</tr>
+<tr>
+<td><strong>Qinhuai River night cruise painted boat</strong></td>
+<td>Nanjing</td>
+<td><strong>Recommended</strong></td>
+<td>1–7 days</td>
+<td>Trip.com (Ctrip); official channels are in Chinese</td>
+<td>East route ¥100/West route ¥120</td>
+</tr>
+<tr>
+<td><strong>Confucius Temple/Qinhuai pedestrian area</strong> (peak-season evening core area)</td>
+<td>Nanjing</td>
+<td><strong>Recommended in peak season</strong> (summer holidays/public holidays 14–22)</td>
+<td>1 day</td>
+<td>Search “南京夫子庙” in Alipay; seniors with ID are exempt from reservation</td>
+<td>Free</td>
+</tr>
+<tr>
+<td><strong>Airport transfer 7-seater (9/10) + 9/12 charter car</strong></td>
+<td>Taipei</td>
+<td><strong>Required</strong></td>
+<td>Recommended 7–14 days (at least 3–7)</td>
+<td>Klook/KKday</td>
+<td>NT$1,800–3,400</td>
+</tr>
+<tr>
+<td><strong>Songshan TSA lounge</strong> (Plaza Premium)</td>
+<td>Taipei</td>
+<td><strong>No reservation needed</strong></td>
+<td>—</td>
+<td>Priority Pass direct entry; walk-in NT$1,500</td>
+<td>PP free</td>
+</tr>
+<tr>
+<td><strong>EasyCard</strong></td>
+<td>Taipei</td>
+<td><strong>No reservation needed</strong></td>
+<td>—</td>
+<td>Buy on arrival at airport/MRT station</td>
+<td>Card fee NT$100</td>
+</tr>
+<tr>
+<td><strong>Din Tai Fung 101 B1</strong></td>
+<td>Taipei</td>
+<td><strong>No reservation needed</strong> (does not accept reservations · walk-in queue only)</td>
+<td>—</td>
+<td>Go directly, take a queue number</td>
+<td>Per person NT$500–800</td>
+</tr>
+<tr>
+<td><strong>Jiufen Old Street / Yangmingshan / Ximending · Red House</strong></td>
+<td>Taipei/New Taipei</td>
+<td><strong>No reservation needed</strong> (free independent entry)</td>
+<td>—</td>
+<td>Go directly</td>
+<td>Free</td>
+</tr>
+<tr>
+<td><strong>Ningxia/Linjiang/Raohe night markets</strong></td>
+<td>Taipei</td>
+<td><strong>No reservation needed</strong></td>
+<td>—</td>
+<td>Go directly</td>
+<td>Free</td>
+</tr>
+<tr>
+<td><strong>Longjing Village / Pingjiang Road / Shantang Street / The Bund / Nanjing Road / West Lake lakeside walk</strong></td>
+<td>Mainland China</td>
+<td><strong>No reservation needed</strong> (public streets/free scenic areas)</td>
+<td>—</td>
+<td>Go directly</td>
+<td>Free</td>
+</tr>
+</tbody>
+</table>
+<h2>Two, 🔴 Key Reminders</h2>
+<ul>
+<li><strong>Closed on Mondays (mainland China)</strong>: <strong>Sun Yat-sen Mausoleum, Memorial Hall of the Victims in Nanjing Massacre, and Presidential Palace are usually closed on Mondays</strong>. <strong>9/14 is Monday</strong> → schedule these Nanjing sites for <strong>9/15–9/17</strong>; on the day of arrival in mainland China, 9/14, prioritize Hangzhou West Lake/Longjing (not affected by Monday closure).</li>
+<li><strong>High-speed rail T-15 ticket rush</strong>: tickets for each segment go on sale 15 days before departure; popular G trains may sell out within hours → buy on 12306/Trip.com <strong>as soon as sales open</strong> (each segment begins opening gradually from about <strong>8/30</strong>).</li>
+<li><strong>General strategy for mainland China foreigner real-name reservations</strong>: ① Trip.com (English + passport + international card, covers most attractions); ② WeChat mini program: choose the “passport” document type (Lingyin Temple clearly supports this); ③ for the person with the Mainland Travel Permit for Taiwan Residents, choose the “Mainland Travel Permit for Taiwan Residents” document type for smoother booking; ④ backup: ask the hotel concierge to book on your behalf (especially for Sun Yat-sen Mausoleum/Memorial Hall).</li>
+</ul>
+<h2>Three, 👵 Senior Travel Notes</h2>
+<ul>
+<li>Passport holders age 70+: <strong>Lingyin Temple, Humble Administrator's Garden, Tiger Hill</strong> often offer free admission (explain at ticket purchase/entry).</li>
+<li><strong>Sun Yat-sen Mausoleum</strong> has many steps, and <strong>Humble Administrator's Garden/Tiger Hill</strong> can have slippery paving → allow enough time and pace according to ability; the Memorial Hall involves a lot of walking, so morning entry is preferable.</li>
+<li>For high-speed rail, choose aisle seats if possible; major stations have accessible routes.</li>
+</ul>
+<h2>Four, Pre-Trip Reservation Countdown Checklist (based on current Plan SH: 9/14 Hangzhou → 9/15–17 Nanjing → 9/18–19 Suzhou → 9/19–20 Shanghai)</h2>
+<blockquote>
+<p>If the final East China route changes (see “East China High-Speed Rail Plan”), count back each mainland China reservation from the new dates accordingly.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Action deadline</th>
+<th>Item</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Immediately</strong></td>
+<td>National Palace Museum “Dragon Tripitaka” timed ticket (if you want to see it), National Palace Museum English guided tour (<strong>before 9/4</strong>), Taipei airport pickup/9/12 charter car</td>
+<td>Already on sale/advance booking required</td>
+</tr>
+<tr>
+<td><strong>About 8/30–9/5</strong></td>
+<td><strong>High-speed rail tickets</strong> for each segment (grab as soon as T-15 window opens)</td>
+<td>12306/Trip.com</td>
+</tr>
+<tr>
+<td><strong>9/8–9/9</strong></td>
+<td><strong>Sun Yat-sen Mausoleum + Memorial Hall of the Victims in Nanjing Massacre</strong> real-name tickets (visit 9/15–16)</td>
+<td>Quota is extremely limited; book early</td>
+</tr>
+<tr>
+<td><strong>9/9–9/11</strong></td>
+<td><strong>Humble Administrator's Garden</strong> timed ticket (9/18–19)</td>
+<td>Easy to sell out in peak season</td>
+</tr>
+<tr>
+<td><strong>by 9/13</strong></td>
+<td><strong>Lingyin Temple/Feilai Peak</strong> real-name reservation (9/14–15)</td>
+<td>Latest 1 day ahead</td>
+</tr>
+<tr>
+<td><strong>9/10–9/11</strong></td>
+<td>Taipei 101 Fast Track, National Palace Museum regular admission e-ticket</td>
+<td>1–3 days ahead</td>
+</tr>
+<tr>
+<td><strong>9/12–9/13</strong></td>
+<td>Ming Xiaoling Mausoleum/Presidential Palace/Huangpu River night cruise/Qinhuai painted boat, etc.</td>
+<td>1–5 days ahead</td>
+</tr>
+<tr>
+<td><strong>No reservation needed</strong></td>
+<td>Din Tai Fung, Jiufen, Yangmingshan, Ximending, all night markets, The Bund, Nanjing Road, Pingjiang Road, Shantang Street, Longjing Village, EasyCard, Songshan lounge</td>
+<td>Go directly</td>
+</tr>
+</tbody>
+</table>
+<p><em>Sources: npm.fonticket.com · npm.gov.tw · taipei-101.com.tw · 12306.cn · official sites of Sun Yat-sen Mausoleum/Memorial Hall of the Victims in Nanjing Massacre · Lingyin Temple en.lingyinsi.org · travelchinaguide.com · Trip.com/Klook. Reconfirm prices/quotas/time slots in real time before booking.</em></p></div><div class="zh"><h1>全程预约审计（2026 核验）· 每个点是否需预约 + 提前几天</h1>
 <blockquote>
 <p>5 人团（4 本美国护照 + 1 本中国护照持台胞证；含长辈）。台北 9/10–13；大陆 9/14–20。<strong>每个要去的点都标注了「需/不需预约、提前几天、外籍怎么订」</strong>。相关：<code>Taipei-3Day-Executable-Plan.md</code>、<code>Cash-Exchange.html</code>。
 ⚠️ 大陆景区多为<strong>实名预约</strong>：<strong>首选 Trip.com（携程国际版，英文、护照号、国际卡）</strong>；或微信小程序选「护照/台胞证」类型；再不行让<strong>酒店礼宾代订</strong>。持台胞证那位比美国护照更好订。</p>
@@ -309,6 +611,21 @@ footer{color:var(--mut);font-size:12px;margin-top:26px;border-top:1px solid var(
 </tr>
 </tbody>
 </table>
-<p><em>来源：npm.fonticket.com · npm.gov.tw · taipei-101.com.tw · 12306.cn · 中山陵/南京大屠杀纪念馆官网 · 灵隐寺 en.lingyinsi.org · travelchinaguide.com · Trip.com/Klook。价格/名额/时段订前实时复核。</em></p>
-<footer>由 Reservation-Audit.md 自动渲染 · rendered 2026-08-24 · 数据以官方/实时为准</footer>
-</div></body></html>
+<p><em>来源：npm.fonticket.com · npm.gov.tw · taipei-101.com.tw · 12306.cn · 中山陵/南京大屠杀纪念馆官网 · 灵隐寺 en.lingyinsi.org · travelchinaguide.com · Trip.com/Klook。价格/名额/时段订前实时复核。</em></p></div>
+<footer><span class="en">Auto-rendered · 2026-08-24 · verify prices/status before booking</span><span class="zh">自动渲染 · 2026-08-24 · 价格/房态订前复核</span></footer>
+</div>
+<script>
+function setLang(lang){
+  lang = lang === 'zh' ? 'zh' : 'en';
+  document.body.dataset.lang = lang;
+  document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : 'en';
+  document.title = lang === 'zh' ? '预约说明' : 'Reservations & Bookings';
+  try{localStorage.setItem('itin-lang', lang);}catch(e){}
+}
+(function(){
+  var p=null; try{p=new URLSearchParams(location.search).get('lang');}catch(e){}
+  var s=null; try{s=localStorage.getItem('itin-lang');}catch(e){}
+  setLang(p==='zh'||p==='en'?p:(s==='zh'?'zh':'en'));
+})();
+</script>
+</body></html>

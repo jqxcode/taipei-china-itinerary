@@ -1,5 +1,7 @@
-<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><title>华东高铁路线 Plan · China HSR</title>
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>East China HSR Plan</title>
 <style>
 :root{--bg:#0f1723;--card:#182333;--ink:#e8eef7;--mut:#9fb0c6;--acc:#4aa3ff;--line:#243349}
 *{box-sizing:border-box}
@@ -8,7 +10,8 @@ body{margin:0;font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,"PingF
 a{color:var(--acc)}
 h1{font-size:25px;margin:0 0 6px;border-bottom:2px solid var(--line);padding-bottom:10px}
 h2{font-size:19px;margin:28px 0 10px;color:#dbe6f5;background:#101c2c;border-left:3px solid var(--acc);padding:7px 12px;border-radius:6px}
-h3{font-size:16px;margin:20px 0 8px;color:#fff}
+h3{font-size:16px;margin:20px 0 8px;color:#fff;scroll-margin-top:64px}
+.sec{scroll-margin-top:64px}
 blockquote{color:var(--mut);border-left:3px solid var(--line);margin:14px 0;padding:6px 14px;background:#101a28;border-radius:6px;font-size:14px}
 table{border-collapse:collapse;width:100%;margin:14px 0;font-size:13.5px;display:block;overflow-x:auto}
 th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
@@ -17,12 +20,227 @@ tr:nth-child(even) td{background:#131e2d}
 ul,ol{padding-left:22px}li{margin:5px 0}
 code{background:#0e1826;border:1px solid var(--line);border-radius:4px;padding:1px 5px;font-size:12.5px}
 hr{border:0;border-top:1px solid var(--line);margin:22px 0}
-.back{position:fixed;top:12px;right:14px;background:rgba(14,24,38,.94);border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:13px;text-decoration:none}
+.back{position:fixed;top:12px;left:14px;z-index:1200;background:rgba(14,24,38,.94);border:1px solid var(--line);border-radius:999px;padding:7px 13px;font-size:13px;text-decoration:none}
 strong{color:#fff}
 footer{color:var(--mut);font-size:12px;margin-top:26px;border-top:1px solid var(--line);padding-top:12px}
-</style></head><body>
-<a class="back" href="Taipei-China-Itinerary.html">← 回行程 Itinerary</a>
-<div class="wrap"><h1>华东高铁路线 Plan（9/14–9/20，含浙江台州 · 仅规划不改行程）</h1>
+@media (max-width:640px){.wrap{padding-top:56px}}
+
+body[data-lang="zh"] .en{display:none!important}
+body[data-lang="en"] .zh{display:none!important}
+.lang-toggle{position:fixed;top:10px;right:12px;z-index:1200;background:rgba(14,24,38,.94);border:1px solid var(--line);border-radius:999px;padding:4px;box-shadow:0 8px 22px rgba(0,0,0,.28)}
+.lang-toggle button{background:transparent;color:var(--mut);border:0;border-radius:999px;padding:6px 10px;font-size:12px;cursor:pointer}
+.lang-toggle .sep{color:#53677f;font-size:12px}
+body[data-lang="en"] #lang-en,body[data-lang="zh"] #lang-zh{background:var(--acc);color:#04121f}
+@media (max-width:640px){.lang-toggle{top:8px;right:8px}}
+</style></head>
+<body data-lang="en">
+<a class="back" href="Taipei-China-Itinerary.html"><span class="en">← Itinerary</span><span class="zh">← 回行程</span></a>
+<div class="lang-toggle" aria-label="Language"><button id="lang-en" type="button" onclick="setLang('en')">EN</button><span class="sep">|</span><button id="lang-zh" type="button" onclick="setLang('zh')">中文</button></div>
+<div class="wrap">
+<div class="en"><h1>East China HSR Route Plan (9/14–9/20, including Taizhou, Zhejiang · Planning only, itinerary not changed)</h1>
+<blockquote>
+<p><strong>⚠️ Disclaimer:</strong> Train numbers/times/fares are planning reference values (2026 public timetables: 12306/Ctrip/gaotie.com.cn). <strong>Before booking, be sure to re-check the actual 2026-09 dates on 12306 or Ctrip</strong> (tickets are usually released 15 days in advance; annual timetable adjustments can change schedules). Exchange rate: US$1 ≈ ¥7.1.
+<strong>Family profile:</strong> 5 people including an elderly mother (tires easily, prioritizes comfort) → Principle: ≤1 intercity move per day, fewer hotel changes, less luggage dragging, take boats/cable cars instead of climbing whenever possible.
+<strong>This file = planning only; no itinerary has been changed.</strong> After adoption, itinerary and reservation dates can be revised. 🗺️ <strong>Intercity times + fastest train numbers are shown on the map <a href="China-HSR-Map.html">China-HSR-Map.html</a></strong>.
+✅ As you confirmed: <strong>Only Taizhou, Zhejiang (Táizhōu; Jiaojiang/Linhai/Tiantai/Xianju) is included; Taizhou, Jiangsu has been fully removed.</strong></p>
+</blockquote>
+<h2>1. 🐟 Key premise: 2026 East China Sea fishing season opens at noon on 9/16 → schedule Taizhou after 9/16</h2>
+<ul>
+<li><strong>Confirmed: the East China Sea fully opens for fishing at 12:00 on September 16, 2026</strong> (the “small opening” on 8/5 already brings swimming crab/red shrimp; the full opening on 9/16 has the widest variety, freshest catch, and lowest prices). Sources: Zhejiang Online Taizhou channel, Taizhou government zjtz.gov.cn.</li>
+<li>Therefore, <strong>Taizhou is best scheduled on 9/17–9/18 (the first full day after the full fishing-season opening)</strong> — the first fresh batches of wild East China Sea swimming crab 🦀, small yellow croaker, pomfret, ribbonfish, and mantis shrimp arrive in large quantities. Jiaojiang’s newly opened <strong>Yudu Fishing Town</strong> (葭沚街道, 140 stalls + 134 shops) in 2026-08 = a new landmark for seafood shopping/night-market eating.</li>
+</ul>
+<h2>2. 🗺️ Intercity HSR time matrix (fastest G trains · minutes; shown on the map)</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Shanghai Hongqiao (上海虹桥)</th>
+<th>Suzhou (苏州)</th>
+<th>Nanjing South (南京南)</th>
+<th>Hangzhou East (杭州东)</th>
+<th>Taizhou (台州)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Shanghai Hongqiao (上海虹桥)</strong></td>
+<td>—</td>
+<td><strong>25</strong></td>
+<td><strong>70</strong></td>
+<td><strong>52</strong></td>
+<td><strong>139</strong></td>
+</tr>
+<tr>
+<td><strong>Suzhou (苏州)</strong></td>
+<td>25</td>
+<td>—</td>
+<td><strong>75</strong></td>
+<td>65</td>
+<td>~165</td>
+</tr>
+<tr>
+<td><strong>Nanjing South (南京南)</strong></td>
+<td>70</td>
+<td>75</td>
+<td>—</td>
+<td><strong>~61–75</strong></td>
+<td>~210</td>
+</tr>
+<tr>
+<td><strong>Hangzhou East (杭州东)</strong></td>
+<td>52</td>
+<td>65</td>
+<td>~61–75</td>
+<td>—</td>
+<td><strong>76</strong></td>
+</tr>
+<tr>
+<td><strong>Taizhou (台州)</strong></td>
+<td>139</td>
+<td>~165</td>
+<td>~210</td>
+<td><strong>76</strong></td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>One-line reading of the map:</strong> Shanghai/Suzhou/Nanjing/Hangzhou form a tight network with trips ≤75 minutes; <strong>Taizhou is the southern far corner and is closest to Hangzhou (76 minutes)</strong>, so <strong>entering Taizhou from Hangzhou</strong> is the easiest option.</p>
+<h3>Representative fastest / morning-midday-evening trains (re-check before booking)</h3>
+<ul>
+<li><strong>Shanghai Hongqiao (上海虹桥)→Suzhou (苏州)</strong> (~25 min): G7006/G7008 morning trains; about every ~30 minutes all day</li>
+<li><strong>Shanghai Hongqiao (上海虹桥)→Hangzhou East (杭州东)</strong> (~52 min): G7 07:00→07:52; every 10–15 minutes</li>
+<li><strong>Shanghai Hongqiao (上海虹桥)→Nanjing South (南京南)</strong> (~70 min): G7002 07:00→08:08</li>
+<li><strong>Nanjing South (南京南)→Hangzhou East (杭州东)</strong> (~1h): <strong>G33 about 1h01 in the morning</strong> (direct Ningbo-Hangzhou corridor route; avoids the 3h Shanghai detour on G7491/7371/7591)</li>
+<li><strong>Hangzhou East (杭州东)→Taizhou (台州)</strong> (★ core leg, fastest ~76 min): <strong>G7545 16:39→17:55 (fastest)</strong> ｜ G7461 10:56→12:21 ｜ G7711 06:37→08:15 (morning train; can visit Tiantai Mountain first)</li>
+<li><strong>Shanghai Hongqiao (上海虹桥)→Taizhou (台州)</strong> (2h19–2h42): G7461 10:02→12:22 ｜ G7585 17:20→19:41 ｜ G7363 06:24→09:06</li>
+<li><strong>Taizhou (台州)→Shanghai Hongqiao (上海虹桥)</strong> (return ~2h20): G7585 Taizhou (台州) 17:20→Shanghai Hongqiao (上海虹桥) 19:41, etc.</li>
+</ul>
+<h2>3. 🐠 Taizhou 2 days / 1 night (elder-friendly · 9/17–9/18, after fishing opens)</h2>
+<p><strong>Buy tickets to the right station</strong>: For <strong>Tiantai Mountain/Jiaojiang city area</strong>, buy “<strong>Taizhou Station (台州站)</strong>”; for <strong>Linhai Ancient City</strong>, buy “<strong>Linhai Station (临海站)</strong>” (direct via Hangzhou-Taizhou HSR) or transfer to S1 from Taizhou West Station.</p>
+<p><strong>Day1 (Thu 9/17): Hangzhou East (杭州东)→Taizhou (台州) (G7461 10:56→12:21, ¥136)</strong>
+- Afternoon: <strong>Guoqing Temple (Tiantai Mountain) (国清寺（天台山）)</strong>: ancestral temple of the Tiantai school, <strong>free</strong>, flat ground with no steps, <strong>best suited for elders</strong> (chartered car about 45 minutes).
+- <strong>Shenxianju (Xianju) (神仙居（仙居）)</strong>: <strong>take the South Gate cable car up</strong> (one-way about ¥80) to save 90% of the effort; boardwalks are gentle and shuttle buses are available; admission about ¥110 (half price for 65+).
+- Evening: <strong>Jiaojiang Yudu Fishing Town first-fresh-catch night market after fishing opens</strong> (opens 18:30; you can sit while choosing): wild swimming crab 🦀, small yellow croaker, pomfret, mantis shrimp (~¥70/jin). Stay in Jiaojiang city area.</p>
+<p><strong>Day2 (Fri 9/18): Taizhou (台州)→Shanghai (上海)</strong>
+- Morning: <strong>Linhai Taizhou Prefecture City Wall (Jiangnan Great Wall)</strong>: enter from <strong>Xingshan Gate (兴善门)</strong> and walk the highlight section <strong>Ziyang Street (紫阳街)→Wangjiang Tower (望江楼)</strong>, 2 km (do what feels manageable; you can climb only a few sections); admission about ¥55 (free/half price for elders).
+- <strong>Ziyang Ancient Street (紫阳古街)</strong> (Song-dynasty style, flat) snacks: seaweed pastry, jiaobingtong, egg-white “sheep tail,” wheat-oil pastry, black-rice mochi.
+- Afternoon return: <strong>Recommend going directly back to Shanghai</strong> G7585 Taizhou (台州) 17:20→Shanghai Hongqiao (上海虹桥) 19:41 (~2h21); or first return to Hangzhou East (杭州东) (~1h) and transfer. Stay in <strong>Shanghai Pudong (上海浦东)</strong> (near PVG).</p>
+<h2>4. 📅 Full itinerary (9/14–9/20 · including Taizhou · elder-friendly)</h2>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Plan</th>
+<th>Same-day HSR (reference)</th>
+<th>Overnight</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sun 9/13</td>
+<td>Arrive at Hongqiao at night and check in</td>
+<td>DL arrival</td>
+<td>Shanghai</td>
+</tr>
+<tr>
+<td><strong>Sun 9/14</strong></td>
+<td>Arrive in Shanghai; afternoon G train to <strong>Suzhou (苏州)</strong> (~25 min); Humble Administrator’s Garden/Pingjiang Road</td>
+<td>G7006 etc. (every ~30 min)</td>
+<td><strong>Suzhou (苏州)</strong></td>
+</tr>
+<tr>
+<td><strong>Mon 9/15</strong></td>
+<td>Suzhou gardens (choose one: Lingering Garden/Tiger Hill); afternoon G train to <strong>Nanjing South (南京南)</strong> (~1h15)</td>
+<td>G7055/G191</td>
+<td><strong>Nanjing (南京)</strong></td>
+</tr>
+<tr>
+<td><strong>Wed 9/16</strong></td>
+<td>Nanjing Presidential Palace/Confucius Temple (elders can skip the uphill Sun Yat-sen Mausoleum); afternoon G train to <strong>Hangzhou East (杭州东)</strong> (~1h)</td>
+<td>G235/G7679; <strong>12:00 East China Sea fishing season opens</strong></td>
+<td><strong>Hangzhou (杭州)</strong></td>
+</tr>
+<tr>
+<td><strong>Thu 9/17</strong></td>
+<td>Morning G train to <strong>Taizhou (台州)</strong>; afternoon Guoqing Temple + Shenxianju cable car; evening Jiaojiang Yudu night market (first fresh catch after fishing opens)</td>
+<td><strong>G7461 Hangzhou East (杭州东) 10:56→Taizhou (台州) 12:21</strong></td>
+<td><strong>Taizhou (Jiaojiang) (台州（椒江）)</strong></td>
+</tr>
+<tr>
+<td><strong>Fri 9/18</strong></td>
+<td>Linhai Prefecture City Wall + Ziyang Street snacks; afternoon return to Shanghai</td>
+<td><strong>G7585 Taizhou (台州) 17:20→Shanghai Hongqiao (上海虹桥) 19:41</strong></td>
+<td><strong>Shanghai · Pudong (上海·浦东)</strong></td>
+</tr>
+<tr>
+<td><strong>Sat 9/19</strong></td>
+<td>Rest in Shanghai Pudong (Lujiazui/The Bund); before evening, move to a hotel near PVG and organize luggage</td>
+<td>—</td>
+<td><strong>Shanghai · Pudong (上海·浦东)</strong></td>
+</tr>
+<tr>
+<td><strong>Sun 9/20</strong></td>
+<td>Arrive at PVG 3h early</td>
+<td><strong>DL280 PVG 17:30 → Seattle</strong></td>
+<td>✈️</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Note: The currently booked main route is Shanghai→Hangzhou→Nanjing→Suzhou→Shanghai; this Plan recommends changing the order to <strong>Suzhou→Nanjing→Hangzhou→Taizhou→Shanghai</strong> (do the northern line first, then go south to Taizhou after fishing opens on 9/16). After you adopt it, I can rework the itinerary and reservation dates accordingly.</p>
+</blockquote>
+<h2>5. If it feels too packed, simplify (6 days / 5 cities is tight with elders)</h2>
+<table>
+<thead>
+<tr>
+<th>Priority</th>
+<th>City</th>
+<th>Keep/cut rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>⭐⭐⭐ Must-go</td>
+<td><strong>Taizhou (台州)</strong> (9/17–18)</td>
+<td>Unique fishing-season-opening window; miss it and you wait a year</td>
+</tr>
+<tr>
+<td>⭐⭐⭐ Must-go</td>
+<td><strong>Hangzhou (杭州)</strong> (9/16)</td>
+<td>Classic West Lake; closest to Taizhou (76 min)</td>
+</tr>
+<tr>
+<td>⭐⭐⭐ Must-go</td>
+<td><strong>Shanghai (上海)</strong> (arrival/departure)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>⭐⭐ Recommended</td>
+<td><strong>Suzhou (苏州)</strong> (afternoon 9/14)</td>
+<td>Same day as Shanghai; easy</td>
+</tr>
+<tr>
+<td>⭐ Can shorten/cut</td>
+<td><strong>Nanjing (南京)</strong> (9/15)</td>
+<td>With limited elder stamina, shorten to a half-day at Confucius Temple, or cut the whole city for the most relaxed pace</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Most streamlined:</strong> Shanghai→Suzhou (9/14)→Hangzhou (9/15)→Taizhou (evening 9/16 / 9/17–18)→Shanghai (9/19), <strong>remove Nanjing</strong>, for the most relaxed rhythm.</p>
+<h2>6. ⛳ Buffer for catching PVG 17:30 on 9/20</h2>
+<ul>
+<li>Hongqiao (west side of the city) and PVG (Pudong) are at opposite ends → <strong>move to Pudong on 9/19 for the night</strong>, and do not cross the whole city on the morning of 9/20.</li>
+<li>After returning from Taizhou to <strong>Hongqiao</strong> on 9/18, transferring to Pudong that afternoon is the easiest option (Hongqiao→Pudong by taxi 45–90 min / Metro Line 2 90–110 min).</li>
+<li>9/20 Pudong hotel→PVG by taxi 30–45 min; for an international flight, <strong>arrive 3 hours early</strong> (≈14:00–14:30 at PVG). First confirm <strong>which PVG terminal DL280 uses</strong> (Delta is usually T1).</li>
+</ul>
+<h2>7. Elder-friendly tips &amp; sources</h2>
+<ul>
+<li>For Shenxianju, take the <strong>South Gate cable car</strong> instead of climbing the trail; for Linhai City Wall, choose the highlight section (≤2 km); Jiaojiang Yudu night market has plenty of seating so you can browse while sitting; Guoqing Temple is flat throughout.</li>
+<li>Must-eat after fishing opens: swimming crab 🦀 / small yellow croaker / pomfret / mantis shrimp / ribbonfish. Linhai snacks: seaweed pastry / jiaobingtong / egg-white “sheep tail” / wheat-oil pastry.</li>
+<li>Sources: Zhejiang Online tz.zjol.com.cn (fishing-season opening/Yudu Fishing Town), Taizhou government zjtz.gov.cn, gaotie.com.cn/hao86.com (train numbers), Ctrip/12306. <strong>Re-check train numbers before booking.</strong></li>
+</ul>
+<hr>
+<p><strong>One sentence:</strong> Schedule Taizhou for <strong>9/17–18</strong> (after fishing opens on 9/16), <strong>enter from Hangzhou (fastest 76 min)</strong>; full route Shanghai→Suzhou→Nanjing→Hangzhou→Taizhou→Shanghai; if elder stamina is tight, cut Nanjing. <strong>Planning only; itinerary not yet changed</strong>; if you want to implement it, say so and I will rework the itinerary + reservation dates accordingly.</p></div><div class="zh"><h1>华东高铁路线 Plan（9/14–9/20，含浙江台州 · 仅规划不改行程）</h1>
 <blockquote>
 <p><strong>⚠️ 免责：</strong> 车次/时刻/票价为规划参考值（2026 公开时刻表：12306/携程/gaotie.com.cn）。<strong>订票前务必在 12306 或携程按 2026-09 实际日期复核</strong>（一般提前 15 天放票，每年调图会变）。汇率 US$1 ≈ ¥7.1。
 <strong>家庭画像：</strong> 5 人含年迈母亲(易疲劳、重舒适) → 原则：每天 ≤1 次城际移动、少换酒店、少拖行李、能坐船/索道就不爬坡。
@@ -225,6 +443,21 @@ footer{color:var(--mut);font-size:12px;margin-top:26px;border-top:1px solid var(
 <li>来源：浙江在线 tz.zjol.com.cn(开渔/渔都小镇)、台州政府 zjtz.gov.cn、gaotie.com.cn/hao86.com(车次)、携程/12306。<strong>车次订前必复核。</strong></li>
 </ul>
 <hr>
-<p><strong>一句话：</strong> 台州排 <strong>9/17–18</strong>(9/16 开渔后)、<strong>从杭州进(76 分最快)</strong>;全程 上海→苏州→南京→杭州→台州→上海;长辈吃紧就删南京。<strong>仅规划,未改行程</strong>;要落地就说一声,我据此重排行程+预约日期。</p>
-<footer>由 China-HSR-Plan.md 自动渲染 · rendered 2026-08-24 · 数据以官方/实时为准</footer>
-</div></body></html>
+<p><strong>一句话：</strong> 台州排 <strong>9/17–18</strong>(9/16 开渔后)、<strong>从杭州进(76 分最快)</strong>;全程 上海→苏州→南京→杭州→台州→上海;长辈吃紧就删南京。<strong>仅规划,未改行程</strong>;要落地就说一声,我据此重排行程+预约日期。</p></div>
+<footer><span class="en">Auto-rendered · 2026-08-24 · verify prices/status before booking</span><span class="zh">自动渲染 · 2026-08-24 · 价格/房态订前复核</span></footer>
+</div>
+<script>
+function setLang(lang){
+  lang = lang === 'zh' ? 'zh' : 'en';
+  document.body.dataset.lang = lang;
+  document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : 'en';
+  document.title = lang === 'zh' ? '华东高铁方案' : 'East China HSR Plan';
+  try{localStorage.setItem('itin-lang', lang);}catch(e){}
+}
+(function(){
+  var p=null; try{p=new URLSearchParams(location.search).get('lang');}catch(e){}
+  var s=null; try{s=localStorage.getItem('itin-lang');}catch(e){}
+  setLang(p==='zh'||p==='en'?p:(s==='zh'?'zh':'en'));
+})();
+</script>
+</body></html>

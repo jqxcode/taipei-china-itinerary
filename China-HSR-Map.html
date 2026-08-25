@@ -1,13 +1,13 @@
-<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="utf-8">
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>华东高铁地图 · 城际时间 + 最快车次</title>
+<title>East China HSR Map · times + fastest trains</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <style>
 :root{--ink:#e8eef7;--mut:#9fb0c6;--acc:#4aa3ff;--line:#243349}
 body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei","PingFang TC",sans-serif;background:#0f1723;color:var(--ink)}
 .wrap{max-width:1150px;margin:0 auto;padding:16px}
 a{color:var(--acc)}
-h1{font-size:22px;margin:6px 0}
+h1{font-size:22px;margin:6px 0;padding-right:120px}
 .sub{color:var(--mut);font-size:14px;margin-bottom:10px}
 #map{height:76vh;min-height:540px;border:1px solid var(--line);border-radius:12px}
 .legend{display:flex;gap:16px;flex-wrap:wrap;margin:10px 0;font-size:13px;color:var(--mut)}
@@ -19,36 +19,64 @@ th{background:#101c2c;color:#cfe0f5}
 .back{display:inline-block;margin:0 8px 8px 0}
 .leaflet-tooltip.city{background:#c0392b;color:#fff;font-weight:800;font-size:13px;border:0}
 .leaflet-tooltip.tmin{background:rgba(10,18,30,.9);color:#ffd27a;font-weight:800;font-size:12px;border:0}
+
+body[data-lang="zh"] .en{display:none!important}
+body[data-lang="en"] .zh{display:none!important}
+.lang-toggle{position:fixed;top:10px;right:12px;z-index:1200;background:rgba(14,24,38,.94);border:1px solid var(--line);border-radius:999px;padding:4px;box-shadow:0 8px 22px rgba(0,0,0,.28)}
+.lang-toggle button{background:transparent;color:var(--mut);border:0;border-radius:999px;padding:6px 10px;font-size:12px;cursor:pointer}
+.lang-toggle .sep{color:#53677f;font-size:12px}
+body[data-lang="en"] #lang-en,body[data-lang="zh"] #lang-zh{background:var(--acc);color:#04121f}
+@media (max-width:640px){.lang-toggle{top:8px;right:8px}}
+
 </style></head>
-<body><div class="wrap">
-<a class="back" href="China-HSR-Plan.html">← 高铁 Plan</a>
-<a class="back" href="Taipei-China-Itinerary.html">行程 Itinerary</a>
-<h1>🚄 华东高铁地图 · 城际时间 + 最快车次</h1>
-<div class="sub">节点＝城市，连线上的数字＝<b>最快 G 车分钟数</b>；点连线看<b>最快/代表车次时间</b>。绿色粗线＝推荐路线 上海→苏州→南京→杭州→台州→上海。数据为规划估算，订前请在 12306/携程复核。</div>
+<body data-lang="en">
+<div class="lang-toggle" aria-label="Language"><button id="lang-en" type="button" onclick="setLang('en')">EN</button><span class="sep">|</span><button id="lang-zh" type="button" onclick="setLang('zh')">中文</button></div>
+<div class="wrap">
+<a class="back" href="China-HSR-Plan.html"><span class="en">← HSR Plan</span><span class="zh">← 高铁 Plan</span></a>
+<a class="back" href="Taipei-China-Itinerary.html"><span class="en">Itinerary</span><span class="zh">行程 Itinerary</span></a>
+<h1><span class="en">🚄 East China HSR Map · city-to-city time + fastest trains</span><span class="zh">🚄 华东高铁地图 · 城际时间 + 最快车次</span></h1>
+<div class="sub"><span class="en">Nodes = cities; the number on each line = <b>fastest G-train minutes</b>; click a line for <b>fastest/representative train times</b>. Thick green = recommended route Shanghai→Suzhou→Nanjing→Hangzhou→Taizhou→Shanghai. Figures are planning estimates — re-check on 12306/Trip.com before booking.</span><span class="zh">节点＝城市，连线上的数字＝<b>最快 G 车分钟数</b>；点连线看<b>最快/代表车次时间</b>。绿色粗线＝推荐路线 上海→苏州→南京→杭州→台州→上海。数据为规划估算，订前请在 12306/携程复核。</span></div>
 <div class="legend">
-<span><span class="ln" style="border-color:#2ecc71"></span><b>推荐路线</b>（苏→宁→杭→台州→沪）</span>
-<span><span class="ln" style="border-color:#5a6b82"></span>其它直达连接</span>
-<span>🔴 城市/高铁站</span>
+<span><span class="ln" style="border-color:#2ecc71"></span><b><span class="en">Recommended route</span><span class="zh">推荐路线</span><span class="en"> (Suzhou→Nanjing→Hangzhou→Taizhou→SH)</span><span class="zh">（苏→宁→杭→台州→沪）</span></b></span>
+<span><span class="ln" style="border-color:#5a6b82"></span><span class="en">other direct links</span><span class="zh">其它直达连接</span></span>
+<span><span class="en">🔴 city / HSR station</span><span class="zh">🔴 城市/高铁站</span></span>
 </div>
 <div id="map"></div>
-<h3>最快用时矩阵（分钟）</h3>
-<table><tr><th>最快(分)</th><th>上海虹桥</th><th>苏州</th><th>南京南</th><th>杭州东</th><th>台州</th></tr><tr><th>上海虹桥</th><td>—</td><td>25</td><td>70</td><td>52</td><td>139</td></tr><tr><th>苏州</th><td>25</td><td>—</td><td>75</td><td>65</td><td>~165</td></tr><tr><th>南京南</th><td>70</td><td>75</td><td>—</td><td>~65</td><td>~210</td></tr><tr><th>杭州东</th><td>52</td><td>65</td><td>~65</td><td>—</td><td>76</td></tr><tr><th>台州</th><td>139</td><td>~165</td><td>~210</td><td>76</td><td>—</td></tr></table>
-<p class="sub">🐟 台州排在 <b>9/16 东海开渔（正午）之后</b>（9/17–18），从<b>杭州进最快（76 分）</b>。详见 <a href="China-HSR-Plan.html">China-HSR-Plan.html</a>。</p>
+<h3><span class="en">Fastest-time matrix (minutes)</span><span class="zh">最快用时矩阵（分钟）</span></h3>
+<table><tr><th><span class="en">fastest (min)</span><span class="zh">最快(分)</span></th><th><span class="en">Shanghai Hongqiao</span><span class="zh">上海虹桥</span></th><th><span class="en">Suzhou</span><span class="zh">苏州</span></th><th><span class="en">Nanjing South</span><span class="zh">南京南</span></th><th><span class="en">Hangzhou East</span><span class="zh">杭州东</span></th><th><span class="en">Taizhou</span><span class="zh">台州</span></th></tr><tr><th><span class="en">Shanghai Hongqiao</span><span class="zh">上海虹桥</span></th><td>—</td><td>25</td><td>70</td><td>52</td><td>139</td></tr><tr><th><span class="en">Suzhou</span><span class="zh">苏州</span></th><td>25</td><td>—</td><td>75</td><td>65</td><td>~165</td></tr><tr><th><span class="en">Nanjing South</span><span class="zh">南京南</span></th><td>70</td><td>75</td><td>—</td><td>~65</td><td>~210</td></tr><tr><th><span class="en">Hangzhou East</span><span class="zh">杭州东</span></th><td>52</td><td>65</td><td>~65</td><td>—</td><td>76</td></tr><tr><th><span class="en">Taizhou</span><span class="zh">台州</span></th><td>139</td><td>~165</td><td>~210</td><td>76</td><td>—</td></tr></table>
+<p class="sub"><span class="en">🐟 Taizhou is placed <b>after the East China fishing-season opening (Sep 16 noon)</b> (Sep 17–18); enter fastest <b>from Hangzhou (76 min)</b>. See <a href="China-HSR-Plan.html">China-HSR-Plan.html</a>.</span><span class="zh">🐟 台州排在 <b>9/16 东海开渔（正午）之后</b>（9/17–18），从<b>杭州进最快（76 分）</b>。详见 <a href="China-HSR-Plan.html">China-HSR-Plan.html</a>。</span></p>
 </div>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-var NODES=[{"n": "上海虹桥", "lat": 31.1943, "lon": 121.3202}, {"n": "苏州", "lat": 31.33, "lon": 120.622}, {"n": "南京南", "lat": 31.9686, "lon": 118.7969}, {"n": "杭州东", "lat": 30.2906, "lon": 120.2124}, {"n": "台州", "lat": 28.63, "lon": 121.302}], EDGES=[{"a": "上海虹桥", "b": "苏州", "m": 25, "t": "G7006 等 · 全天每~30 分一班", "r": true, "la": 31.1943, "lo": 121.3202, "lb": 31.33, "lob": 120.622, "mid": [31.26215, 120.9711]}, {"a": "苏州", "b": "南京南", "m": 75, "t": "G7055 / G191 等", "r": true, "la": 31.33, "lo": 120.622, "lb": 31.9686, "lob": 118.7969, "mid": [31.649299999999997, 119.70945]}, {"a": "南京南", "b": "杭州东", "m": 65, "t": "G33 上午 ~1h01 直达宁杭（避绕沪 3h 车）", "r": true, "la": 31.9686, "lo": 118.7969, "lb": 30.2906, "lob": 120.2124, "mid": [31.1296, 119.50465]}, {"a": "杭州东", "b": "台州", "m": 76, "t": "最快 G7545 16:39→17:55 · G7461 10:56→12:21 · 早班 G7711 06:37→08:15", "r": true, "la": 30.2906, "lo": 120.2124, "lb": 28.63, "lob": 121.302, "mid": [29.4603, 120.75720000000001]}, {"a": "台州", "b": "上海虹桥", "m": 139, "t": "返程 G7585 17:20→19:41 · G7461 10:02→12:22", "r": true, "la": 28.63, "lo": 121.302, "lb": 31.1943, "lob": 121.3202, "mid": [29.912149999999997, 121.31110000000001]}, {"a": "上海虹桥", "b": "杭州东", "m": 52, "t": "G7 07:00→07:52 · 10–15 分一班", "r": false, "la": 31.1943, "lo": 121.3202, "lb": 30.2906, "lob": 120.2124, "mid": [30.742449999999998, 120.7663]}, {"a": "上海虹桥", "b": "南京南", "m": 70, "t": "G7002 07:00→08:08", "r": false, "la": 31.1943, "lo": 121.3202, "lb": 31.9686, "lob": 118.7969, "mid": [31.581449999999997, 120.05855]}, {"a": "苏州", "b": "杭州东", "m": 65, "t": "G1509 08:12→09:32", "r": false, "la": 31.33, "lo": 120.622, "lb": 30.2906, "lob": 120.2124, "mid": [30.810299999999998, 120.41720000000001]}];
+function bi(en,zh){return '<span class="en">'+en+'</span><span class="zh">'+zh+'</span>';}
+var NODES=[{"n": "上海虹桥", "en": "Shanghai Hongqiao", "lat": 31.1943, "lon": 121.3202}, {"n": "苏州", "en": "Suzhou", "lat": 31.33, "lon": 120.622}, {"n": "南京南", "en": "Nanjing South", "lat": 31.9686, "lon": 118.7969}, {"n": "杭州东", "en": "Hangzhou East", "lat": 30.2906, "lon": 120.2124}, {"n": "台州", "en": "Taizhou", "lat": 28.63, "lon": 121.302}], EDGES=[{"a": "上海虹桥", "b": "苏州", "ae": "Shanghai Hongqiao", "be": "Suzhou", "m": 25, "t": "G7006 等 · 全天每~30 分一班", "te": "G7006 etc. · ~every 30 min all day", "r": true, "la": 31.1943, "lo": 121.3202, "lb": 31.33, "lob": 120.622, "mid": [31.26215, 120.9711]}, {"a": "苏州", "b": "南京南", "ae": "Suzhou", "be": "Nanjing South", "m": 75, "t": "G7055 / G191 等", "te": "G7055 / G191 etc.", "r": true, "la": 31.33, "lo": 120.622, "lb": 31.9686, "lob": 118.7969, "mid": [31.649299999999997, 119.70945]}, {"a": "南京南", "b": "杭州东", "ae": "Nanjing South", "be": "Hangzhou East", "m": 65, "t": "G33 上午 ~1h01 直达宁杭（避绕沪 3h 车）", "te": "G33 (AM) ~1h01 direct Ning–Hang (avoid via-Shanghai 3h trains)", "r": true, "la": 31.9686, "lo": 118.7969, "lb": 30.2906, "lob": 120.2124, "mid": [31.1296, 119.50465]}, {"a": "杭州东", "b": "台州", "ae": "Hangzhou East", "be": "Taizhou", "m": 76, "t": "最快 G7545 16:39→17:55 · G7461 10:56→12:21 · 早班 G7711 06:37→08:15", "te": "fastest G7545 16:39→17:55 · G7461 10:56→12:21 · early G7711 06:37→08:15", "r": true, "la": 30.2906, "lo": 120.2124, "lb": 28.63, "lob": 121.302, "mid": [29.4603, 120.75720000000001]}, {"a": "台州", "b": "上海虹桥", "ae": "Taizhou", "be": "Shanghai Hongqiao", "m": 139, "t": "返程 G7585 17:20→19:41 · G7461 10:02→12:22", "te": "return G7585 17:20→19:41 · G7461 10:02→12:22", "r": true, "la": 28.63, "lo": 121.302, "lb": 31.1943, "lob": 121.3202, "mid": [29.912149999999997, 121.31110000000001]}, {"a": "上海虹桥", "b": "杭州东", "ae": "Shanghai Hongqiao", "be": "Hangzhou East", "m": 52, "t": "G7 07:00→07:52 · 10–15 分一班", "te": "G7 07:00→07:52 · every 10–15 min", "r": false, "la": 31.1943, "lo": 121.3202, "lb": 30.2906, "lob": 120.2124, "mid": [30.742449999999998, 120.7663]}, {"a": "上海虹桥", "b": "南京南", "ae": "Shanghai Hongqiao", "be": "Nanjing South", "m": 70, "t": "G7002 07:00→08:08", "te": "G7002 07:00→08:08", "r": false, "la": 31.1943, "lo": 121.3202, "lb": 31.9686, "lob": 118.7969, "mid": [31.581449999999997, 120.05855]}, {"a": "苏州", "b": "杭州东", "ae": "Suzhou", "be": "Hangzhou East", "m": 65, "t": "G1509 08:12→09:32", "te": "G1509 08:12→09:32", "r": false, "la": 31.33, "lo": 120.622, "lb": 30.2906, "lob": 120.2124, "mid": [30.810299999999998, 120.41720000000001]}];
 var map=L.map('map',{center:[30.4,120.4],zoom:7});
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'© OpenStreetMap'}).addTo(map);
 EDGES.forEach(function(e){
   var col=e.r?'#2ecc71':'#5a6b82', w=e.r?5:2.5;
   L.polyline([[e.la,e.lo],[e.lb,e.lob]],{color:col,weight:w,opacity:.85}).addTo(map)
-    .bindPopup('<b>'+e.a+' ↔ '+e.b+'</b><br>最快约 <b>'+e.m+' 分</b><br>'+e.t);
+    .bindPopup(bi('<b>'+e.ae+' ↔ '+e.be+'</b><br>fastest ~<b>'+e.m+' min</b><br>'+e.te,
+                  '<b>'+e.a+' ↔ '+e.b+'</b><br>最快约 <b>'+e.m+' 分</b><br>'+e.t));
   L.marker(e.mid,{opacity:0}).addTo(map)
-    .bindTooltip(e.m+'分',{permanent:true,direction:'center',className:'tmin'});
+    .bindTooltip(bi(e.m+' min', e.m+'分'),{permanent:true,direction:'center',className:'tmin'});
 });
 NODES.forEach(function(n){
   L.circleMarker([n.lat,n.lon],{radius:8,color:'#fff',weight:2,fillColor:'#c0392b',fillOpacity:1}).addTo(map)
-    .bindTooltip(n.n,{permanent:true,direction:'top',className:'city'});
+    .bindTooltip(bi(n.en, n.n),{permanent:true,direction:'top',className:'city'});
 });
-</script></body></html>
+</script>
+<script>
+function setLang(lang){
+  lang = lang === 'zh' ? 'zh' : 'en';
+  document.body.dataset.lang = lang;
+  document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : 'en';
+  document.title = lang === 'zh' ? '华东高铁地图' : 'East China HSR Map';
+  try{localStorage.setItem('itin-lang', lang);}catch(e){}
+}
+(function(){
+  var p=null; try{p=new URLSearchParams(location.search).get('lang');}catch(e){}
+  var s=null; try{s=localStorage.getItem('itin-lang');}catch(e){}
+  setLang(p==='zh'||p==='en'?p:(s==='zh'?'zh':'en'));
+})();
+</script>
+</body></html>

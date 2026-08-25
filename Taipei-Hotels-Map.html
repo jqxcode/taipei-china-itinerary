@@ -1,13 +1,13 @@
-<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="utf-8">
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>台北酒店选址对比地图 · Taipei Hotels vs Markers</title>
+<title>Taipei Hotels — location compare map</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <style>
 :root{--bg:#0f1723;--card:#182333;--ink:#e8eef7;--mut:#9fb0c6;--acc:#4aa3ff;--line:#243349}
 body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei","PingFang TC",sans-serif;background:#0f1723;color:var(--ink)}
 .wrap{max-width:1200px;margin:0 auto;padding:16px}
 a{color:var(--acc)}
-h1{font-size:22px;margin:6px 0}
+h1{font-size:22px;margin:6px 0;padding-right:120px}
 .sub{color:var(--mut);font-size:14px;margin-bottom:10px}
 #map{height:74vh;min-height:520px;border:1px solid var(--line);border-radius:12px}
 .legend{display:flex;gap:16px;flex-wrap:wrap;margin:10px 0;font-size:13px;color:var(--mut)}
@@ -20,51 +20,75 @@ tr:nth-child(even) td{background:#131e2d}
 .back{display:inline-block;margin:0 8px 8px 0}
 .leaflet-tooltip.lbl{background:rgba(10,18,30,.85);border:0;color:#fff;font-weight:700;font-size:11px;box-shadow:none}
 .leaflet-tooltip.lblh{background:#c0392b;color:#fff;font-weight:800;font-size:12px;border:0}
+
+body[data-lang="zh"] .en{display:none!important}
+body[data-lang="en"] .zh{display:none!important}
+.lang-toggle{position:fixed;top:10px;right:12px;z-index:1200;background:rgba(14,24,38,.94);border:1px solid var(--line);border-radius:999px;padding:4px;box-shadow:0 8px 22px rgba(0,0,0,.28)}
+.lang-toggle button{background:transparent;color:var(--mut);border:0;border-radius:999px;padding:6px 10px;font-size:12px;cursor:pointer}
+.lang-toggle .sep{color:#53677f;font-size:12px}
+body[data-lang="en"] #lang-en,body[data-lang="zh"] #lang-zh{background:var(--acc);color:#04121f}
+@media (max-width:640px){.lang-toggle{top:8px;right:8px}}
+
 </style></head>
-<body><div class="wrap">
-<a class="back" href="Taipei-China-Itinerary.html">← 回行程 Itinerary</a>
-<a class="back" href="Hotel-Selection.html">🏨 住宿选择说明</a>
-<h1>🗺️ 台北酒店选址对比地图</h1>
-<div class="sub">把每家候选酒店 🏨 和你已有的全部台北标记（景点/夜市/40 家美食）放在同一张图上，直接比哪家位置最顺。右上角可勾选/关闭图层。需联网加载地图。</div>
+<body data-lang="en">
+<div class="lang-toggle" aria-label="Language"><button id="lang-en" type="button" onclick="setLang('en')">EN</button><span class="sep">|</span><button id="lang-zh" type="button" onclick="setLang('zh')">中文</button></div>
+<div class="wrap">
+<a class="back" href="Taipei-China-Itinerary.html"><span class="en">← Itinerary</span><span class="zh">← 回行程 Itinerary</span></a>
+<a class="back" href="Hotel-Selection.html"><span class="en">🏨 Hotel Selection</span><span class="zh">🏨 住宿选择说明</span></a>
+<h1><span class="en">🗺️ Taipei hotels — location compare map</span><span class="zh">🗺️ 台北酒店选址对比地图</span></h1>
+<div class="sub"><span class="en">Every candidate hotel 🏨 plus all your existing Taipei markers (attractions / night markets / 40 food spots) on ONE map, so you can see which location is smoothest. Toggle layers at top-right. Needs internet.</span><span class="zh">把每家候选酒店 🏨 和你已有的全部台北标记（景点/夜市/40 家美食）放在同一张图上，直接比哪家位置最顺。右上角可勾选/关闭图层。需联网加载地图。</span></div>
 <div class="legend">
-<span><span class="dot" style="background:#c0392b"></span><b>🏨 候选酒店</b></span>
-<span><span class="dot" style="background:#2f6fed"></span>景点(故宫/101/西门/车站)</span>
-<span><span class="dot" style="background:#e0281e"></span>松山机场</span>
-<span><span class="dot" style="background:#9b59b6"></span>夜市(3 晚)</span>
-<span><span class="dot" style="background:#e8820c"></span>美食(精确/区级)</span>
-<span><span class="dot" style="background:#16a085"></span>远点(九份/阳明山/桃园)</span>
+<span><span class="dot" style="background:#c0392b"></span><b><span class="en">🏨 candidate hotels</span><span class="zh">🏨 候选酒店</span></b></span>
+<span><span class="dot" style="background:#2f6fed"></span><span class="en">attractions (NPM/101/Ximen/Station)</span><span class="zh">景点(故宫/101/西门/车站)</span></span>
+<span><span class="dot" style="background:#e0281e"></span><span class="en">Songshan Airport</span><span class="zh">松山机场</span></span>
+<span><span class="dot" style="background:#9b59b6"></span><span class="en">night markets (3 nights)</span><span class="zh">夜市(3 晚)</span></span>
+<span><span class="dot" style="background:#e8820c"></span><span class="en">food (precise/district)</span><span class="zh">美食(精确/区级)</span></span>
+<span><span class="dot" style="background:#16a085"></span><span class="en">far (Jiufen/Yangmingshan/Taoyuan)</span><span class="zh">远点(九份/阳明山/桃园)</span></span>
 </div>
 <div id="map"></div>
-
-<h3>四家候选对比（8 个标志点单程 MRT 均时 · 价为估·订前核价）</h3>
-<table>
-<tr><th>酒店</th><th>区域</th><th>最近捷运</th><th>8点均时</th><th>参考均价/晚</th><th>最适合</th></tr>
-<tr><td><b>君品 Palais de Chine</b> ⭐5</td><td>大同·台北车站北</td><td>台北车站·步行3分</td><td>≈15 分</td><td>NT$4,500–6,000起</td><td>舒适全能·一站通</td></tr>
-<tr><td><b>凯撒 Caesar Park</b> ⭐4</td><td>中正·台北车站南</td><td>台北车站·步行2分</td><td>≈15 分</td><td>NT$2,100–3,100</td><td>性价比最高·交通最便</td></tr>
-<tr><td><b>捷丝旅西门 Just Sleep</b> ⭐3</td><td>中正·西门町</td><td>西门·步行3–5分</td><td>≈17 分</td><td>NT$3,800–4,500</td><td>西门氛围·长辈稍远</td></tr>
-<tr><td><b>老爷 Royal Nikko</b> ⭐5</td><td>中山·南西商圈</td><td>中山·步行5–7分</td><td>≈17 分</td><td>NT$4,400–6,000</td><td>故宫最快·购物</td></tr>
-</table>
-<p>💡 <b>推荐</b>：位置便利 + 晚到重行李 + 9/13 松山机场 → <b>性价比首选「凯撒」</b>（车站直连 2 分、家庭房约君品一半）；<b>舒适全能首选「君品」</b>（直通京站商场、宁夏夜市步行可达）。捷丝旅/老爷离松山机场与台北车站巴士各多约一段路，长辈同行不如前两家顺。详见 <a href="Hotel-Selection.html">住宿选择说明</a> · <a href="Taipei-China-Itinerary.html">行程表</a>。</p>
-
+<h3><span class="en">Four candidates compared (avg one-way MRT to 8 landmarks · prices est., re-check before booking)</span><span class="zh">四家候选对比（8 个标志点单程 MRT 均时 · 价为估·订前核价）</span></h3><table><tr><th><span class="en">Hotel</span><span class="zh">酒店</span></th><th><span class="en">Area</span><span class="zh">区域</span></th><th><span class="en">Nearest MRT</span><span class="zh">最近捷运</span></th><th><span class="en">Avg to 8 spots</span><span class="zh">8点均时</span></th><th><span class="en">Ref avg/night</span><span class="zh">参考均价/晚</span></th><th><span class="en">Best for</span><span class="zh">最适合</span></th></tr><tr><td><span class="en"><b>Palais de Chine</b> ⭐5</span><span class="zh"><b>君品 Palais de Chine</b> ⭐5</span></td><td><span class="en">Datong · N of Taipei Main</span><span class="zh">大同·台北车站北</span></td><td><span class="en">Taipei Main · 3-min</span><span class="zh">台北车站·步行3分</span></td><td>≈15 min</td><td><span class="en">from NT$4,500–6,000</span><span class="zh">NT$4,500–6,000起</span></td><td><span class="en">comfortable all-rounder · one-hub</span><span class="zh">舒适全能·一站通</span></td></tr><tr><td><span class="en"><b>Caesar Park</b> ⭐4</span><span class="zh"><b>凯撒 Caesar Park</b> ⭐4</span></td><td><span class="en">Zhongzheng · S of Taipei Main</span><span class="zh">中正·台北车站南</span></td><td><span class="en">Taipei Main · 2-min</span><span class="zh">台北车站·步行2分</span></td><td>≈15 min</td><td>NT$2,100–3,100</td><td><span class="en">best value · easiest transit</span><span class="zh">性价比最高·交通最便</span></td></tr><tr><td><span class="en"><b>Just Sleep Ximending</b> ⭐3</span><span class="zh"><b>捷丝旅西门 Just Sleep</b> ⭐3</span></td><td><span class="en">Zhongzheng · Ximending</span><span class="zh">中正·西门町</span></td><td><span class="en">Ximen · 3–5-min</span><span class="zh">西门·步行3–5分</span></td><td>≈17 min</td><td>NT$3,800–4,500</td><td><span class="en">Ximen vibe · a bit far for elders</span><span class="zh">西门氛围·长辈稍远</span></td></tr><tr><td><span class="en"><b>Royal Nikko</b> ⭐5</span><span class="zh"><b>老爷 Royal Nikko</b> ⭐5</span></td><td><span class="en">Zhongshan · Nanxi area</span><span class="zh">中山·南西商圈</span></td><td><span class="en">Zhongshan · 5–7-min</span><span class="zh">中山·步行5–7分</span></td><td>≈17 min</td><td>NT$4,400–6,000</td><td><span class="en">fastest to NPM · shopping</span><span class="zh">故宫最快·购物</span></td></tr></table><p><span class="en">💡 <b>Recommend</b>: convenient location + late arrival with luggage + Songshan on 9/13 → <b>best value = Caesar</b> (2-min to station, family rooms ~half of Palais); <b>most comfortable all-rounder = Palais de Chine</b> (linked to Q-Square mall, walk to Ningxia Night Mkt). Just Sleep / Royal Nikko are each a bit further from Songshan and the Taipei Main buses — less smooth with an elder. See <a href="Hotel-Selection.html">Hotel Selection</a> · <a href="Taipei-China-Itinerary.html">Itinerary</a>.</span><span class="zh">💡 <b>推荐</b>：位置便利 + 晚到重行李 + 9/13 松山机场 → <b>性价比首选「凯撒」</b>（车站直连 2 分、家庭房约君品一半）；<b>舒适全能首选「君品」</b>（直通京站商场、宁夏夜市步行可达）。捷丝旅/老爷离松山机场与台北车站巴士各多约一段路，长辈同行不如前两家顺。详见 <a href="Hotel-Selection.html">住宿选择说明</a> · <a href="Taipei-China-Itinerary.html">行程表</a>。</span></p>
 </div>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-var HOTELS=[{"n": "君品酒店", "e": "Palais de Chine", "lat": 25.04914, "lon": 121.51692, "addr": "承德路一段3号(京站/台北车站)", "mrt": "台北车站 R10/BL12·步行3分", "price": "NT$4,500–6,000起(估)", "note": "首选·台北车站枢纽·舒适全能"}, {"n": "台北凯撒", "e": "Caesar Park", "lat": 25.04611, "lon": 121.51629, "addr": "忠孝西路一段38号", "mrt": "台北车站·步行2分", "price": "NT$2,100–3,100(估)", "note": "性价比最高·车站直连·松山最省心"}, {"n": "捷丝旅西门町", "e": "Just Sleep Ximending", "lat": 25.04504, "lon": 121.50963, "addr": "中华路一段41号5F", "mrt": "西门站·步行3–5分", "price": "NT$3,800–4,500(估)", "note": "西门夜生活·但离松山/故宫远"}, {"n": "台北老爷", "e": "Hotel Royal Nikko", "lat": 25.05367, "lon": 121.52291, "addr": "中山北路二段37-1号", "mrt": "中山站·步行5–7分", "price": "NT$4,400–6,000(估)", "note": "去故宫最快·中山购物氛围"}], ATTR=[{"n": "故宫博物院 NPM", "lat": 25.1024, "lon": 121.5485, "k": "attr"}, {"n": "台北101", "lat": 25.0338, "lon": 121.5645, "k": "attr"}, {"n": "西门町", "lat": 25.0421, "lon": 121.5069, "k": "attr"}, {"n": "台北车站(参考)", "lat": 25.0478, "lon": 121.517, "k": "station"}, {"n": "松山机场 TSA(9/13离境)", "lat": 25.0697, "lon": 121.5515, "k": "air"}], NIGHT=[{"n": "宁夏夜市(第1晚)", "lat": 25.0565, "lon": 121.5155}, {"n": "临江街/通化夜市(第2晚)", "lat": 25.0331, "lon": 121.5533}, {"n": "饶河街夜市(第3晚)", "lat": 25.0505, "lon": 121.5773}], FAR=[{"n": "九份(9/12 计划一)", "lat": 25.1096, "lon": 121.8443}, {"n": "阳明山·小油坑(9/12 计划二)", "lat": 25.1737, "lon": 121.5555}, {"n": "桃园机场 TPE(9/10抵达)", "lat": 25.0777, "lon": 121.233}], FOOD=[{"n": "欣葉台菜(創始店)", "lat": 25.06653, "lon": 121.52419, "area": "中山區"}, {"n": "無老鍋", "lat": 25.03772, "lon": 121.53247, "area": "中山/信義"}, {"n": "鼎王麻辣鍋", "lat": 25.04267, "lon": 121.50799, "area": "中山區"}, {"n": "饗 A Joy", "lat": 25.03334, "lon": 121.5669, "area": "信義區"}, {"n": "犇 鐵板燒", "lat": 25.04042, "lon": 121.56693, "area": "大安/中山"}, {"n": "HANA 錵鐵板燒", "lat": 25.06436, "lon": 121.53347, "area": "中山區"}, {"n": "山海樓", "lat": 25.038, "lon": 121.53137, "area": "中正區(仁愛路)"}, {"n": "Nara Thai", "lat": 25.03334, "lon": 121.5669, "area": "信義區(微風/ATT)"}, {"n": "鄒記食舖", "lat": 25.04989, "lon": 121.57727, "area": "松山區"}, {"n": "磚窯古早味懷舊餐廳", "lat": 25.04989, "lon": 121.57727, "area": "松山區"}, {"n": "三六食府", "lat": 25.02274, "lon": 121.52755, "area": "大安區"}, {"n": "驥園川菜餐廳", "lat": 25.02652, "lon": 121.5344, "area": "大安區"}, {"n": "春韭", "lat": 25.06436, "lon": 121.53347, "area": "中山區晴光商圈"}, {"n": "花娘小館", "lat": 25.05486, "lon": 121.55088, "area": "松山區"}, {"n": "老撈麻辣火鍋", "lat": 25.04989, "lon": 121.57727, "area": "松山區"}, {"n": "梨園湯包館", "lat": 25.05026, "lon": 121.54479, "area": "松山區"}, {"n": "聚聚", "lat": 25.02999, "lon": 121.51499, "area": "中正區"}, {"n": "牛耳精緻麵館", "lat": 25.06966, "lon": 121.589, "area": "內湖區"}, {"n": "醉翁漁港海鮮", "lat": 25.04809, "lon": 121.54474, "area": "松山區"}, {"n": "富霸王豬腳", "lat": 25.06436, "lon": 121.53347, "area": "中山區四平商圈"}, {"n": "譽展蜜餞行", "lat": 25.06436, "lon": 121.53347, "area": "中山區四平商圈"}, {"n": "王記府城肉粽", "lat": 25.04792, "lon": 121.546, "area": "松山區"}, {"n": "阿婆水果攤(臨江街夜市)", "lat": 25.03334, "lon": 121.5669, "area": "信義區(通化/臨江街)"}, {"n": "豆花莊", "lat": 25.06599, "lon": 121.51551, "area": "大同區寧夏夜市"}, {"n": "詹記水果", "lat": 25.06599, "lon": 121.51551, "area": "大同區寧夏夜市"}, {"n": "老宗店蚵仔煎", "lat": 25.06599, "lon": 121.51551, "area": "大同區寧夏夜市"}];
+function bi(en,zh){return '<span class="en">'+en+'</span><span class="zh">'+zh+'</span>';}
+var HOTELS=[{"n": "君品酒店", "e": "Palais de Chine", "lat": 25.04914, "lon": 121.51692, "addr": "承德路一段3号(京站/台北车站)", "ade": "3 Chengde Rd Sec 1 (Q-Square / Taipei Main)", "mrt": "台北车站 R10/BL12·步行3分", "mre": "Taipei Main R10/BL12 · 3-min walk", "price": "NT$4,500–6,000起(估)", "pre": "from ~NT$4,500–6,000 (est.)", "note": "首选·台北车站枢纽·舒适全能", "noe": "top pick · hub · most comfortable all-rounder"}, {"n": "台北凯撒", "e": "Caesar Park", "lat": 25.04611, "lon": 121.51629, "addr": "忠孝西路一段38号", "ade": "38 Zhongxiao W Rd Sec 1", "mrt": "台北车站·步行2分", "mre": "Taipei Main · 2-min walk", "price": "NT$2,100–3,100(估)", "pre": "~NT$2,100–3,100 (est.)", "note": "性价比最高·车站直连·松山最省心", "noe": "best value · station-linked · easiest for Songshan"}, {"n": "捷丝旅西门町", "e": "Just Sleep Ximending", "lat": 25.04504, "lon": 121.50963, "addr": "中华路一段41号5F", "ade": "5F, 41 Zhonghua Rd Sec 1", "mrt": "西门站·步行3–5分", "mre": "Ximen · 3–5-min walk", "price": "NT$3,800–4,500(估)", "pre": "~NT$3,800–4,500 (est.)", "note": "西门夜生活·但离松山/故宫远", "noe": "Ximen nightlife · but far from Songshan/NPM"}, {"n": "台北老爷", "e": "Hotel Royal Nikko", "lat": 25.05367, "lon": 121.52291, "addr": "中山北路二段37-1号", "ade": "37-1 Zhongshan N Rd Sec 2", "mrt": "中山站·步行5–7分", "mre": "Zhongshan · 5–7-min walk", "price": "NT$4,400–6,000(估)", "pre": "~NT$4,400–6,000 (est.)", "note": "去故宫最快·中山购物氛围", "noe": "fastest to NPM · Zhongshan shopping"}], ATTR=[{"n": "故宫博物院 NPM", "e": "Palace Museum (NPM)", "lat": 25.1024, "lon": 121.5485, "k": "attr"}, {"n": "台北101", "e": "Taipei 101", "lat": 25.0338, "lon": 121.5645, "k": "attr"}, {"n": "西门町", "e": "Ximending", "lat": 25.0421, "lon": 121.5069, "k": "attr"}, {"n": "台北车站(参考)", "e": "Taipei Main (ref)", "lat": 25.0478, "lon": 121.517, "k": "station"}, {"n": "松山机场 TSA(9/13离境)", "e": "Songshan TSA (9/13 dep)", "lat": 25.0697, "lon": 121.5515, "k": "air"}], NIGHT=[{"n": "宁夏夜市(第1晚)", "e": "Ningxia Night Mkt (night 1)", "lat": 25.0565, "lon": 121.5155}, {"n": "临江街/通化夜市(第2晚)", "e": "Linjiang/Tonghua Night Mkt (night 2)", "lat": 25.0331, "lon": 121.5533}, {"n": "饶河街夜市(第3晚)", "e": "Raohe St Night Mkt (night 3)", "lat": 25.0505, "lon": 121.5773}], FAR=[{"n": "九份(9/12 计划一)", "e": "Jiufen (9/12 Plan A)", "lat": 25.1096, "lon": 121.8443}, {"n": "阳明山·小油坑(9/12 计划二)", "e": "Yangmingshan · Xiaoyoukeng (9/12 Plan B)", "lat": 25.1737, "lon": 121.5555}, {"n": "桃园机场 TPE(9/10抵达)", "e": "Taoyuan TPE (9/10 arrival)", "lat": 25.0777, "lon": 121.233}], FOOD=[{"n": "欣葉台菜(創始店)", "lat": 25.06653, "lon": 121.52419, "area": "中山區"}, {"n": "無老鍋", "lat": 25.03772, "lon": 121.53247, "area": "中山/信義"}, {"n": "鼎王麻辣鍋", "lat": 25.04267, "lon": 121.50799, "area": "中山區"}, {"n": "饗 A Joy", "lat": 25.03334, "lon": 121.5669, "area": "信義區"}, {"n": "犇 鐵板燒", "lat": 25.04042, "lon": 121.56693, "area": "大安/中山"}, {"n": "HANA 錵鐵板燒", "lat": 25.06436, "lon": 121.53347, "area": "中山區"}, {"n": "山海樓", "lat": 25.038, "lon": 121.53137, "area": "中正區(仁愛路)"}, {"n": "Nara Thai", "lat": 25.03334, "lon": 121.5669, "area": "信義區(微風/ATT)"}, {"n": "鄒記食舖", "lat": 25.04989, "lon": 121.57727, "area": "松山區"}, {"n": "磚窯古早味懷舊餐廳", "lat": 25.04989, "lon": 121.57727, "area": "松山區"}, {"n": "三六食府", "lat": 25.02274, "lon": 121.52755, "area": "大安區"}, {"n": "驥園川菜餐廳", "lat": 25.02652, "lon": 121.5344, "area": "大安區"}, {"n": "春韭", "lat": 25.06436, "lon": 121.53347, "area": "中山區晴光商圈"}, {"n": "花娘小館", "lat": 25.05486, "lon": 121.55088, "area": "松山區"}, {"n": "老撈麻辣火鍋", "lat": 25.04989, "lon": 121.57727, "area": "松山區"}, {"n": "梨園湯包館", "lat": 25.05026, "lon": 121.54479, "area": "松山區"}, {"n": "聚聚", "lat": 25.02999, "lon": 121.51499, "area": "中正區"}, {"n": "牛耳精緻麵館", "lat": 25.06966, "lon": 121.589, "area": "內湖區"}, {"n": "醉翁漁港海鮮", "lat": 25.04809, "lon": 121.54474, "area": "松山區"}, {"n": "富霸王豬腳", "lat": 25.06436, "lon": 121.53347, "area": "中山區四平商圈"}, {"n": "譽展蜜餞行", "lat": 25.06436, "lon": 121.53347, "area": "中山區四平商圈"}, {"n": "王記府城肉粽", "lat": 25.04792, "lon": 121.546, "area": "松山區"}, {"n": "阿婆水果攤(臨江街夜市)", "lat": 25.03334, "lon": 121.5669, "area": "信義區(通化/臨江街)"}, {"n": "豆花莊", "lat": 25.06599, "lon": 121.51551, "area": "大同區寧夏夜市"}, {"n": "詹記水果", "lat": 25.06599, "lon": 121.51551, "area": "大同區寧夏夜市"}, {"n": "老宗店蚵仔煎", "lat": 25.06599, "lon": 121.51551, "area": "大同區寧夏夜市"}];
 var map=L.map('map',{center:[25.052,121.53],zoom:13});
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© OpenStreetMap'}).addTo(map);
 function cm(lat,lon,color,r){return L.circleMarker([lat,lon],{radius:r,color:'#fff',weight:2,fillColor:color,fillOpacity:.95});}
 var gHotel=L.layerGroup(), gAttr=L.layerGroup(), gNight=L.layerGroup(), gFood=L.layerGroup(), gFar=L.layerGroup();
 HOTELS.forEach(function(h){var m=cm(h.lat,h.lon,'#c0392b',10).addTo(gHotel);
-  m.bindTooltip('🏨 '+h.n,{permanent:true,direction:'right',className:'lblh'});
-  m.bindPopup('<b>🏨 '+h.n+' '+h.e+'</b><br>'+h.addr+'<br>捷运：'+h.mrt+'<br>约 '+h.price+'<br>'+h.note);});
+  m.bindTooltip(bi('🏨 '+h.e,'🏨 '+h.n),{permanent:true,direction:'right',className:'lblh'});
+  m.bindPopup(bi('<b>🏨 '+h.e+'</b><br>'+h.ade+'<br>MRT: '+h.mre+'<br>~'+h.pre+'<br>'+h.noe,
+                 '<b>🏨 '+h.n+' '+h.e+'</b><br>'+h.addr+'<br>捷运：'+h.mrt+'<br>约 '+h.price+'<br>'+h.note));});
 ATTR.forEach(function(a){var c=a.k==='air'?'#e0281e':(a.k==='station'?'#7f8c8d':'#2f6fed');var m=cm(a.lat,a.lon,c,7).addTo(gAttr);
-  m.bindTooltip(a.n,{permanent:true,direction:'right',className:'lbl'});m.bindPopup('<b>'+a.n+'</b>');});
+  m.bindTooltip(bi(a.e,a.n),{permanent:true,direction:'right',className:'lbl'});m.bindPopup(bi('<b>'+a.e+'</b>','<b>'+a.n+'</b>'));});
 NIGHT.forEach(function(n){var m=cm(n.lat,n.lon,'#9b59b6',7).addTo(gNight);
-  m.bindTooltip('🍢 '+n.n,{permanent:true,direction:'right',className:'lbl'});m.bindPopup('<b>'+n.n+'</b>');});
+  m.bindTooltip(bi('🍢 '+n.e,'🍢 '+n.n),{permanent:true,direction:'right',className:'lbl'});m.bindPopup(bi('<b>'+n.e+'</b>','<b>'+n.n+'</b>'));});
 FOOD.forEach(function(e){var m=cm(e.lat,e.lon,'#e8820c',4).addTo(gFood);
   m.bindTooltip(e.n+(e.area?(' · '+e.area):''),{direction:'top'});});
 FAR.forEach(function(n){var m=cm(n.lat,n.lon,'#16a085',7).addTo(gFar);
-  m.bindTooltip(n.n,{permanent:true,direction:'right',className:'lbl'});m.bindPopup('<b>'+n.n+'</b>');});
+  m.bindTooltip(bi(n.e,n.n),{permanent:true,direction:'right',className:'lbl'});m.bindPopup(bi('<b>'+n.e+'</b>','<b>'+n.n+'</b>'));});
 gHotel.addTo(map);gAttr.addTo(map);gNight.addTo(map);gFood.addTo(map);
-L.control.layers(null,{'🏨 候选酒店':gHotel,'景点':gAttr,'夜市':gNight,'美食(40)':gFood,'远点(九份/阳明山/桃园)':gFar},{collapsed:false}).addTo(map);
-</script></body></html>
+L.control.layers(null,{
+  [bi('🏨 hotels','🏨 候选酒店')]:gHotel,
+  [bi('attractions','景点')]:gAttr,
+  [bi('night markets','夜市')]:gNight,
+  [bi('food (40)','美食(40)')]:gFood,
+  [bi('far (Jiufen/Yangmingshan/Taoyuan)','远点(九份/阳明山/桃园)')]:gFar
+},{collapsed:false}).addTo(map);
+</script>
+<script>
+function setLang(lang){
+  lang = lang === 'zh' ? 'zh' : 'en';
+  document.body.dataset.lang = lang;
+  document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : 'en';
+  document.title = lang === 'zh' ? '台北酒店选址地图' : 'Taipei Hotels Map';
+  try{localStorage.setItem('itin-lang', lang);}catch(e){}
+}
+(function(){
+  var p=null; try{p=new URLSearchParams(location.search).get('lang');}catch(e){}
+  var s=null; try{s=localStorage.getItem('itin-lang');}catch(e){}
+  setLang(p==='zh'||p==='en'?p:(s==='zh'?'zh':'en'));
+})();
+</script>
+</body></html>
