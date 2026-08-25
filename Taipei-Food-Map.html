@@ -1,0 +1,54 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>台北美食40家 · 一图看区域分布</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<style>
+:root{--ink:#e8eef7;--mut:#9fb0c6;--acc:#4aa3ff;--line:#243349}
+body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei","PingFang TC",sans-serif;background:#0f1723;color:var(--ink)}
+.wrap{max-width:1200px;margin:0 auto;padding:16px}
+a{color:var(--acc)}
+h1{font-size:22px;margin:6px 0}
+.sub{color:var(--mut);font-size:14px;margin-bottom:10px}
+#map{height:78vh;min-height:560px;border:1px solid var(--line);border-radius:12px}
+.legend{display:flex;gap:16px;flex-wrap:wrap;margin:10px 0;font-size:13px;color:var(--mut)}
+.dot{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:5px;vertical-align:middle;border:2px solid #fff}
+.panel{background:#131e2d;border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:12px 0;font-size:13px}
+.back{display:inline-block;margin:0 8px 8px 0}
+.leaflet-tooltip.lbl{background:rgba(10,18,30,.82);border:0;color:#fff;font-weight:700;font-size:11px}
+</style></head>
+<body><div class="wrap">
+<a class="back" href="Taipei-China-Itinerary.html">← 回行程 Itinerary</a>
+<a class="back" href="Taipei-Hotels-Map.html">🏨 酒店选址地图</a>
+<h1>🍜 台北美食 40 家 · 一图看区域分布</h1>
+<div class="sub">按类别着色（餐廳 / 黃仁勳美食地圖 / 奶茶），叠在酒店 🏨、夜市 🍢、景点上，看哪家在哪个区、离你顺不顺。26 家有确切点位；14 家连锁在下方单列。右上角可切换图层。需联网。</div>
+<div class="legend">
+<span><span class="dot" style="background:#e8820c"></span>餐廳</span>
+<span><span class="dot" style="background:#9b59b6"></span>黃仁勳美食地圖</span>
+<span><span class="dot" style="background:#16a085"></span>奶茶</span>
+<span><span class="dot" style="background:#c0392b"></span>🏨 候选酒店</span>
+<span><span class="dot" style="background:#f1c40f"></span>🍢 夜市</span>
+<span><span class="dot" style="background:#2f6fed"></span>景点</span>
+</div>
+<div id="map"></div>
+<div class="panel"><p><b>餐廳（连锁·多分店，全城都有）：</b>橘色涮涮屋（橘色火鍋）、欣葉小聚、饗食天堂、鼎泰豐</p><p><b>奶茶（连锁·多分店，全城都有）：</b>迷客夏 Milksha、一沐日、五桐號 WOOTEA、得正、龜記茗品、約翰紅茶、麻古茶坊 Macu、大茗本位製茶堂、再睡五分鐘、可不可熟成紅茶 KEBUKE</p></div>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+var FOOD=[{"n": "欣葉台菜(創始店)", "lat": 25.06653, "lon": 121.52419, "area": "中山區", "cat": "餐廳", "c": "#e8820c"}, {"n": "無老鍋", "lat": 25.03772, "lon": 121.53247, "area": "中山/信義", "cat": "餐廳", "c": "#e8820c"}, {"n": "鼎王麻辣鍋", "lat": 25.04267, "lon": 121.50799, "area": "中山區", "cat": "餐廳", "c": "#e8820c"}, {"n": "饗 A Joy", "lat": 25.03334, "lon": 121.5669, "area": "信義區", "cat": "餐廳", "c": "#e8820c"}, {"n": "犇 鐵板燒", "lat": 25.04042, "lon": 121.56693, "area": "大安/中山", "cat": "餐廳", "c": "#e8820c"}, {"n": "HANA 錵鐵板燒", "lat": 25.06436, "lon": 121.53347, "area": "中山區", "cat": "餐廳", "c": "#e8820c"}, {"n": "山海樓", "lat": 25.038, "lon": 121.53137, "area": "中正區(仁愛路)", "cat": "餐廳", "c": "#e8820c"}, {"n": "Nara Thai", "lat": 25.03334, "lon": 121.5669, "area": "信義區(微風/ATT)", "cat": "餐廳", "c": "#e8820c"}, {"n": "鄒記食舖", "lat": 25.04989, "lon": 121.57727, "area": "松山區", "cat": "黃仁勳美食地圖", "c": "#9b59b6"}, {"n": "磚窯古早味懷舊餐廳", "lat": 25.04989, "lon": 121.57727, "area": "松山區", "cat": "黃仁勳美食地圖", "c": "#9b59b6"}, {"n": "三六食府", "lat": 25.02274, "lon": 121.52755, "area": "大安區", "cat": "黃仁勳美食地圖", "c": "#9b59b6"}, {"n": "驥園川菜餐廳", "lat": 25.02652, "lon": 121.5344, "area": "大安區", "cat": "黃仁勳美食地圖", "c": "#9b59b6"}, {"n": "春韭", "lat": 25.06436, "lon": 121.53347, "area": "中山區晴光商圈", "cat": "黃仁勳美食地圖", "c": "#9b59b6"}, {"n": "花娘小館", "lat": 25.05486, "lon": 121.55088, "area": "松山區", "cat": "黃仁勳美食地圖", "c": "#9b59b6"}, {"n": "老撈麻辣火鍋", "lat": 25.04989, "lon": 121.57727, "area": "松山區", "cat": "黃仁勳美食地圖", "c": "#9b59b6"}, {"n": "梨園湯包館", "lat": 25.05026, "lon": 121.54479, "area": "松山區", "cat": "黃仁勳美食地圖", "c": "#9b59b6"}, {"n": "聚聚", "lat": 25.02999, "lon": 121.51499, "area": "中正區", "cat": "黃仁勳美食地圖", "c": "#9b59b6"}, {"n": "牛耳精緻麵館", "lat": 25.06966, "lon": 121.589, "area": "內湖區", "cat": "黃仁勳美食地圖", "c": "#9b59b6"}, {"n": "醉翁漁港海鮮", "lat": 25.04809, "lon": 121.54474, "area": "松山區", "cat": "黃仁勳美食地圖", "c": "#9b59b6"}, {"n": "富霸王豬腳", "lat": 25.06436, "lon": 121.53347, "area": "中山區四平商圈", "cat": "黃仁勳美食地圖", "c": "#9b59b6"}, {"n": "譽展蜜餞行", "lat": 25.06436, "lon": 121.53347, "area": "中山區四平商圈", "cat": "黃仁勳美食地圖", "c": "#9b59b6"}, {"n": "王記府城肉粽", "lat": 25.04792, "lon": 121.546, "area": "松山區", "cat": "黃仁勳美食地圖", "c": "#9b59b6"}, {"n": "阿婆水果攤(臨江街夜市)", "lat": 25.03334, "lon": 121.5669, "area": "信義區(通化/臨江街)", "cat": "黃仁勳美食地圖", "c": "#9b59b6"}, {"n": "豆花莊", "lat": 25.06599, "lon": 121.51551, "area": "大同區寧夏夜市", "cat": "黃仁勳美食地圖", "c": "#9b59b6"}, {"n": "詹記水果", "lat": 25.06599, "lon": 121.51551, "area": "大同區寧夏夜市", "cat": "黃仁勳美食地圖", "c": "#9b59b6"}, {"n": "老宗店蚵仔煎", "lat": 25.06599, "lon": 121.51551, "area": "大同區寧夏夜市", "cat": "黃仁勳美食地圖", "c": "#9b59b6"}], ATTR=[{"n": "故宫 NPM", "lat": 25.1024, "lon": 121.5485}, {"n": "台北101", "lat": 25.0338, "lon": 121.5645}, {"n": "西门町", "lat": 25.0421, "lon": 121.5069}, {"n": "台北车站", "lat": 25.0478, "lon": 121.517}, {"n": "松山机场 TSA", "lat": 25.0697, "lon": 121.5515}], NIGHT=[{"n": "宁夏夜市", "lat": 25.0565, "lon": 121.5155}, {"n": "临江街夜市", "lat": 25.0331, "lon": 121.5533}, {"n": "饶河夜市", "lat": 25.0505, "lon": 121.5773}], HOTEL=[{"n": "君品", "lat": 25.04914, "lon": 121.51692}, {"n": "凯撒", "lat": 25.04611, "lon": 121.51629}, {"n": "捷丝旅西门", "lat": 25.04504, "lon": 121.50963}, {"n": "老爷", "lat": 25.05367, "lon": 121.52291}];
+var map=L.map('map',{center:[25.055,121.535],zoom:13});
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© OpenStreetMap'}).addTo(map);
+function cm(lat,lon,color,r){return L.circleMarker([lat,lon],{radius:r,color:'#fff',weight:1.5,fillColor:color,fillOpacity:.95});}
+var gRest=L.layerGroup(), gHuang=L.layerGroup(), gTea=L.layerGroup(), gHotel=L.layerGroup(), gNight=L.layerGroup(), gAttr=L.layerGroup();
+var grp={'餐廳':gRest,'黃仁勳美食地圖':gHuang,'奶茶':gTea};
+FOOD.forEach(function(e){var m=cm(e.lat,e.lon,e.c,6).addTo(grp[e.cat]||gRest);
+  m.bindTooltip(e.n+(e.area?(' · '+e.area):''),{direction:'top'});
+  m.bindPopup('<b>'+e.n+'</b><br>'+e.cat+(e.area?(' · '+e.area):''));});
+HOTEL.forEach(function(h){var m=cm(h.lat,h.lon,'#c0392b',8).addTo(gHotel);
+  m.bindTooltip('🏨 '+h.n,{permanent:true,direction:'right',className:'lbl'});});
+NIGHT.forEach(function(n){var m=cm(n.lat,n.lon,'#f1c40f',7).addTo(gNight);
+  m.bindTooltip('🍢 '+n.n,{permanent:true,direction:'right',className:'lbl'});});
+ATTR.forEach(function(a){var m=cm(a.lat,a.lon,'#2f6fed',6).addTo(gAttr);
+  m.bindTooltip(a.n,{permanent:true,direction:'right',className:'lbl'});});
+gRest.addTo(map);gHuang.addTo(map);gTea.addTo(map);gHotel.addTo(map);gNight.addTo(map);gAttr.addTo(map);
+L.control.layers(null,{'餐廳':gRest,'黃仁勳美食地圖':gHuang,'奶茶':gTea,'🏨 酒店':gHotel,'🍢 夜市':gNight,'景点':gAttr},{collapsed:false}).addTo(map);
+</script></body></html>

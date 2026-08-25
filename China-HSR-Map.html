@@ -1,0 +1,54 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>华东高铁地图 · 城际时间 + 最快车次</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<style>
+:root{--ink:#e8eef7;--mut:#9fb0c6;--acc:#4aa3ff;--line:#243349}
+body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei","PingFang TC",sans-serif;background:#0f1723;color:var(--ink)}
+.wrap{max-width:1150px;margin:0 auto;padding:16px}
+a{color:var(--acc)}
+h1{font-size:22px;margin:6px 0}
+.sub{color:var(--mut);font-size:14px;margin-bottom:10px}
+#map{height:76vh;min-height:540px;border:1px solid var(--line);border-radius:12px}
+.legend{display:flex;gap:16px;flex-wrap:wrap;margin:10px 0;font-size:13px;color:var(--mut)}
+.legend b{color:var(--ink)}
+.ln{display:inline-block;width:22px;height:0;border-top:4px solid;margin-right:6px;vertical-align:middle}
+table{border-collapse:collapse;width:100%;font-size:13px;margin:12px 0;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:7px 9px;text-align:center}
+th{background:#101c2c;color:#cfe0f5}
+.back{display:inline-block;margin:0 8px 8px 0}
+.leaflet-tooltip.city{background:#c0392b;color:#fff;font-weight:800;font-size:13px;border:0}
+.leaflet-tooltip.tmin{background:rgba(10,18,30,.9);color:#ffd27a;font-weight:800;font-size:12px;border:0}
+</style></head>
+<body><div class="wrap">
+<a class="back" href="China-HSR-Plan.html">← 高铁 Plan</a>
+<a class="back" href="Taipei-China-Itinerary.html">行程 Itinerary</a>
+<h1>🚄 华东高铁地图 · 城际时间 + 最快车次</h1>
+<div class="sub">节点＝城市，连线上的数字＝<b>最快 G 车分钟数</b>；点连线看<b>最快/代表车次时间</b>。绿色粗线＝推荐路线 上海→苏州→南京→杭州→台州→上海。数据为规划估算，订前请在 12306/携程复核。</div>
+<div class="legend">
+<span><span class="ln" style="border-color:#2ecc71"></span><b>推荐路线</b>（苏→宁→杭→台州→沪）</span>
+<span><span class="ln" style="border-color:#5a6b82"></span>其它直达连接</span>
+<span>🔴 城市/高铁站</span>
+</div>
+<div id="map"></div>
+<h3>最快用时矩阵（分钟）</h3>
+<table><tr><th>最快(分)</th><th>上海虹桥</th><th>苏州</th><th>南京南</th><th>杭州东</th><th>台州</th></tr><tr><th>上海虹桥</th><td>—</td><td>25</td><td>70</td><td>52</td><td>139</td></tr><tr><th>苏州</th><td>25</td><td>—</td><td>75</td><td>65</td><td>~165</td></tr><tr><th>南京南</th><td>70</td><td>75</td><td>—</td><td>~65</td><td>~210</td></tr><tr><th>杭州东</th><td>52</td><td>65</td><td>~65</td><td>—</td><td>76</td></tr><tr><th>台州</th><td>139</td><td>~165</td><td>~210</td><td>76</td><td>—</td></tr></table>
+<p class="sub">🐟 台州排在 <b>9/16 东海开渔（正午）之后</b>（9/17–18），从<b>杭州进最快（76 分）</b>。详见 <a href="China-HSR-Plan.html">China-HSR-Plan.html</a>。</p>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+var NODES=[{"n": "上海虹桥", "lat": 31.1943, "lon": 121.3202}, {"n": "苏州", "lat": 31.33, "lon": 120.622}, {"n": "南京南", "lat": 31.9686, "lon": 118.7969}, {"n": "杭州东", "lat": 30.2906, "lon": 120.2124}, {"n": "台州", "lat": 28.63, "lon": 121.302}], EDGES=[{"a": "上海虹桥", "b": "苏州", "m": 25, "t": "G7006 等 · 全天每~30 分一班", "r": true, "la": 31.1943, "lo": 121.3202, "lb": 31.33, "lob": 120.622, "mid": [31.26215, 120.9711]}, {"a": "苏州", "b": "南京南", "m": 75, "t": "G7055 / G191 等", "r": true, "la": 31.33, "lo": 120.622, "lb": 31.9686, "lob": 118.7969, "mid": [31.649299999999997, 119.70945]}, {"a": "南京南", "b": "杭州东", "m": 65, "t": "G33 上午 ~1h01 直达宁杭（避绕沪 3h 车）", "r": true, "la": 31.9686, "lo": 118.7969, "lb": 30.2906, "lob": 120.2124, "mid": [31.1296, 119.50465]}, {"a": "杭州东", "b": "台州", "m": 76, "t": "最快 G7545 16:39→17:55 · G7461 10:56→12:21 · 早班 G7711 06:37→08:15", "r": true, "la": 30.2906, "lo": 120.2124, "lb": 28.63, "lob": 121.302, "mid": [29.4603, 120.75720000000001]}, {"a": "台州", "b": "上海虹桥", "m": 139, "t": "返程 G7585 17:20→19:41 · G7461 10:02→12:22", "r": true, "la": 28.63, "lo": 121.302, "lb": 31.1943, "lob": 121.3202, "mid": [29.912149999999997, 121.31110000000001]}, {"a": "上海虹桥", "b": "杭州东", "m": 52, "t": "G7 07:00→07:52 · 10–15 分一班", "r": false, "la": 31.1943, "lo": 121.3202, "lb": 30.2906, "lob": 120.2124, "mid": [30.742449999999998, 120.7663]}, {"a": "上海虹桥", "b": "南京南", "m": 70, "t": "G7002 07:00→08:08", "r": false, "la": 31.1943, "lo": 121.3202, "lb": 31.9686, "lob": 118.7969, "mid": [31.581449999999997, 120.05855]}, {"a": "苏州", "b": "杭州东", "m": 65, "t": "G1509 08:12→09:32", "r": false, "la": 31.33, "lo": 120.622, "lb": 30.2906, "lob": 120.2124, "mid": [30.810299999999998, 120.41720000000001]}];
+var map=L.map('map',{center:[30.4,120.4],zoom:7});
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'© OpenStreetMap'}).addTo(map);
+EDGES.forEach(function(e){
+  var col=e.r?'#2ecc71':'#5a6b82', w=e.r?5:2.5;
+  L.polyline([[e.la,e.lo],[e.lb,e.lob]],{color:col,weight:w,opacity:.85}).addTo(map)
+    .bindPopup('<b>'+e.a+' ↔ '+e.b+'</b><br>最快约 <b>'+e.m+' 分</b><br>'+e.t);
+  L.marker(e.mid,{opacity:0}).addTo(map)
+    .bindTooltip(e.m+'分',{permanent:true,direction:'center',className:'tmin'});
+});
+NODES.forEach(function(n){
+  L.circleMarker([n.lat,n.lon],{radius:8,color:'#fff',weight:2,fillColor:'#c0392b',fillOpacity:1}).addTo(map)
+    .bindTooltip(n.n,{permanent:true,direction:'top',className:'city'});
+});
+</script></body></html>
