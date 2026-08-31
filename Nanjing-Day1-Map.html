@@ -1,0 +1,15 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>南京 Day 1（2026-09-15 周二）抵达+城中博物馆+秦淮夜</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<style>body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;background:#0f1723;color:#e8eef7}.wrap{max-width:1180px;margin:auto;padding:14px}a{color:#69b7ff}#map{height:72vh;min-height:520px;border:1px solid #26364d;border-radius:12px}.sub,li{color:#b9c7d8}.lbl{background:rgba(12,20,34,.86);border:0;color:white;font-weight:700}</style></head>
+<body><div class="wrap"><h1>南京 Day 1（2026-09-15 周二）抵达+城中博物馆+秦淮夜</h1><p class="sub">总统府与南京博物院仅在早班高铁时间允许时都做；晚点时二选一，秦淮夜保持。 <a href="https://www.google.com/maps/dir/31.9686,118.7969/32.0308,118.7845/32.0443,118.7976/32.0419,118.8263/32.0218,118.7904/32.0124,118.7874/32.0308,118.7845" target="_blank" rel="noopener">打开多点路线</a></p><div id="map"></div><ol><li><b>1. 南京南站</b> — 苏州抵达；先去酒店放行李</li>
+<li><b>2. 夫子庙/新街口酒店区</b> — 放行李与休息</li>
+<li><b>3. 总统府</b> — 下午第一站；时间不足可与南博二选一</li>
+<li><b>4. 南京博物院</b> — 只看重点馆，使用电梯</li>
+<li><b>5. 夫子庙秦淮河画舫</b> — 晚间坐船，减少步行</li>
+<li><b>6. 老门东</b> — 主街短段与晚餐</li>
+<li><b>7. 酒店区</b> — 打车返回</li></ol></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script>
+const pts=[{"name": "南京南站", "lat": 31.9686, "lon": 118.7969, "note": "苏州抵达；先去酒店放行李"}, {"name": "夫子庙/新街口酒店区", "lat": 32.0308, "lon": 118.7845, "note": "放行李与休息"}, {"name": "总统府", "lat": 32.0443, "lon": 118.7976, "note": "下午第一站；时间不足可与南博二选一"}, {"name": "南京博物院", "lat": 32.0419, "lon": 118.8263, "note": "只看重点馆，使用电梯"}, {"name": "夫子庙秦淮河画舫", "lat": 32.0218, "lon": 118.7904, "note": "晚间坐船，减少步行"}, {"name": "老门东", "lat": 32.0124, "lon": 118.7874, "note": "主街短段与晚餐"}, {"name": "酒店区", "lat": 32.0308, "lon": 118.7845, "note": "打车返回"}];const map=L.map('map');L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© OpenStreetMap'}).addTo(map);
+const bounds=[];pts.forEach((p,i)=>{const m=L.marker([p.lat,p.lon]).addTo(map);m.bindTooltip((i+1)+'. '+p.name,{permanent:true,direction:'right',className:'lbl'});m.bindPopup('<b>'+(i+1)+'. '+p.name+'</b><br>'+p.note);bounds.push([p.lat,p.lon]);});map.fitBounds(bounds,{padding:[35,35]});
+</script></body></html>

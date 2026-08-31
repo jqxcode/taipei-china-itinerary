@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Reservations & Bookings</title>
+<title>Reservations</title>
 <style>
 :root{--bg:#0f1723;--card:#182333;--ink:#e8eef7;--mut:#9fb0c6;--acc:#4aa3ff;--line:#243349}
 *{box-sizing:border-box}
@@ -37,583 +37,67 @@ body[data-lang="en"] #lang-en,body[data-lang="zh"] #lang-zh{background:var(--acc
 <a class="back" href="Taipei-China-Itinerary.html"><span class="en">← Itinerary</span><span class="zh">← 回行程</span></a>
 <div class="lang-toggle" aria-label="Language"><button id="lang-en" type="button" onclick="setLang('en')">EN</button><span class="sep">|</span><button id="lang-zh" type="button" onclick="setLang('zh')">中文</button></div>
 <div class="wrap">
-<div class="en"><h1>Full Reservation Audit (2026 Verification) · Whether Each Stop Requires Reservation + How Many Days Ahead</h1>
+<div class="en"><h1>Reservation Audit (Current Locked Route)</h1>
 <blockquote>
-<p>Party of 5 (4 U.S. passports + 1 Chinese passport holder with Mainland Travel Permit for Taiwan Residents; includes seniors). Taipei 9/10–13; mainland China 9/14–20. <strong>Every planned stop is marked as “reservation required/no reservation needed, how many days ahead, and how foreigners can book.”</strong> Related: <code>Taipei-3Day-Executable-Plan.md</code>, <code>Cash-Exchange.html</code>.
-⚠️ Mainland China attractions mostly require <strong>real-name reservation</strong>: <strong>first choice is Trip.com (Ctrip international version, English, passport number, international cards)</strong>; or use a WeChat mini program and choose the “passport/Mainland Travel Permit for Taiwan Residents” document type; if that still does not work, ask the <strong>hotel concierge to book on your behalf</strong>. The person with the Mainland Travel Permit for Taiwan Residents will have an easier time booking than those using U.S. passports.
-✅ Accommodation status: Taipei hotel booked — <strong>Hotel Resonance Taipei</strong> (confirmation <strong>#H-KG26PCHH3BRH</strong>), 9/10–9/13, 2 rooms.</p>
+<p>The public copy keeps status only and omits confirmed, confirmation codes, personal document details, and ticket links.</p>
 </blockquote>
-<h2>One, Main Table (sorted by longest lead time first)</h2>
-<table>
-<thead>
-<tr>
-<th>Location / Item</th>
-<th>City</th>
-<th>Reservation required?</th>
-<th>Lead time</th>
-<th>How foreigners can book</th>
-<th>Free/Paid</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>High-speed rail tickets</strong> (all segments)</td>
-<td>Mainland China</td>
-<td><strong>Required</strong></td>
-<td><strong>On sale T-15 days</strong> (grab as soon as the window opens; popular trains can sell out within hours)</td>
-<td>12306 (English + passport) or Trip.com; <strong>passport is the ticket</strong> for gate entry</td>
-<td>¥50–180/segment/person</td>
-</tr>
-<tr>
-<td><strong>National Palace Museum “Dragon Tripitaka” special exhibition timed ticket</strong></td>
-<td>Taipei</td>
-<td><strong>Required</strong> (only if you want to see it)</td>
-<td>2–14 days</td>
-<td>Buy directly on npm.fonticket.com official site, admission included</td>
-<td>Admission included NT$350（≈US$11）</td>
-</tr>
-<tr>
-<td><strong>National Palace Museum English guided tour</strong></td>
-<td>Taipei</td>
-<td><strong>Required</strong> (if you want to join)</td>
-<td><strong>≥7 days (latest 9/4)</strong></td>
-<td>signup.npm.edu.tw; + audio NT$50（≈US$2）</td>
-<td>Admission purchased separately</td>
-</tr>
-<tr>
-<td><strong>Sun Yat-sen Mausoleum</strong> (Nanjing)</td>
-<td>Nanjing</td>
-<td><strong>Required · free real-name reservation</strong></td>
-<td>Recommended as early as possible within 7 days</td>
-<td>WeChat/Alipay mini program: choose “passport”, or book via Trip.com/hotel</td>
-<td>Free</td>
-</tr>
-<tr>
-<td><strong>Memorial Hall of the Victims in Nanjing Massacre by Japanese Invaders</strong></td>
-<td>Nanjing</td>
-<td><strong>Required · free real-name reservation</strong> (three halls separately; each person limited to 1 visit/month/hall)</td>
-<td><strong>Up to 7 days ahead</strong></td>
-<td>WeChat mini program (Chinese, can translate); phone 025-58598353 for assistance</td>
-<td>Free</td>
-</tr>
-<tr>
-<td><strong>Lingyin Temple/Feilai Peak</strong></td>
-<td>Hangzhou</td>
-<td><strong>Required · real-name reservation</strong> (not available same day)</td>
-<td><strong>1–7 days</strong> (latest 1 day ahead)</td>
-<td>“杭州灵隐飞来峰” mini program supports passport/English</td>
-<td>Feilai Peak free; main hall incense-flower ticket ¥30</td>
-</tr>
-<tr>
-<td><strong>Humble Administrator's Garden</strong></td>
-<td>Suzhou</td>
-<td><strong>Required · real-name timed entry</strong> (very easy to sell out in peak season)</td>
-<td>Recommended 3–7 days</td>
-<td>Trip.com/TravelChinaGuide (passport); enter with passport</td>
-<td>Peak season ¥80; 70+ free</td>
-</tr>
-<tr>
-<td><strong>National Palace Museum regular admission</strong></td>
-<td>Taipei</td>
-<td><strong>Recommended</strong> (buy online to skip ticket queue)</td>
-<td>1–7 days</td>
-<td>Official site card payment NT$350（≈US$11） (free under age 17)</td>
-<td>NT$350（≈US$11）</td>
-</tr>
-<tr>
-<td><strong>Taipei 101 Observatory + Fast Track</strong></td>
-<td>Taipei</td>
-<td><strong>Recommended</strong> (Fast Track must be booked in advance)</td>
-<td>1–14 days</td>
-<td>Official site/Klook/KKday; entrance from 2026-07 is at the office tower 1F</td>
-<td>Standard NT$600（≈US$19） / Fast Track NT$1,200（≈US$38）</td>
-</tr>
-<tr>
-<td><strong>Huangpu River night cruise</strong></td>
-<td>Shanghai</td>
-<td><strong>Recommended</strong> (peak-season evening sailings fill easily)</td>
-<td>1–3 days</td>
-<td>Trip.com/Klook; exchange for boarding pass with passport</td>
-<td>¥120–150</td>
-</tr>
-<tr>
-<td><strong>Ming Xiaoling Mausoleum</strong></td>
-<td>Nanjing</td>
-<td><strong>Recommended</strong></td>
-<td>2–5 days</td>
-<td>Trip.com/Klook (passport)</td>
-<td>¥70</td>
-</tr>
-<tr>
-<td><strong>Presidential Palace</strong> (Nanjing)</td>
-<td>Nanjing</td>
-<td><strong>Recommended</strong></td>
-<td>2–3 days</td>
-<td>Trip.com/Klook</td>
-<td>¥50–60</td>
-</tr>
-<tr>
-<td><strong>Tiger Hill</strong></td>
-<td>Suzhou</td>
-<td><strong>Recommended</strong></td>
-<td>1–3 days</td>
-<td>Trip.com/TravelChinaGuide</td>
-<td>Peak season ¥70</td>
-</tr>
-<tr>
-<td><strong>Yu Garden</strong></td>
-<td>Shanghai</td>
-<td><strong>Recommended</strong></td>
-<td>1–2 days</td>
-<td>Klook/Trip.com; enter with passport</td>
-<td>¥40</td>
-</tr>
-<tr>
-<td><strong>Oriental Pearl Tower/Lujiazui sightseeing</strong></td>
-<td>Shanghai</td>
-<td><strong>Recommended</strong></td>
-<td>1–2 days</td>
-<td>Official site/Trip.com</td>
-<td>¥165–399</td>
-</tr>
-<tr>
-<td><strong>West Lake boat ride</strong></td>
-<td>Hangzhou</td>
-<td><strong>Recommended</strong></td>
-<td>Same day–1 day</td>
-<td>Trip.com/GetYourGuide</td>
-<td>¥55–70</td>
-</tr>
-<tr>
-<td><strong>Qinhuai River night cruise painted boat</strong></td>
-<td>Nanjing</td>
-<td><strong>Recommended</strong></td>
-<td>1–7 days</td>
-<td>Trip.com (Ctrip); official channels are in Chinese</td>
-<td>East route ¥100/West route ¥120</td>
-</tr>
-<tr>
-<td><strong>Confucius Temple/Qinhuai pedestrian area</strong> (peak-season evening core area)</td>
-<td>Nanjing</td>
-<td><strong>Recommended in peak season</strong> (summer holidays/public holidays 14–22)</td>
-<td>1 day</td>
-<td>Search “南京夫子庙” in Alipay; seniors with ID are exempt from reservation</td>
-<td>Free</td>
-</tr>
-<tr>
-<td><strong>Airport transfer 7-seater (9/10) + 9/12 charter car</strong></td>
-<td>Taipei</td>
-<td><strong>Required</strong></td>
-<td>Recommended 7–14 days (at least 3–7)</td>
-<td>Klook/KKday</td>
-<td>NT$1,800–3,400（≈US$57–107）</td>
-</tr>
-<tr>
-<td><strong>Songshan TSA lounge</strong> (Plaza Premium)</td>
-<td>Taipei</td>
-<td><strong>No reservation needed</strong></td>
-<td>—</td>
-<td>Priority Pass direct entry; walk-in NT$1,500（≈US$47）</td>
-<td>PP free</td>
-</tr>
-<tr>
-<td><strong>EasyCard</strong></td>
-<td>Taipei</td>
-<td><strong>No reservation needed</strong></td>
-<td>—</td>
-<td>Buy on arrival at airport/MRT station</td>
-<td>Card fee NT$100（≈US$3）</td>
-</tr>
-<tr>
-<td><strong>Din Tai Fung 101 B1</strong></td>
-<td>Taipei</td>
-<td><strong>No reservation needed</strong> (does not accept reservations · walk-in queue only)</td>
-<td>—</td>
-<td>Go directly, take a queue number</td>
-<td>Per person NT$500–800（≈US$16–25）</td>
-</tr>
-<tr>
-<td><strong>Jiufen Old Street / Yangmingshan / Ximending · Red House</strong></td>
-<td>Taipei/New Taipei</td>
-<td><strong>No reservation needed</strong> (free independent entry)</td>
-<td>—</td>
-<td>Go directly</td>
-<td>Free</td>
-</tr>
-<tr>
-<td><strong>Ningxia/Linjiang/Raohe night markets</strong></td>
-<td>Taipei</td>
-<td><strong>No reservation needed</strong></td>
-<td>—</td>
-<td>Go directly</td>
-<td>Free</td>
-</tr>
-<tr>
-<td><strong>Longjing Village / Pingjiang Road / Shantang Street / The Bund / Nanjing Road / West Lake lakeside walk</strong></td>
-<td>Mainland China</td>
-<td><strong>No reservation needed</strong> (public streets/free scenic areas)</td>
-<td>—</td>
-<td>Go directly</td>
-<td>Free</td>
-</tr>
-</tbody>
-</table>
-<h2>Two, 🔴 Key Reminders</h2>
+<h2>Completed</h2>
 <ul>
-<li><strong>Closed on Mondays (mainland China)</strong>: <strong>Sun Yat-sen Mausoleum, Memorial Hall of the Victims in Nanjing Massacre, and Presidential Palace are usually closed on Mondays</strong>. <strong>9/14 is Monday</strong> → schedule these Nanjing sites for <strong>9/15–9/17</strong>; on the day of arrival in mainland China, 9/14, prioritize Hangzhou West Lake/Longjing (not affected by Monday closure).</li>
-<li><strong>High-speed rail T-15 ticket rush</strong>: tickets for each segment go on sale 15 days before departure; popular G trains may sell out within hours → buy on 12306/Trip.com <strong>as soon as sales open</strong> (each segment begins opening gradually from about <strong>8/30</strong>).</li>
-<li><strong>General strategy for mainland China foreigner real-name reservations</strong>: ① Trip.com (English + passport + international card, covers most attractions); ② WeChat mini program: choose the “passport” document type (Lingyin Temple clearly supports this); ③ for the person with the Mainland Travel Permit for Taiwan Residents, choose the “Mainland Travel Permit for Taiwan Residents” document type for smoother booking; ④ backup: ask the hotel concierge to book on your behalf (especially for Sun Yat-sen Mausoleum/Memorial Hall).</li>
+<li>Hotel Resonance Taipei: <strong>booked</strong> for Sep 10–13, two rooms.</li>
+<li>National Palace Museum admission plus five timed entries for the Dragon Tripitaka room (12:00–13:00): <strong>paid and confirmed</strong>; tickets remain private and local.</li>
 </ul>
-<h2>Three, 👵 Senior Travel Notes</h2>
+<h2>Recommended, not yet paid</h2>
 <ul>
-<li>Passport holders age 70+: <strong>Lingyin Temple, Humble Administrator's Garden, Tiger Hill</strong> often offer free admission (explain at ticket purchase/entry).</li>
-<li><strong>Sun Yat-sen Mausoleum</strong> has many steps, and <strong>Humble Administrator's Garden/Tiger Hill</strong> can have slippery paving → allow enough time and pace according to ability; the Memorial Hall involves a lot of walking, so morning entry is preferable.</li>
-<li>For high-speed rail, choose aisle seats if possible; major stations have accessible routes.</li>
+<li>Sep 10 TPE T2→hotel: Klook 7/8-seat transfer preferred; KKday backup.</li>
+<li>Sep 12 Beitou private hot-spring room: pay only after the family confirms.</li>
+<li>Sep 16 No. 9 Hot Spring Life Center: verify meal inclusion, second-meal price, foreign-document acceptance, and elevator access before payment.</li>
+<li>Sep 19 Shanghai cruise/observation option: decide from weather and energy.</li>
 </ul>
-<h2>Four, Pre-Trip Reservation Countdown Checklist (based on current Plan SH: 9/14 Hangzhou → 9/15–17 Nanjing → 9/18–19 Suzhou → 9/19–20 Shanghai)</h2>
+<h2>Reservations and reservations required</h2>
+<ul>
+<li>HSR: verify and buy at T-15 on 12306/Trip.com. G7599 currently references <strong>Taizhou West Station</strong> for Sep 17; re-check around Sep 3.</li>
+<li>Sep 14 Humble Administrator's Garden and Master of the Nets Garden: real-name booking. Suzhou Museum is closed Monday; exterior only.</li>
+<li>Sep 15 Presidential Palace and Nanjing Museum: reserve only if the early train preserves enough time. Qinhuai cruise is recommended in advance.</li>
+<li>The official NPM English docent path is unavailable; use the English audio guide unless a commercial tour is separately approved for payment.</li>
+</ul>
+<h2>No reservation needed</h2>
+<ul>
+<li>Ximending, night markets, Qibao, Guanqian, the public part of Shantang Street, Confucius Temple public streets, the Bund, and the short flat Ziyang Street section.</li>
+</ul>
+<h2>Archive / not used</h2>
+<ul>
+<li>Hangzhou is outside the active route; no current backdated booking tasks apply.</li>
+</ul></div><div class="zh"><h1>全程预约审计（当前锁定路线）</h1>
 <blockquote>
-<p>If the final East China route changes (see “East China High-Speed Rail Plan”), count back each mainland China reservation from the new dates accordingly.</p>
+<p>公开版只保留状态，不展示订单号、确认代码、个人证件或票据链接。</p>
 </blockquote>
-<table>
-<thead>
-<tr>
-<th>Action deadline</th>
-<th>Item</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Immediately</strong></td>
-<td>National Palace Museum “Dragon Tripitaka” timed ticket (if you want to see it), National Palace Museum English guided tour (<strong>before 9/4</strong>), Taipei airport pickup/9/12 charter car</td>
-<td>Already on sale/advance booking required</td>
-</tr>
-<tr>
-<td><strong>About 8/30–9/5</strong></td>
-<td><strong>High-speed rail tickets</strong> for each segment (grab as soon as T-15 window opens)</td>
-<td>12306/Trip.com</td>
-</tr>
-<tr>
-<td><strong>9/8–9/9</strong></td>
-<td><strong>Sun Yat-sen Mausoleum + Memorial Hall of the Victims in Nanjing Massacre</strong> real-name tickets (visit 9/15–16)</td>
-<td>Quota is extremely limited; book early</td>
-</tr>
-<tr>
-<td><strong>9/9–9/11</strong></td>
-<td><strong>Humble Administrator's Garden</strong> timed ticket (9/18–19)</td>
-<td>Easy to sell out in peak season</td>
-</tr>
-<tr>
-<td><strong>by 9/13</strong></td>
-<td><strong>Lingyin Temple/Feilai Peak</strong> real-name reservation (9/14–15)</td>
-<td>Latest 1 day ahead</td>
-</tr>
-<tr>
-<td><strong>9/10–9/11</strong></td>
-<td>Taipei 101 Fast Track, National Palace Museum regular admission e-ticket</td>
-<td>1–3 days ahead</td>
-</tr>
-<tr>
-<td><strong>9/12–9/13</strong></td>
-<td>Ming Xiaoling Mausoleum/Presidential Palace/Huangpu River night cruise/Qinhuai painted boat, etc.</td>
-<td>1–5 days ahead</td>
-</tr>
-<tr>
-<td><strong>No reservation needed</strong></td>
-<td>Din Tai Fung, Jiufen, Yangmingshan, Ximending, all night markets, The Bund, Nanjing Road, Pingjiang Road, Shantang Street, Longjing Village, EasyCard, Songshan lounge</td>
-<td>Go directly</td>
-</tr>
-</tbody>
-</table>
-<p><em>Sources: npm.fonticket.com · npm.gov.tw · taipei-101.com.tw · 12306.cn · official sites of Sun Yat-sen Mausoleum/Memorial Hall of the Victims in Nanjing Massacre · Lingyin Temple en.lingyinsi.org · travelchinaguide.com · Trip.com/Klook. Reconfirm prices/quotas/time slots in real time before booking.</em></p></div><div class="zh"><h1>全程预约审计（2026 核验）· 每个点是否需预约 + 提前几天</h1>
-<blockquote>
-<p>5 人团（4 本美国护照 + 1 本中国护照持台胞证；含长辈）。台北 9/10–13；大陆 9/14–20。<strong>每个要去的点都标注了「需/不需预约、提前几天、外籍怎么订」</strong>。相关：<code>Taipei-3Day-Executable-Plan.md</code>、<code>Cash-Exchange.html</code>。
-⚠️ 大陆景区多为<strong>实名预约</strong>：<strong>首选 Trip.com（携程国际版，英文、护照号、国际卡）</strong>；或微信小程序选「护照/台胞证」类型；再不行让<strong>酒店礼宾代订</strong>。持台胞证那位比美国护照更好订。
-✅ 住宿状态：台北酒店已订 — <strong>Hotel Resonance Taipei</strong>（确认号 <strong>#H-KG26PCHH3BRH</strong>），9/10–9/13，2 间房。</p>
-</blockquote>
-<h2>一、主表（按提前天数从多到少）</h2>
-<table>
-<thead>
-<tr>
-<th>地点 / 项目</th>
-<th>城市</th>
-<th>需预约？</th>
-<th>提前</th>
-<th>外籍怎么订</th>
-<th>免费/收费</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>高铁票</strong>（各段）</td>
-<td>大陆</td>
-<td><strong>必须</strong></td>
-<td><strong>T-15 天开售</strong>（开窗即抢，热门数小时售罄）</td>
-<td>12306（英文+护照）或 Trip.com；<strong>护照即票</strong>刷闸机</td>
-<td>¥50–180/段/人</td>
-</tr>
-<tr>
-<td><strong>故宫《龙藏经》特展分时票</strong></td>
-<td>台北</td>
-<td><strong>必须</strong>（想看才需）</td>
-<td>2–14 天</td>
-<td>npm.fonticket.com 官网直购、含门票</td>
-<td>含门票 NT$350（≈US$11）</td>
-</tr>
-<tr>
-<td><strong>故宫英文导览团</strong></td>
-<td>台北</td>
-<td><strong>必须</strong>（想参加）</td>
-<td><strong>≥7 天（最晚 9/4）</strong></td>
-<td>signup.npm.edu.tw；+音频 NT$50（≈US$2）</td>
-<td>门票另购</td>
-</tr>
-<tr>
-<td><strong>中山陵</strong>（南京）</td>
-<td>南京</td>
-<td><strong>必须·实名免费</strong></td>
-<td>建议 7 天内尽早</td>
-<td>微信/支付宝小程序选「护照」，或 Trip.com/酒店代订</td>
-<td>免费</td>
-</tr>
-<tr>
-<td><strong>侵华日军南京大屠杀纪念馆</strong></td>
-<td>南京</td>
-<td><strong>必须·实名免费</strong>（三馆分别、每人每月限1次/馆）</td>
-<td><strong>最多提前 7 天</strong></td>
-<td>微信小程序（中文，可翻译）；电话 025-58598353 协助</td>
-<td>免费</td>
-</tr>
-<tr>
-<td><strong>灵隐寺/飞来峰</strong></td>
-<td>杭州</td>
-<td><strong>必须·实名</strong>（不可当天）</td>
-<td><strong>1–7 天</strong>（最迟提前 1 天）</td>
-<td>「杭州灵隐飞来峰」小程序支持护照/英文</td>
-<td>飞来峰免费；大殿香花票 ¥30</td>
-</tr>
-<tr>
-<td><strong>拙政园</strong></td>
-<td>苏州</td>
-<td><strong>必须·实名分时</strong>（旺季极易售罄）</td>
-<td>建议 3–7 天</td>
-<td>Trip.com/TravelChinaGuide（护照）；凭护照进园</td>
-<td>旺季 ¥80；70+ 免费</td>
-</tr>
-<tr>
-<td><strong>故宫普通门票</strong></td>
-<td>台北</td>
-<td><strong>建议</strong>（可网购跳排队）</td>
-<td>1–7 天</td>
-<td>官网刷卡 NT$350（≈US$11）（17 岁以下免）</td>
-<td>NT$350（≈US$11）</td>
-</tr>
-<tr>
-<td><strong>台北101 观景台 + 快速通道</strong></td>
-<td>台北</td>
-<td><strong>建议</strong>（快速通道须先订）</td>
-<td>1–14 天</td>
-<td>官网/Klook/KKday；入口 2026-07 起在办公楼 1F</td>
-<td>标准 NT$600（≈US$19） / 快通 NT$1,200（≈US$38）</td>
-</tr>
-<tr>
-<td><strong>黄浦江夜游</strong></td>
-<td>上海</td>
-<td><strong>建议</strong>（旺季夜班易满）</td>
-<td>1–3 天</td>
-<td>Trip.com/Klook；凭护照换登船证</td>
-<td>¥120–150</td>
-</tr>
-<tr>
-<td><strong>明孝陵</strong></td>
-<td>南京</td>
-<td><strong>建议</strong></td>
-<td>2–5 天</td>
-<td>Trip.com/Klook（护照）</td>
-<td>¥70</td>
-</tr>
-<tr>
-<td><strong>总统府</strong>（南京）</td>
-<td>南京</td>
-<td><strong>建议</strong></td>
-<td>2–3 天</td>
-<td>Trip.com/Klook</td>
-<td>¥50–60</td>
-</tr>
-<tr>
-<td><strong>虎丘</strong></td>
-<td>苏州</td>
-<td><strong>建议</strong></td>
-<td>1–3 天</td>
-<td>Trip.com/TravelChinaGuide</td>
-<td>旺季 ¥70</td>
-</tr>
-<tr>
-<td><strong>豫园</strong></td>
-<td>上海</td>
-<td><strong>建议</strong></td>
-<td>1–2 天</td>
-<td>Klook/Trip.com；凭护照进园</td>
-<td>¥40</td>
-</tr>
-<tr>
-<td><strong>东方明珠/陆家嘴观光</strong></td>
-<td>上海</td>
-<td><strong>建议</strong></td>
-<td>1–2 天</td>
-<td>官网/Trip.com</td>
-<td>¥165–399</td>
-</tr>
-<tr>
-<td><strong>西湖游船</strong></td>
-<td>杭州</td>
-<td><strong>建议</strong></td>
-<td>当天–1 天</td>
-<td>Trip.com/GetYourGuide</td>
-<td>¥55–70</td>
-</tr>
-<tr>
-<td><strong>秦淮河夜游画舫</strong></td>
-<td>南京</td>
-<td><strong>建议</strong></td>
-<td>1–7 天</td>
-<td>Trip.com（携程）；官方渠道中文</td>
-<td>东线 ¥100/西线 ¥120</td>
-</tr>
-<tr>
-<td><strong>夫子庙/秦淮步行区</strong>（旺季夜间核心区）</td>
-<td>南京</td>
-<td><strong>旺季建议</strong>（暑期/节假日 14–22 点）</td>
-<td>1 天</td>
-<td>支付宝搜「南京夫子庙」；老人凭证免预约</td>
-<td>免费</td>
-</tr>
-<tr>
-<td><strong>机场接送 7 座（9/10）+ 9/12 包车</strong></td>
-<td>台北</td>
-<td><strong>必须</strong></td>
-<td>建议 7–14 天（至少 3–7）</td>
-<td>Klook/KKday</td>
-<td>NT$1,800–3,400（≈US$57–107）</td>
-</tr>
-<tr>
-<td><strong>松山 TSA 贵宾室</strong>（Plaza Premium）</td>
-<td>台北</td>
-<td><strong>无需</strong></td>
-<td>—</td>
-<td>Priority Pass 直接刷入；walk-in NT$1,500（≈US$47）</td>
-<td>PP 免费</td>
-</tr>
-<tr>
-<td><strong>悠游卡 EasyCard</strong></td>
-<td>台北</td>
-<td><strong>无需</strong></td>
-<td>—</td>
-<td>机场/捷运站即买</td>
-<td>工本费 NT$100（≈US$3）</td>
-</tr>
-<tr>
-<td><strong>鼎泰丰 101 B1</strong></td>
-<td>台北</td>
-<td><strong>无需</strong>（不接受订位·纯现场排队）</td>
-<td>—</td>
-<td>直接去取号排队</td>
-<td>人均 NT$500–800（≈US$16–25）</td>
-</tr>
-<tr>
-<td><strong>九份老街 / 阳明山 / 西门町·红楼</strong></td>
-<td>台北/新北</td>
-<td><strong>无需</strong>（免费自由入）</td>
-<td>—</td>
-<td>直接前往</td>
-<td>免费</td>
-</tr>
-<tr>
-<td><strong>宁夏/临江/饶河 夜市</strong></td>
-<td>台北</td>
-<td><strong>无需</strong></td>
-<td>—</td>
-<td>直接前往</td>
-<td>免费</td>
-</tr>
-<tr>
-<td><strong>龙井村 / 平江路 / 山塘街 / 外滩 / 南京路 / 西湖环湖步行</strong></td>
-<td>大陆</td>
-<td><strong>无需</strong>（公共街区/景区免费）</td>
-<td>—</td>
-<td>直接前往</td>
-<td>免费</td>
-</tr>
-</tbody>
-</table>
-<h2>二、🔴 关键提醒</h2>
+<h2>已完成</h2>
 <ul>
-<li><strong>周一闭馆（大陆）</strong>：<strong>中山陵、南京大屠杀纪念馆、总统府 周一通常闭馆</strong>。<strong>9/14 是周一</strong> → 南京这几处安排 <strong>9/15–9/17</strong>；9/14 到大陆当天优先安排杭州西湖/龙井（不受周一影响）。</li>
-<li><strong>高铁 T-15 抢票</strong>：各段出发前 15 天开售，热门 G 车开售数小时可能售罄 → <strong>开售日第一时间</strong>在 12306/Trip.com 抢（约 <strong>8/30 起</strong>陆续开各段）。</li>
-<li><strong>大陆外籍实名预约通用策略</strong>：① Trip.com（英文+护照+国际卡，覆盖大多数景点）；② 微信小程序选「护照」类型（灵隐寺明确支持）；③ 台胞证那位选「台胞证」类型更顺；④ 后备：酒店礼宾代订（尤其中山陵/纪念馆）。</li>
+<li>台北 Hotel Resonance Taipei：<strong>已订</strong>（9/10–9/13，2 间房）。</li>
+<li>故宫北院门票 +《龙藏经》103 陈列室 12:00–13:00 时段 ×5：<strong>已付款并确认</strong>；票据仅保存在私人本地目录。</li>
 </ul>
-<h2>三、👵 长辈出行提示</h2>
+<h2>建议但尚未付款</h2>
 <ul>
-<li>70 岁以上持护照：<strong>灵隐寺、拙政园、虎丘</strong>多可免票（购票/入园时说明）。</li>
-<li><strong>中山陵</strong>台阶多、<strong>拙政园/虎丘</strong>路面湿滑 → 留足时间、量力而行；纪念馆步行量大，宜午前入场。</li>
-<li>高铁购票可选靠走廊座位；大站有无障碍通道。</li>
+<li>9/10 桃园 T2→酒店：优先 Klook 7/8 座接机，KKday 备选。</li>
+<li>9/12 北投汤屋：如全家确定泡汤再付款。</li>
+<li>9/16 九号汤泉：确认套餐包含哪一顿正餐、第二顿价格、外籍证件接待与电梯后再付款。</li>
+<li>9/19 上海夜游/观景项目：按天气与体力决定。</li>
 </ul>
-<h2>四、行前预约倒推清单（按现行 Plan SH：9/14 杭→9/15–17 宁→9/18–19 苏→9/19–20 沪）</h2>
-<blockquote>
-<p>若最终改动华东路线（见「华东高铁 Plan」），大陆各项按新日期同步倒推。</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>截止操作</th>
-<th>项目</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>即刻</strong></td>
-<td>故宫《龙藏经》分时票（想看）、故宫英文导览（<strong>9/4 前</strong>）、台北接机/9/12 包车</td>
-<td>已开售/须提前</td>
-</tr>
-<tr>
-<td><strong>约 8/30–9/5</strong></td>
-<td>各段<strong>高铁票</strong>（T-15 开窗即抢）</td>
-<td>12306/Trip.com</td>
-</tr>
-<tr>
-<td><strong>9/8–9/9</strong></td>
-<td><strong>中山陵 + 南京大屠杀纪念馆</strong> 实名票（9/15–16 参观）</td>
-<td>名额极有限，尽早</td>
-</tr>
-<tr>
-<td><strong>9/9–9/11</strong></td>
-<td><strong>拙政园</strong> 分时票（9/18–19）</td>
-<td>旺季易售罄</td>
-</tr>
-<tr>
-<td><strong>by 9/13</strong></td>
-<td><strong>灵隐寺/飞来峰</strong> 实名（9/14–15）</td>
-<td>最迟提前 1 天</td>
-</tr>
-<tr>
-<td><strong>9/10–9/11</strong></td>
-<td>台北 101 快速通道、故宫普通门票 e-ticket</td>
-<td>提前 1–3 天</td>
-</tr>
-<tr>
-<td><strong>9/12–9/13</strong></td>
-<td>明孝陵/总统府/黄浦江夜游/秦淮画舫等</td>
-<td>提前 1–5 天</td>
-</tr>
-<tr>
-<td><strong>无需预约</strong></td>
-<td>鼎泰丰、九份、阳明山、西门、各夜市、外滩、南京路、平江路、山塘街、龙井村、EasyCard、松山贵宾室</td>
-<td>直接去</td>
-</tr>
-</tbody>
-</table>
-<p><em>来源：npm.fonticket.com · npm.gov.tw · taipei-101.com.tw · 12306.cn · 中山陵/南京大屠杀纪念馆官网 · 灵隐寺 en.lingyinsi.org · travelchinaguide.com · Trip.com/Klook。价格/名额/时段订前实时复核。</em></p></div>
+<h2>必须抢票/预约</h2>
+<ul>
+<li>高铁：T-15 开售后立即在 12306/Trip.com 核验并购买；9/17 G7599 当前参考到<strong>台州西站</strong>，约 9/3 再核。</li>
+<li>9/14 拙政园、网师园：实名预约；苏州博物馆周一闭馆，只看外观。</li>
+<li>9/15 总统府、南京博物院：仅在早班高铁时间允许时预约；秦淮画舫建议提前。</li>
+<li>故宫英文真人导览：官方入口不可用，当前不再作为待完成预约；使用英文语音导览，除非另行确认商业导览付款。</li>
+</ul>
+<h2>无需预约</h2>
+<ul>
+<li>西门町、夜市、七宝、观前街、山塘街公共段、夫子庙公共街区、外滩、临海紫阳街短段。</li>
+</ul>
+<h2>Archive / not used</h2>
+<ul>
+<li>杭州不在 active route，不再倒推灵隐寺、西湖或杭州酒店预约。</li>
+</ul></div>
 <footer><span class="en">Auto-rendered · 2026-08-30 · verify prices/status before booking</span><span class="zh">自动渲染 · 2026-08-30 · 价格/房态订前复核</span></footer>
 </div>
 <script>
@@ -621,7 +105,7 @@ function setLang(lang){
   lang = lang === 'zh' ? 'zh' : 'en';
   document.body.dataset.lang = lang;
   document.documentElement.lang = lang === 'zh' ? 'zh-Hans' : 'en';
-  document.title = lang === 'zh' ? '预约说明' : 'Reservations & Bookings';
+  document.title = lang === 'zh' ? '预约清单' : 'Reservations';
   try{localStorage.setItem('itin-lang', lang);}catch(e){}
 }
 (function(){

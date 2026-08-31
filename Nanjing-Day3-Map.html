@@ -1,0 +1,12 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>南京 Day 3（2026-09-17 周四）直接去南京南→台州西</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<style>body{margin:0;font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif;background:#0f1723;color:#e8eef7}.wrap{max-width:1180px;margin:auto;padding:14px}a{color:#69b7ff}#map{height:72vh;min-height:520px;border:1px solid #26364d;border-radius:12px}.sub,li{color:#b9c7d8}.lbl{background:rgba(12,20,34,.86);border:0;color:white;font-weight:700}</style></head>
+<body><div class="wrap"><h1>南京 Day 3（2026-09-17 周四）直接去南京南→台州西</h1><p class="sub">颐和路已删除；保护 G7599 09:20 发车。约9/3在12306复核最终到站。 <a href="https://www.google.com/maps/dir/32.0308,118.7845/31.9686,118.7969/28.689153,121.286474/28.660437,121.404117" target="_blank" rel="noopener">打开多点路线</a></p><div id="map"></div><ol><li><b>1. 夫子庙/新街口酒店区</b> — 早餐、退房后直接出发</li>
+<li><b>2. 南京南站</b> — 目标08:20–08:30到站</li>
+<li><b>3. 台州西站</b> — G7599当前参考14:02抵达；开售后复核</li>
+<li><b>4. 台州希尔顿（椒江）</b> — 预约车约30–45分钟；连住两晚</li></ol></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script><script>
+const pts=[{"name": "夫子庙/新街口酒店区", "lat": 32.0308, "lon": 118.7845, "note": "早餐、退房后直接出发"}, {"name": "南京南站", "lat": 31.9686, "lon": 118.7969, "note": "目标08:20–08:30到站"}, {"name": "台州西站", "lat": 28.689153, "lon": 121.286474, "note": "G7599当前参考14:02抵达；开售后复核"}, {"name": "台州希尔顿（椒江）", "lat": 28.660437, "lon": 121.404117, "note": "预约车约30–45分钟；连住两晚"}];const map=L.map('map');L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'© OpenStreetMap'}).addTo(map);
+const bounds=[];pts.forEach((p,i)=>{const m=L.marker([p.lat,p.lon]).addTo(map);m.bindTooltip((i+1)+'. '+p.name,{permanent:true,direction:'right',className:'lbl'});m.bindPopup('<b>'+(i+1)+'. '+p.name+'</b><br>'+p.note);bounds.push([p.lat,p.lon]);});map.fitBounds(bounds,{padding:[35,35]});
+</script></body></html>
