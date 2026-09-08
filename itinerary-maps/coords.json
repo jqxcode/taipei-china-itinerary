@@ -83,6 +83,12 @@
   "lon": 121.8443,
   "kind": "attr"
  },
+ "tamsui": {
+  "name": "Tamsui Old Street / riverfront",
+  "lat": 25.1697,
+  "lon": 121.4441,
+  "kind": "attr"
+ },
  "westlake": {
   "name": "West Lake",
   "lat": 30.2417,
