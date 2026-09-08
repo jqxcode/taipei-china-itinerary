@@ -1,0 +1,350 @@
+{
+ "seattle": {
+  "name": "Seattle",
+  "lat": 47.6062,
+  "lon": -122.3321,
+  "kind": "attr"
+ },
+ "taipei_city": {
+  "name": "Hotel Resonance Taipei, Tapestry Collection by Hilton ✅ booked",
+  "lat": 25.0443,
+  "lon": 121.5231,
+  "kind": "attr"
+ },
+ "npm": {
+  "name": "National Palace Museum",
+  "lat": 25.1024,
+  "lon": 121.5485,
+  "kind": "attr"
+ },
+ "taipei101": {
+  "name": "Taipei 101",
+  "lat": 25.0338,
+  "lon": 121.5645,
+  "kind": "attr"
+ },
+ "ningxia": {
+  "name": "Ningxia Night Market",
+  "lat": 25.0565,
+  "lon": 121.5155,
+  "kind": "attr"
+ },
+ "linjiang": {
+  "name": "Linjiang / Tonghua Night Market",
+  "lat": 25.0298,
+  "lon": 121.5557,
+  "kind": "attr"
+ },
+ "raohe": {
+  "name": "Raohe Street Night Market",
+  "lat": 25.0505,
+  "lon": 121.5773,
+  "kind": "attr"
+ },
+ "beitou_hotspring": {
+  "name": "Beitou Hot Spring Museum",
+  "lat": 25.1364,
+  "lon": 121.5073,
+  "kind": "attr"
+ },
+ "thermal_valley": {
+  "name": "Thermal Valley",
+  "lat": 25.1374,
+  "lon": 121.5113,
+  "kind": "attr"
+ },
+ "ximen": {
+  "name": "Ximending / Red House",
+  "lat": 25.0421,
+  "lon": 121.5069,
+  "kind": "attr"
+ },
+ "xiaoyoukeng": {
+  "name": "Xiaoyoukeng (Yangmingshan)",
+  "lat": 25.1737,
+  "lon": 121.5555,
+  "kind": "attr"
+ },
+ "qingtiangang": {
+  "name": "Qingtiangang Grassland",
+  "lat": 25.1699,
+  "lon": 121.5716,
+  "kind": "attr"
+ },
+ "zhuzihu": {
+  "name": "Zhuzihu (Yangmingshan)",
+  "lat": 25.1662,
+  "lon": 121.533,
+  "kind": "attr"
+ },
+ "jiufen": {
+  "name": "Jiufen Old Street",
+  "lat": 25.1096,
+  "lon": 121.8443,
+  "kind": "attr"
+ },
+ "westlake": {
+  "name": "West Lake",
+  "lat": 30.2417,
+  "lon": 120.1494,
+  "kind": "attr"
+ },
+ "lingyin": {
+  "name": "Lingyin Temple",
+  "lat": 30.2447,
+  "lon": 120.101,
+  "kind": "attr"
+ },
+ "bund": {
+  "name": "The Bund",
+  "lat": 31.2397,
+  "lon": 121.4903,
+  "kind": "attr"
+ },
+ "lujiazui": {
+  "name": "Lujiazui Skyline",
+  "lat": 31.2397,
+  "lon": 121.5,
+  "kind": "attr"
+ },
+ "pudong": {
+  "name": "Shanghai Pudong",
+  "lat": 31.2304,
+  "lon": 121.5,
+  "kind": "attr"
+ },
+ "qibao": {
+  "name": "Qibao Old Street",
+  "lat": 31.157,
+  "lon": 121.3514,
+  "kind": "attr"
+ },
+ "qinhuai": {
+  "name": "Confucius Temple & Qinhuai River",
+  "lat": 32.0219,
+  "lon": 118.787,
+  "kind": "attr"
+ },
+ "laomendong": {
+  "name": "Laomendong Historic District",
+  "lat": 32.0124,
+  "lon": 118.7874,
+  "kind": "attr"
+ },
+ "humble_garden": {
+  "name": "Humble Administrator's Garden",
+  "lat": 31.3255,
+  "lon": 120.629,
+  "kind": "attr"
+ },
+ "suzhou_museum": {
+  "name": "Suzhou Museum",
+  "lat": 31.3245,
+  "lon": 120.6294,
+  "kind": "attr"
+ },
+ "guanqian": {
+  "name": "Guanqian Street",
+  "lat": 31.3146,
+  "lon": 120.6219,
+  "kind": "attr"
+ },
+ "suzhou_hotel": {
+  "name": "Suzhou old-town hotel area",
+  "lat": 31.3152,
+  "lon": 120.6214,
+  "kind": "attr"
+ },
+ "nets_garden": {
+  "name": "Master of the Nets Garden",
+  "lat": 31.2996,
+  "lon": 120.6299,
+  "kind": "attr"
+ },
+ "shantang": {
+  "name": "Shantang Street",
+  "lat": 31.322,
+  "lon": 120.5951,
+  "kind": "attr"
+ },
+ "pingjiang": {
+  "name": "Pingjiang Road",
+  "lat": 31.3225,
+  "lon": 120.63,
+  "kind": "attr"
+ },
+ "mingxiaoling_shendao": {
+  "name": "Ming Xiaoling Sacred Way",
+  "lat": 32.0577,
+  "lon": 118.8354,
+  "kind": "attr"
+ },
+ "meiling_palace": {
+  "name": "Meiling Palace",
+  "lat": 32.0475,
+  "lon": 118.8388,
+  "kind": "attr"
+ },
+ "presidential_palace": {
+  "name": "Presidential Palace of Nanjing",
+  "lat": 32.0443,
+  "lon": 118.7976,
+  "kind": "attr"
+ },
+ "nanjing_museum": {
+  "name": "Nanjing Museum",
+  "lat": 32.0419,
+  "lon": 118.8263,
+  "kind": "attr"
+ },
+ "nanjing_hotel": {
+  "name": "Nanjing Confucius Temple / Xinjiekou hotel area",
+  "lat": 32.0308,
+  "lon": 118.7845,
+  "kind": "attr"
+ },
+ "nanjing_bathhouse": {
+  "name": "No. 9 Hot Spring Life Center",
+  "lat": 31.9935,
+  "lon": 118.7225,
+  "kind": "attr"
+ },
+ "xuanwu_lake": {
+  "name": "Xuanwu Lake",
+  "lat": 32.0716,
+  "lon": 118.7941,
+  "kind": "attr"
+ },
+ "yihe_road": {
+  "name": "Yihe Road Historic Residences",
+  "lat": 32.0651,
+  "lon": 118.7747,
+  "kind": "attr"
+ },
+ "taizhou_west": {
+  "name": "Taizhou West Station",
+  "lat": 28.689153,
+  "lon": 121.286474,
+  "kind": "rail"
+ },
+ "xinrongji_linhai": {
+  "name": "Xin Rong Ji, Linhai",
+  "lat": 28.858,
+  "lon": 121.138,
+  "kind": "attr"
+ },
+ "taizhou_station": {
+  "name": "Taizhou Station",
+  "lat": 28.656169,
+  "lon": 121.367286,
+  "kind": "rail"
+ },
+ "taizhou_fishing_port": {
+  "name": "Taizhou Fishing Port / Seafood",
+  "lat": 28.68,
+  "lon": 121.43,
+  "kind": "attr"
+ },
+ "taizhou_hotel": {
+  "name": "Hilton Taizhou, Jiaojiang",
+  "lat": 28.660437,
+  "lon": 121.404117,
+  "kind": "attr"
+ },
+ "linhai_east_lake": {
+  "name": "Linhai East Lake",
+  "lat": 28.850126,
+  "lon": 121.119767,
+  "kind": "attr"
+ },
+ "longxing_temple": {
+  "name": "Longxing Temple",
+  "lat": 28.841835,
+  "lon": 121.113353,
+  "kind": "attr"
+ },
+ "guoqingsi": {
+  "name": "Guoqing Temple (Tiantai)",
+  "lat": 29.146,
+  "lon": 121.032,
+  "kind": "attr"
+ },
+ "linhai": {
+  "name": "Linhai Fucheng Old City",
+  "lat": 28.858,
+  "lon": 121.138,
+  "kind": "attr"
+ },
+ "ziyang_street": {
+  "name": "Ziyang Street",
+  "lat": 28.8571,
+  "lon": 121.1378,
+  "kind": "attr"
+ },
+ "jiaojiang_fish": {
+  "name": "Jiaojiang Fishing-Town Market",
+  "lat": 28.68,
+  "lon": 121.43,
+  "kind": "attr"
+ },
+ "shanghai_central_hotel": {
+  "name": "Central Shanghai hotel area",
+  "lat": 31.2356,
+  "lon": 121.4815,
+  "kind": "attr"
+ },
+ "SEA": {
+  "name": "Seattle–Tacoma (SEA)",
+  "lat": 47.4502,
+  "lon": -122.3088,
+  "kind": "air"
+ },
+ "TPE": {
+  "name": "Taoyuan Airport (TPE)",
+  "lat": 25.0777,
+  "lon": 121.233,
+  "kind": "air"
+ },
+ "TSA": {
+  "name": "Songshan Airport (TSA)",
+  "lat": 25.0697,
+  "lon": 121.5515,
+  "kind": "air"
+ },
+ "PVG": {
+  "name": "Shanghai Pudong (PVG)",
+  "lat": 31.1517,
+  "lon": 121.8017,
+  "kind": "air"
+ },
+ "SHA": {
+  "name": "Shanghai Hongqiao Airport (SHA)",
+  "lat": 31.1979,
+  "lon": 121.3363,
+  "kind": "air"
+ },
+ "hangzhou_east": {
+  "name": "Hangzhou East HSR",
+  "lat": 30.2906,
+  "lon": 120.2124,
+  "kind": "rail"
+ },
+ "nanjing_south": {
+  "name": "Nanjing South HSR",
+  "lat": 31.9686,
+  "lon": 118.7969,
+  "kind": "rail"
+ },
+ "suzhou_st": {
+  "name": "Suzhou Station",
+  "lat": 31.3329,
+  "lon": 120.6064,
+  "kind": "rail"
+ },
+ "shanghai_hongqiao": {
+  "name": "Shanghai Hongqiao HSR",
+  "lat": 31.1943,
+  "lon": 121.3202,
+  "kind": "rail"
+ }
+}
