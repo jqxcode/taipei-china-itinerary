@@ -61,6 +61,15 @@ figcaption{padding:10px 12px}
 .cc{display:block;color:var(--mut);font-size:12.5px;margin-top:3px}
 a.pin{display:inline-block;margin-top:8px;font-size:12.5px;color:var(--acc);text-decoration:none}
 a.pin:hover{text-decoration:underline}
+.tree{font-size:13px;line-height:1.6}
+.tree ul{list-style-type:none;padding-left:18px;margin:4px 0}
+.tree li{margin:4px 0;position:relative}
+.tree details{background:#111c2b;border:1px solid var(--line);border-radius:8px;margin:6px 0;padding:6px 12px}
+.tree summary{padding:4px 0;font-weight:700;cursor:pointer;color:#4aa3ff}
+.tree summary::before{content:"▸ ";color:var(--acc)}
+.tree details[open] summary::before{content:"▾ "}
+.tree .cat-title{color:#ffd27a;font-weight:700;margin-top:6px;display:inline-block}
+.tree .brand-badge{background:#1a2a3f;border:1px solid var(--line);padding:2px 6px;border-radius:4px;font-size:11.5px;color:#cbdbe8;margin-right:6px}
 footer{color:var(--mut);font-size:12.5px;margin-top:30px;border-top:1px solid var(--line);padding-top:14px}
 a{color:var(--acc)}
 @media (max-width:640px){.wrap{padding-top:58px}.lang-toggle{top:8px;right:8px}}
@@ -447,6 +456,190 @@ a{color:var(--acc)}
 <li><b>高温</b>：多安排室内冷气路线，Mom 午后强制休息，随身补水。</li>
 <li><b>航班/末班车</b>：9/10 即使延误，机场捷运末班快车 22:55、预约 van 会追踪航班。</li>
 </ul></div>
+</details>
+<details class="day" id="hotel-brands">
+<summary><span class="date"><span class="en">Info</span><span class="zh">参考</span></span><span class="hl en">Global Hotel Brand Hierarchy (Collapsible Tree)</span><span class="hl zh">🏨 全球主要酒店集团子品牌谱系图（可折叠树形图）</span><span class="tag en">品牌谱系</span><span class="tag zh">品牌谱系</span></summary>
+<div class="body">
+<p>收录万豪、希尔顿、凯悦、洲际、雅高、香格里拉等国际酒店集团旗下主要子品牌分布与档次分类（点开各集团可展开/收起子品牌）：</p>
+<div class="tree">
+  <details open>
+    <summary>🏨 万豪国际集团 (Marriott International)</summary>
+    <ul>
+      <li><span class="cat-title">奢华品牌 (Luxury):</span>
+        <ul>
+          <li><span class="brand-badge">The Ritz-Carlton</span>丽思卡尔顿</li>
+          <li><span class="brand-badge">St. Regis</span>瑞吉</li>
+          <li><span class="brand-badge">JW Marriott</span>JW 万豪</li>
+          <li><span class="brand-badge">The Luxury Collection</span>豪华精选 (如南京圣和府邸)</li>
+          <li><span class="brand-badge">W Hotels</span>W 酒店</li>
+          <li><span class="brand-badge">EDITION</span>艾迪逊</li>
+          <li><span class="brand-badge">Ritz-Carlton Reserve</span>丽思卡尔顿隐世</li>
+        </ul>
+      </li>
+      <li><span class="cat-title">高级高端品牌 (Premium):</span>
+        <ul>
+          <li><span class="brand-badge">Marriott</span>万豪</li>
+          <li><span class="brand-badge">Sheraton</span>喜来登</li>
+          <li><span class="brand-badge">Westin</span>威斯汀</li>
+          <li><span class="brand-badge">Renaissance</span>万丽</li>
+          <li><span class="brand-badge">Le Méridien</span>艾美</li>
+          <li><span class="brand-badge">Autograph Collection</span>傲途格精选</li>
+          <li><span class="brand-badge">Tribute Portfolio</span>臻品之选</li>
+          <li><span class="brand-badge">Design Hotels</span>设计酒店</li>
+        </ul>
+      </li>
+      <li><span class="cat-title">精选服务/中高端 (Select & Long Stay):</span>
+        <ul>
+          <li><span class="brand-badge">Courtyard</span>万怡</li>
+          <li><span class="brand-badge">Four Points</span>福朋喜来登</li>
+          <li><span class="brand-badge">Aloft</span>雅乐轩</li>
+          <li><span class="brand-badge">Moxy</span>Moxy 酒店</li>
+          <li><span class="brand-badge">Fairfield</span>万枫</li>
+          <li><span class="brand-badge">Residence Inn / Element</span>万豪居轩 / 元素</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+
+  <details open>
+    <summary>🏨 希尔顿酒店集团 (Hilton Worldwide)</summary>
+    <ul>
+      <li><span class="cat-title">奢华 & 顶尖生活方式 (Luxury & Lifestyle):</span>
+        <ul>
+          <li><span class="brand-badge">Waldorf Astoria</span>华尔道夫</li>
+          <li><span class="brand-badge">Conrad</span>康莱德</li>
+          <li><span class="brand-badge">LXR Hotels & Resorts</span>LXR 酒店及度假村</li>
+          <li><span class="brand-badge">Signia by Hilton</span>Signia 希尔顿</li>
+        </ul>
+      </li>
+      <li><span class="cat-title">高端全服务 (Full Service & Collections):</span>
+        <ul>
+          <li><span class="brand-badge">Hilton</span>希尔顿 (如南京世茂滨江、台州希尔顿)</li>
+          <li><span class="brand-badge">DoubleTree by Hilton</span>希尔顿逸林</li>
+          <li><span class="brand-badge">Curio Collection</span>启宣精选</li>
+          <li><span class="brand-badge">Tapestry Collection</span>Tapestry 精选 (如台北 Hotel Resonance)</li>
+          <li><span class="brand-badge">Canopy by Hilton</span>嘉悦里</li>
+        </ul>
+      </li>
+      <li><span class="cat-title">精选服务 / 快捷 (Focused Service):</span>
+        <ul>
+          <li><span class="brand-badge">Hilton Garden Inn</span>希尔顿花园</li>
+          <li><span class="brand-badge">Hampton by Hilton</span>希尔顿欢朋 (如南京夫子庙欢朋)</li>
+          <li><span class="brand-badge">Home2 Suites</span>希尔顿惠庭</li>
+          <li><span class="brand-badge">Motto by Hilton</span>Motto 希尔顿</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+
+  <details>
+    <summary>🏨 凯悦酒店集团 (Hyatt Hotels Corporation)</summary>
+    <ul>
+      <li><span class="cat-title">奢华旗舰 (Timeless / Boundless Luxury):</span>
+        <ul>
+          <li><span class="brand-badge">Park Hyatt</span>柏悦</li>
+          <li><span class="brand-badge">Grand Hyatt</span>君悦</li>
+          <li><span class="brand-badge">Andaz</span>安达仕</li>
+          <li><span class="brand-badge">Alila</span>阿丽拉</li>
+          <li><span class="brand-badge">Miraval</span>Miraval 养生度假</li>
+        </ul>
+      </li>
+      <li><span class="cat-title">高端 & 独立精选 (Upscale & Independent):</span>
+        <ul>
+          <li><span class="brand-badge">Hyatt Regency</span>凯悦</li>
+          <li><span class="brand-badge">Hyatt Centric</span>凯悦尚萃</li>
+          <li><span class="brand-badge">Unbound Collection</span>凯悦臻选</li>
+          <li><span class="brand-badge">JdV by Hyatt</span>凯悦悠选</li>
+        </ul>
+      </li>
+      <li><span class="cat-title">精选服务 (Select Service):</span>
+        <ul>
+          <li><span class="brand-badge">Hyatt Place</span>凯悦嘉轩</li>
+          <li><span class="brand-badge">Hyatt House</span>凯悦嘉轩套房</li>
+          <li><span class="brand-badge">UrCove by HYATT</span>逸扉 (中国联合品牌)</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+
+  <details>
+    <summary>🏨 洲际酒店集团 (IHG Hotels & Resorts)</summary>
+    <ul>
+      <li><span class="cat-title">奢华 & 精品 (Luxury & Lifestyle):</span>
+        <ul>
+          <li><span class="brand-badge">Six Senses</span>六善</li>
+          <li><span class="brand-badge">Regent</span>丽晶</li>
+          <li><span class="brand-badge">InterContinental</span>洲际 (如南京绿地洲际)</li>
+          <li><span class="brand-badge">Vignette Collection</span>洲至奢选</li>
+          <li><span class="brand-badge">Kimpton</span>金普顿</li>
+          <li><span class="brand-badge">Hotel Indigo</span>英迪格</li>
+        </ul>
+      </li>
+      <li><span class="cat-title">高端全服务 (Premium):</span>
+        <ul>
+          <li><span class="brand-badge">Crowne Plaza</span>皇冠假日</li>
+          <li><span class="brand-badge">HUALUXE</span>华邑 (中式高端)</li>
+          <li><span class="brand-badge">VOCO</span>VOCO 酒店</li>
+          <li><span class="brand-badge">EVEN Hotels</span>逸衡</li>
+        </ul>
+      </li>
+      <li><span class="cat-title">品质基础 (Essentials & Suites):</span>
+        <ul>
+          <li><span class="brand-badge">Holiday Inn</span>假日酒店</li>
+          <li><span class="brand-badge">Holiday Inn Express</span>智选假日</li>
+          <li><span class="brand-badge">Garner / Candlewood Suites</span>Garner / 智选长住</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+
+  <details>
+    <summary>🏨 雅高酒店集团 (Accor Group)</summary>
+    <ul>
+      <li><span class="cat-title">顶级奢华 (Luxury):</span>
+        <ul>
+          <li><span class="brand-badge">Raffles</span>莱佛士</li>
+          <li><span class="brand-badge">Orient Express</span>东方快车</li>
+          <li><span class="brand-badge">Banyan Tree</span>悦榕庄 (如南京园博园悦榕庄)</li>
+          <li><span class="brand-badge">Fairmont</span>费尔蒙</li>
+          <li><span class="brand-badge">Sofitel Legend / Sofitel</span>索菲特传奇 / 索菲特</li>
+          <li><span class="brand-badge">SLS / Ennismore</span>SLS 潮牌</li>
+        </ul>
+      </li>
+      <li><span class="cat-title">高端全服务 (Premium):</span>
+        <ul>
+          <li><span class="brand-badge">MGallery</span>美爵 / 美居精选</li>
+          <li><span class="brand-badge">Pullman</span>铂尔曼</li>
+          <li><span class="brand-badge">Mövenpick</span>瑞昇</li>
+          <li><span class="brand-badge">Swissôtel</span>瑞士酒店</li>
+          <li><span class="brand-badge">Grand Mercure</span>美爵</li>
+        </ul>
+      </li>
+      <li><span class="cat-title">中端/经济型 (Midscale & Economy):</span>
+        <ul>
+          <li><span class="brand-badge">Novotel</span>诺富特</li>
+          <li><span class="brand-badge">Mercure</span>美居</li>
+          <li><span class="brand-badge">Ibis / Ibis Styles</span>宜必思 / 宜必思尚品</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+
+  <details>
+    <summary>🏨 香格里拉集团 (Shangri-La Group)</summary>
+    <ul>
+      <li><span class="cat-title">品牌阵列:</span>
+        <ul>
+          <li><span class="brand-badge">Shangri-La</span>香格里拉 (旗舰奢华，如南京香格里拉)</li>
+          <li><span class="brand-badge">Kerry Hotels</span>嘉里酒店 (时尚生活方式奢华)</li>
+          <li><span class="brand-badge">JEN by Shangri-La</span>今旅 JEN (新潮中高端)</li>
+          <li><span class="brand-badge">Traders Hotels</span>盛贸饭店 (商务中高端)</li>
+        </ul>
+      </li>
+    </ul>
+  </details>
+</div>
+</div>
 </details>
 <footer><span class="en">Tap any day to expand/collapse; tap a map to open it in Google Maps. Attraction photos &amp; map tiles from Wikimedia Commons / © OpenStreetMap contributors, fetched 2026-09-08. Times, fares and flights are planning estimates — reconfirm before booking.</span><span class="zh">点击任意日期可展开/收起；点击地图可在 Google Maps 中打开。景点照片与地图图块来自 Wikimedia Commons / © OpenStreetMap contributors，抓取日期 2026-09-08。时间、票价与航班均为规划估算 — 预订前请再次确认。</span></footer>
 </div>
