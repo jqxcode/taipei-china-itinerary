@@ -4,6 +4,7 @@
 
 ## Completed
 - Hotel Resonance Taipei: **booked** for Sep 10–13, two rooms.
+- Sep 14 Shanghai Hongqiao → Suzhou Station HSR **G8302** (08:52–09:19, Gate 28B, 1st Class Car 07 Seat 08C): **Booked & paid ✅** (Order #EK92820804).
 - National Palace Museum admission plus five timed entries for the Dragon Tripitaka room (12:00–13:00): **paid and confirmed**; tickets remain private and local.
 
 ## Recommended, not yet paid

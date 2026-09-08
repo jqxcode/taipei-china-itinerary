@@ -6,7 +6,7 @@
 
 | Date | Segment | Current execution note |
 |---|---|---|
-| Mon 9/14 | Shanghai Hongqiao→Suzhou Railway Station | Prefer central Suzhou Station; about 25–35 minutes |
+| Mon 9/14 | Shanghai Hongqiao→Suzhou Railway Station | **Booked: G8302 (08:52→09:19, Gate 28B, 1st Class Car 07 Seat 08C, Order #EK92820804)** ✅ |
 | Tue 9/15 | Suzhou Railway Station→Nanjing South | Choose an early train to preserve time for the Presidential Palace/Nanjing Museum |
 | Thu 9/17 | Nanjing South→**Taizhou West Station** | G7599 09:20→14:02 is the current reference; re-check the timetable and arrival station around Sep 3 |
 | Sat 9/19 | **Taizhou Station**→Shanghai Hongqiao | Taizhou Station is close to Jiaojiang/Hilton Taizhou; prefer a direct departure around 09:30–12:00 |
