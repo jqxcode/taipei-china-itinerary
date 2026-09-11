@@ -263,6 +263,12 @@
   "lon": 121.286474,
   "kind": "rail"
  },
+ "linhai_station": {
+  "name": "Linhai Station",
+  "lat": 28.8830234,
+  "lon": 121.2424833,
+  "kind": "rail"
+ },
  "xinrongji_linhai": {
   "name": "Xin Rong Ji, Linhai",
   "lat": 28.858,
