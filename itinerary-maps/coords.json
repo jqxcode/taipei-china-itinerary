@@ -287,6 +287,30 @@
   "lon": 121.404117,
   "kind": "attr"
  },
+ "dongdaozhu": {
+  "name": "Dongdaozhu Seafood (东岛主海鲜大排档)",
+  "lat": 28.2515769,
+  "lon": 121.587651,
+  "kind": "food"
+ },
+ "xiaoruo": {
+  "name": "Xiaoruo Village / \"Rainbow Fishing Village\" (小箬村/七彩渔村)",
+  "lat": 28.2515769,
+  "lon": 121.587651,
+  "kind": "attr"
+ },
+ "duijie": {
+  "name": "Duijie (\"Couple's Ring\") Viewing Platform",
+  "lat": 28.2824767,
+  "lon": 121.6238445,
+  "kind": "attr"
+ },
+ "shitang_peninsula": {
+  "name": "Shitang Peninsula tourist area",
+  "lat": 28.2759638,
+  "lon": 121.590136,
+  "kind": "attr"
+ },
  "linhai_east_lake": {
   "name": "Linhai East Lake",
   "lat": 28.850126,
