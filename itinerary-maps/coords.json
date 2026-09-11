@@ -53,6 +53,30 @@
   "lon": 121.5113,
   "kind": "attr"
  },
+ "carrefour_guilin": {
+  "name": "Carrefour Guilin Store",
+  "lat": 25.0382,
+  "lon": 121.5028,
+  "kind": "attr"
+ },
+ "watsons_ximen": {
+  "name": "Watsons Ximen Store",
+  "lat": 25.0445,
+  "lon": 121.503,
+  "kind": "attr"
+ },
+ "tenren_ximen": {
+  "name": "Ten Ren Tea (Ximen)",
+  "lat": 25.0442,
+  "lon": 121.5064,
+  "kind": "attr"
+ },
+ "kuoyuanyi": {
+  "name": "Kuo Yuan Ye (Zhongshan branch)",
+  "lat": 25.0615,
+  "lon": 121.5228,
+  "kind": "attr"
+ },
  "ximen": {
   "name": "Ximending / Red House",
   "lat": 25.0421,
