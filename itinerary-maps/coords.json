@@ -125,6 +125,12 @@
   "lon": 121.3514,
   "kind": "attr"
  },
+ "shanghai_hongqiao_hotel": {
+  "name": "Orange Hotel Shanghai Hongqiao Railway Station ✅ booked",
+  "lat": 31.17077,
+  "lon": 121.325225,
+  "kind": "attr"
+ },
  "qinhuai": {
   "name": "Confucius Temple & Qinhuai River",
   "lat": 32.0219,
@@ -156,9 +162,9 @@
   "kind": "attr"
  },
  "suzhou_hotel": {
-  "name": "Suzhou old-town hotel area",
-  "lat": 31.3152,
-  "lon": 120.6214,
+  "name": "Atour Hotel Suzhou Shantang Street Guangjinan Road Metro Station ✅ booked",
+  "lat": 31.30255,
+  "lon": 120.59057,
   "kind": "attr"
  },
  "nets_garden": {
@@ -204,8 +210,8 @@
   "kind": "attr"
  },
  "nanjing_hotel": {
-  "name": "Nanjing Confucius Temple / Xinjiekou hotel area",
-  "lat": 32.0308,
+  "name": "UrCove Nanjing Downtown ✅ booked",
+  "lat": 32.036,
   "lon": 118.7845,
   "kind": "attr"
  },
